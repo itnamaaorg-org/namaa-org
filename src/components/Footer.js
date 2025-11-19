@@ -34,11 +34,7 @@ const Footer = () => {
   };
 
   return (
-    <>
-      {/* This script should be in your index.html head */}
-      <script src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.7.2/js/all.min.js" defer></script>
-      
-      <div dir="rtl" className="font-sans bg-[#F8F9FA] min-h-screen flex flex-col">
+    <div dir="rtl" className="font-sans bg-[#F8F9FA] min-h-screen flex flex-col">
         <main className="flex-grow flex items-center justify-center py-16 px-4">
           <div className="w-full max-w-6xl mx-auto">
             <div className="shadow-xl rounded-2xl overflow-hidden">
@@ -141,7 +137,6 @@ const Footer = () => {
           </div>
         </footer>
       </div>
-    </>
   );
 };
 

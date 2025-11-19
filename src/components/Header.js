@@ -50,7 +50,7 @@ const Header = () => {
               <Link href="#" className="text-gray-700 hover:text-green-600 transition-colors duration-200 font-medium">برامجنا</Link>
               <Link href="#" className="text-gray-700 hover:text-green-600 transition-colors duration-200 font-medium">مشاريعنا</Link>
               <Link href="#" className="text-gray-700 hover:text-green-600 transition-colors duration-200 font-medium">حاضنة المبادرات</Link>
-              <Link href="#" className="text-gray-700 hover:text-green-600 transition-colors duration-200 font-medium">أخبارنا</Link>
+              <Link href="/admin/news" className="text-gray-700 hover:text-green-600 transition-colors duration-200 font-medium">أخبارنا</Link>
             </nav>
             
             {/* Contact Button */}
@@ -78,7 +78,7 @@ const Header = () => {
               <Link href="#" className="block px-3 py-2 text-gray-700 hover:text-green-600 hover:bg-white/30 rounded-xl transition-colors">برامجنا</Link>
               <Link href="#" className="block px-3 py-2 text-gray-700 hover:text-green-600 hover:bg-white/30 rounded-xl transition-colors">مشاريعنا</Link>
               <Link href="#" className="block px-3 py-2 text-gray-700 hover:text-green-600 hover:bg-white/30 rounded-xl transition-colors">خاصية المبادرات</Link>
-              <Link href="#" className="block px-3 py-2 text-gray-700 hover:text-green-600 hover:bg-white/30 rounded-xl transition-colors">أخبارنا</Link>
+              <Link href="/admin/news" className="block px-3 py-2 text-gray-700 hover:text-green-600 hover:bg-white/30 rounded-xl transition-colors">أخبارنا</Link>
               <div className="px-3 py-2">
                 <button className="w-full bg-gradient-to-r from-green-400 to-green-500 hover:from-green-500 hover:to-green-600 text-white px-6 py-2 rounded-full transition-all duration-200 font-medium">
                   تواصل معنا
