@@ -1,0 +1,131 @@
+import Footer from '@/components/Footer';
+
+export const metadata = {
+  title: 'تطوع معنا - نماء',
+  description: 'انضم إلى فرق العمل التطوعي والمساهمة في المبادرات المجتمعية',
+};
+
+const VolunteerPage = () => {
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-white via-green-50/30 to-teal-50/50">
+      <div className="relative pt-32 pb-20 px-4">
+        <div className="max-w-7xl mx-auto">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 text-center mb-8">
+            تطوع معنا
+          </h1>
+          <p className="text-xl md:text-2xl text-gray-700 text-center max-w-3xl mx-auto">
+            دعوة للشباب للانضمام إلى فرق العمل التطوعي والمساهمة في المبادرات المجتمعية
+          </p>
+        </div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 pb-20">
+        {/* Introduction */}
+        <div className="bg-white/80 backdrop-blur-sm rounded-3xl shadow-xl p-8 md:p-12 mb-12">
+          <div className="prose prose-lg max-w-none">
+            <h2 className="text-3xl font-bold text-gray-900 mb-6">لماذا التطوع معنا؟</h2>
+            <p className="text-lg md:text-xl text-gray-700 leading-relaxed mb-6">
+              التطوع مع جمعية نماء هو فرصة مميزة للمساهمة في بناء مجتمع أفضل وتطوير مهاراتك الشخصية والمهنية. نحن نؤمن بأن كل فرد لديه القدرة على إحداث فرق إيجابي في المجتمع.
+            </p>
+          </div>
+        </div>
+
+        {/* Benefits */}
+        <div className="bg-gradient-to-br from-green-50 to-teal-50 rounded-3xl shadow-xl p-8 md:p-12 mb-12">
+          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">فوائد التطوع</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6">
+              <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center text-2xl mb-4">
+                🌟
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">تطوير المهارات</h3>
+              <p className="text-gray-700">اكتسب مهارات جديدة في القيادة، التواصل، وإدارة المشاريع</p>
+            </div>
+            <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6">
+              <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center text-2xl mb-4">
+                🤝
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">بناء الشبكات</h3>
+              <p className="text-gray-700">تعرف على أشخاص جدد وابن شبكة علاقات مهنية واجتماعية</p>
+            </div>
+            <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6">
+              <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center text-2xl mb-4">
+                💪
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">إحداث أثر إيجابي</h3>
+              <p className="text-gray-700">ساهم في تحسين حياة الآخرين وبناء مجتمع أفضل</p>
+            </div>
+            <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6">
+              <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center text-2xl mb-4">
+                🎓
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">التعلم المستمر</h3>
+              <p className="text-gray-700">احصل على تدريب وتأهيل في مختلف المجالات التطوعية</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Volunteer Form */}
+        <div className="bg-white/80 backdrop-blur-sm rounded-3xl shadow-xl p-8 md:p-12">
+          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">انضم إلينا</h2>
+          <form className="max-w-2xl mx-auto space-y-6">
+            <div>
+              <label className="block text-gray-700 font-medium mb-2">الاسم الكامل</label>
+              <input
+                type="text"
+                className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                placeholder="أدخل اسمك الكامل"
+              />
+            </div>
+            <div>
+              <label className="block text-gray-700 font-medium mb-2">البريد الإلكتروني</label>
+              <input
+                type="email"
+                className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                placeholder="example@email.com"
+              />
+            </div>
+            <div>
+              <label className="block text-gray-700 font-medium mb-2">رقم الهاتف</label>
+              <input
+                type="tel"
+                className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                placeholder="07XXXXXXXX"
+              />
+            </div>
+            <div>
+              <label className="block text-gray-700 font-medium mb-2">المجال التطوعي المفضل</label>
+              <select className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-green-500 focus:border-transparent">
+                <option>اختر المجال</option>
+                <option>فريق تمكين</option>
+                <option>فريق الأيتام (رفقاء نماء)</option>
+                <option>فريق المبادرات التطوعية</option>
+                <option>الفريق الطبي</option>
+                <option>الفريق الإعلامي</option>
+              </select>
+            </div>
+            <div>
+              <label className="block text-gray-700 font-medium mb-2">رسالة</label>
+              <textarea
+                rows="4"
+                className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                placeholder="أخبرنا عن دوافعك للانضمام إلينا..."
+              ></textarea>
+            </div>
+            <button
+              type="submit"
+              className="w-full bg-gradient-to-r from-green-500 to-teal-500 hover:from-green-600 hover:to-teal-600 text-white px-8 py-4 rounded-full font-medium text-lg transition-all duration-200 transform hover:scale-105 shadow-lg"
+            >
+              إرسال طلب التطوع
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <Footer />
+    </div>
+  );
+};
+
+export default VolunteerPage;
+

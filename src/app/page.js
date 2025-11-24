@@ -4,6 +4,7 @@ import Ourjourney from '@/components/Ourjourney'
 import Achievements from '@/components/Achievements';
 import Footer from '@/components/Footer';
 import Impactsection from '@/components/Impactsection';
+import NewsSection from '@/components/NewsSection';
 
 export const metadata = {
   title: 'نماء - جمعية تنموية شبابية',
@@ -17,6 +18,7 @@ const Home = () => {
       <Partners />
       <Ourjourney />
       <Achievements />
+      <NewsSection />
       <Footer />
     </div>
   );

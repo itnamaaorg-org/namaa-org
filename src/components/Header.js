@@ -7,10 +7,10 @@ import { ChevronDown, Menu, X } from 'lucide-react';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isAboutDropdownOpen, setIsAboutDropdownOpen] = useState(false);
+  const [isProjectsDropdownOpen, setIsProjectsDropdownOpen] = useState(false);
   
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
-  const toggleAboutDropdown = () => setIsAboutDropdownOpen(!isAboutDropdownOpen);
+  const toggleProjectsDropdown = () => setIsProjectsDropdownOpen(!isProjectsDropdownOpen);
   
   return (
     <header className="fixed top-4 left-4 right-4 z-50">
@@ -24,40 +24,58 @@ const Header = () => {
             
             {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center space-x-8">
-              <Link href="#" className="text-gray-700 hover:text-green-600 transition-colors duration-200 font-medium">
+              <Link href="/" className="text-gray-700 hover:text-green-600 transition-colors duration-200 font-medium">
                 الرئيسية
               </Link>
               
-              {/* About Dropdown */}
-              <div className="relative">
+              <Link href="/about" className="text-gray-700 hover:text-green-600 transition-colors duration-200 font-medium">
+                من نحن
+              </Link>
+              
+              <Link href="/programs" className="text-gray-700 hover:text-green-600 transition-colors duration-200 font-medium">
+                برامجنا
+              </Link>
+              
+              {/* Projects Dropdown */}
+              <div 
+                className="relative"
+                onMouseEnter={() => setIsProjectsDropdownOpen(true)}
+                onMouseLeave={() => setIsProjectsDropdownOpen(false)}
+              >
                 <button
-                  onClick={toggleAboutDropdown}
                   className="flex items-center space-x-1 text-gray-700 hover:text-green-600 transition-colors duration-200 font-medium"
                 >
-                  <span className="cursor-pointer">عن نماء</span>
-                  <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isAboutDropdownOpen ? 'rotate-180' : ''}`} />
+                  <span className="cursor-pointer">مشاريعنا</span>
+                  <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isProjectsDropdownOpen ? 'rotate-180' : ''}`} />
                 </button>
                 
-                {isAboutDropdownOpen && (
-                  <div className="absolute right-0 mt-2 w-48 bg-white/90 backdrop-blur-md rounded-2xl shadow-lg border border-white/30 py-2">
-                    <Link href="#" className="block px-4 py-2 text-gray-700 hover:bg-green-50 hover:text-green-600 transition-colors">من نحن</Link>
-                    <Link href="#" className="block px-4 py-2 text-gray-700 hover:bg-green-50 hover:text-green-600 transition-colors">رؤيتنا ورسالتنا</Link>
-                    <Link href="#" className="block px-4 py-2 text-gray-700 hover:bg-green-50 hover:text-green-600 transition-colors">فريق العمل</Link>
+                {isProjectsDropdownOpen && (
+                  <div className="absolute right-0 top-full pt-2 w-56">
+                    <div className="bg-white/90 backdrop-blur-md rounded-2xl shadow-lg border border-white/30 py-2">
+                      <Link href="/projects/tamkeen" className="block px-4 py-2 text-gray-700 hover:bg-green-50 hover:text-green-600 transition-colors">مشروع تمكين</Link>
+                      <Link href="/projects/refaqa-namaa" className="block px-4 py-2 text-gray-700 hover:bg-green-50 hover:text-green-600 transition-colors">مشروع رفقاء نماء</Link>
+                      <Link href="/projects/seasonal-projects" className="block px-4 py-2 text-gray-700 hover:bg-green-50 hover:text-green-600 transition-colors">المشاريع الموسيمية</Link>
+                    </div>
                   </div>
                 )}
               </div>
               
-              <Link href="#" className="text-gray-700 hover:text-green-600 transition-colors duration-200 font-medium">برامجنا</Link>
-              <Link href="#" className="text-gray-700 hover:text-green-600 transition-colors duration-200 font-medium">مشاريعنا</Link>
-              <Link href="#" className="text-gray-700 hover:text-green-600 transition-colors duration-200 font-medium">حاضنة المبادرات</Link>
-              <Link href="/admin/news" className="text-gray-700 hover:text-green-600 transition-colors duration-200 font-medium">أخبارنا</Link>
+              <Link href="/initiatives-incubator" className="text-gray-700 hover:text-green-600 transition-colors duration-200 font-medium">حاضنة المبادرات</Link>
+              <Link href="/news" className="text-gray-700 hover:text-green-600 transition-colors duration-200 font-medium">أخبارنا</Link>
             </nav>
             
-            {/* Contact Button */}
-            <div className="hidden md:block">
-              <button className="bg-gradient-to-r from-green-400 to-green-500 hover:from-green-500 hover:to-green-600 text-white px-6 py-2 rounded-full transition-all duration-200 transform hover:scale-105 shadow-md hover:shadow-lg font-medium">
-                تواصل معنا
-              </button>
+            {/* Action Buttons */}
+            <div className="hidden md:flex items-center space-x-3 space-x-reverse">
+              <Link href="/volunteer">
+                <button className="bg-[#94C83D] hover:bg-[#7FB030] text-white px-6 py-2 rounded-lg transition-all duration-200 font-medium">
+                  تطوع معنا
+                </button>
+              </Link>
+              <Link href="/contact">
+                <button className="bg-transparent border-2 border-[#94C83D] text-[#94C83D] hover:bg-[#94C83D] hover:text-white px-6 py-2 rounded-lg transition-all duration-200 font-medium">
+                  تواصل معنا
+                </button>
+              </Link>
             </div>
             
             {/* Mobile menu button */}
@@ -73,16 +91,41 @@ const Header = () => {
         {isMenuOpen && (
           <div className="md:hidden bg-white/20 backdrop-blur-md rounded-b-3xl border-t border-white/30 mt-2">
             <div className="px-2 pt-2 pb-3 space-y-1">
-              <Link href="#" className="block px-3 py-2 text-gray-700 hover:text-green-600 hover:bg-white/30 rounded-xl transition-colors">الرئيسية</Link>
-              <Link href="#" className="block px-3 py-2 text-gray-700 hover:text-green-600 hover:bg-white/30 rounded-xl transition-colors">عن نماء</Link>
-              <Link href="#" className="block px-3 py-2 text-gray-700 hover:text-green-600 hover:bg-white/30 rounded-xl transition-colors">برامجنا</Link>
-              <Link href="#" className="block px-3 py-2 text-gray-700 hover:text-green-600 hover:bg-white/30 rounded-xl transition-colors">مشاريعنا</Link>
-              <Link href="#" className="block px-3 py-2 text-gray-700 hover:text-green-600 hover:bg-white/30 rounded-xl transition-colors">خاصية المبادرات</Link>
-              <Link href="/admin/news" className="block px-3 py-2 text-gray-700 hover:text-green-600 hover:bg-white/30 rounded-xl transition-colors">أخبارنا</Link>
-              <div className="px-3 py-2">
-                <button className="w-full bg-gradient-to-r from-green-400 to-green-500 hover:from-green-500 hover:to-green-600 text-white px-6 py-2 rounded-full transition-all duration-200 font-medium">
-                  تواصل معنا
+              <Link href="/" className="block px-3 py-2 text-gray-700 hover:text-green-600 hover:bg-white/30 rounded-xl transition-colors">الرئيسية</Link>
+              <Link href="/about" className="block px-3 py-2 text-gray-700 hover:text-green-600 hover:bg-white/30 rounded-xl transition-colors">من نحن</Link>
+              <Link href="/programs" className="block px-3 py-2 text-gray-700 hover:text-green-600 hover:bg-white/30 rounded-xl transition-colors">برامجنا</Link>
+              
+              {/* Projects Mobile */}
+              <div>
+                <button
+                  onClick={toggleProjectsDropdown}
+                  className="w-full flex items-center justify-between px-3 py-2 text-gray-700 hover:text-green-600 hover:bg-white/30 rounded-xl transition-colors"
+                >
+                  <span>مشاريعنا</span>
+                  <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isProjectsDropdownOpen ? 'rotate-180' : ''}`} />
                 </button>
+                {isProjectsDropdownOpen && (
+                  <div className="pr-4 space-y-1 mt-1">
+                    <Link href="/projects/tamkeen" className="block px-3 py-2 text-gray-600 hover:text-green-600 hover:bg-white/20 rounded-lg transition-colors text-sm">مشروع تمكين</Link>
+                    <Link href="/projects/refaqa-namaa" className="block px-3 py-2 text-gray-600 hover:text-green-600 hover:bg-white/20 rounded-lg transition-colors text-sm">مشروع رفقاء نماء</Link>
+                    <Link href="/projects/seasonal-projects" className="block px-3 py-2 text-gray-600 hover:text-green-600 hover:bg-white/20 rounded-lg transition-colors text-sm">المشاريع الموسيمية</Link>
+                  </div>
+                )}
+              </div>
+              
+              <Link href="/initiatives-incubator" className="block px-3 py-2 text-gray-700 hover:text-green-600 hover:bg-white/30 rounded-xl transition-colors">حاضنة المبادرات</Link>
+              <Link href="/news" className="block px-3 py-2 text-gray-700 hover:text-green-600 hover:bg-white/30 rounded-xl transition-colors">أخبارنا</Link>
+              <div className="px-3 py-2 space-y-2">
+                <Link href="/volunteer">
+                  <button className="w-full bg-[#94C83D] hover:bg-[#7FB030] text-white px-6 py-2 rounded-lg transition-all duration-200 font-medium">
+                    تطوع معنا
+                  </button>
+                </Link>
+                <Link href="/contact">
+                  <button className="w-full bg-transparent border-2 border-[#94C83D] text-[#94C83D] hover:bg-[#94C83D] hover:text-white px-6 py-2 rounded-lg transition-all duration-200 font-medium">
+                    تواصل معنا
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
