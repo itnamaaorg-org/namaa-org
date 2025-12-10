@@ -1,11 +1,59 @@
+'use client';
+
+import { useState } from 'react';
 import Footer from '@/components/Footer';
 
-export const metadata = {
-  title: 'تطوع معنا - نماء',
-  description: 'انضم إلى فرق العمل التطوعي والمساهمة في المبادرات المجتمعية',
-};
-
 const VolunteerPage = () => {
+  const [formData, setFormData] = useState({
+    fullName: '',
+    email: '',
+    phone: '',
+    preferredField: '',
+    message: '',
+  });
+  const [message, setMessage] = useState('');
+  const [loading, setLoading] = useState(false);
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setMessage('');
+    setLoading(true);
+
+    try {
+      const res = await fetch('/api/volunteer-requests', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await res.json();
+
+      if (res.ok) {
+        setMessage('✅ تم إرسال طلب التطوع بنجاح! سنتواصل معك قريباً.');
+        setFormData({
+          fullName: '',
+          email: '',
+          phone: '',
+          preferredField: '',
+          message: '',
+        });
+      } else {
+        setMessage(`⚠️ ${data.message || 'فشل إرسال الطلب. حاول مرة أخرى.'}`);
+      }
+    } catch (err) {
+      setMessage('⚠️ حدث خطأ. حاول مرة أخرى.');
+    } finally {
+      setLoading(false);
+    }
+  };
   return (
     <div className="min-h-screen bg-gradient-to-br from-white via-green-50/30 to-teal-50/50">
       <div className="relative pt-32 pb-20 px-4">
@@ -68,55 +116,96 @@ const VolunteerPage = () => {
         {/* Volunteer Form */}
         <div className="bg-white/80 backdrop-blur-sm rounded-3xl shadow-xl p-8 md:p-12">
           <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">انضم إلينا</h2>
-          <form className="max-w-2xl mx-auto space-y-6">
+          <form onSubmit={handleSubmit} className="max-w-2xl mx-auto space-y-6">
             <div>
               <label className="block text-gray-700 font-medium mb-2">الاسم الكامل</label>
               <input
                 type="text"
+                name="fullName"
+                value={formData.fullName}
+                onChange={handleInputChange}
                 className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-green-500 focus:border-transparent"
                 placeholder="أدخل اسمك الكامل"
+                required
+                disabled={loading}
               />
             </div>
             <div>
               <label className="block text-gray-700 font-medium mb-2">البريد الإلكتروني</label>
               <input
                 type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleInputChange}
                 className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-green-500 focus:border-transparent"
                 placeholder="example@email.com"
+                required
+                disabled={loading}
               />
             </div>
             <div>
               <label className="block text-gray-700 font-medium mb-2">رقم الهاتف</label>
               <input
                 type="tel"
+                name="phone"
+                value={formData.phone}
+                onChange={handleInputChange}
                 className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-green-500 focus:border-transparent"
                 placeholder="07XXXXXXXX"
+                required
+                disabled={loading}
               />
             </div>
             <div>
               <label className="block text-gray-700 font-medium mb-2">المجال التطوعي المفضل</label>
-              <select className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-green-500 focus:border-transparent">
-                <option>اختر المجال</option>
-                <option>فريق تمكين</option>
-                <option>فريق الأيتام (رفقاء نماء)</option>
-                <option>فريق المبادرات التطوعية</option>
-                <option>الفريق الطبي</option>
-                <option>الفريق الإعلامي</option>
+              <select
+                name="preferredField"
+                value={formData.preferredField}
+                onChange={handleInputChange}
+                className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                required
+                disabled={loading}
+              >
+                <option value="">اختر المجال</option>
+                <option value="فريق تمكين">فريق تمكين</option>
+                <option value="فريق الأيتام (رفقاء نماء)">فريق الأيتام (رفقاء نماء)</option>
+                <option value="فريق المبادرات التطوعية">فريق المبادرات التطوعية</option>
+                <option value="الفريق الطبي">الفريق الطبي</option>
+                <option value="الفريق الإعلامي">الفريق الإعلامي</option>
               </select>
             </div>
             <div>
               <label className="block text-gray-700 font-medium mb-2">رسالة</label>
               <textarea
+                name="message"
+                value={formData.message}
+                onChange={handleInputChange}
                 rows="4"
                 className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-green-500 focus:border-transparent"
                 placeholder="أخبرنا عن دوافعك للانضمام إلينا..."
+                required
+                disabled={loading}
               ></textarea>
             </div>
+            
+            {message && (
+              <div
+                className={`p-4 rounded-xl ${
+                  message.startsWith('✅')
+                    ? 'bg-green-100 text-green-800'
+                    : 'bg-red-100 text-red-800'
+                }`}
+              >
+                {message}
+              </div>
+            )}
+            
             <button
               type="submit"
-              className="w-full bg-gradient-to-r from-green-500 to-teal-500 hover:from-green-600 hover:to-teal-600 text-white px-8 py-4 rounded-full font-medium text-lg transition-all duration-200 transform hover:scale-105 shadow-lg"
+              disabled={loading}
+              className="w-full bg-gradient-to-r from-green-500 to-teal-500 hover:from-green-600 hover:to-teal-600 text-white px-8 py-4 rounded-full font-medium text-lg transition-all duration-200 transform hover:scale-105 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
             >
-              إرسال طلب التطوع
+              {loading ? 'جاري الإرسال...' : 'إرسال طلب التطوع'}
             </button>
           </form>
         </div>

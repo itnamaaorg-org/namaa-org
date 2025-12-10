@@ -2,6 +2,7 @@ import connectToDB from "@/lib/db"
 import News from "@/models/News";
 
 export async function GET() {
+  // Public endpoint - no auth required
   try {
     await connectToDB();
     const news = await News.find().sort({ createdOn: -1 });
@@ -22,6 +23,20 @@ export async function GET() {
 
 export async function POST(req) {
   try {
+    // Require authentication for creating news
+    const { requireAuth } = await import("@/lib/auth");
+    try {
+      await requireAuth();
+    } catch (authErr) {
+      return new Response(
+        JSON.stringify({ message: "Unauthorized" }),
+        {
+          status: 401,
+          headers: { 'Content-Type': 'application/json' },
+        }
+      );
+    }
+    
     await connectToDB();
     const { title, description, createdOn } = await req.json();
     

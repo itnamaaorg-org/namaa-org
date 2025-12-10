@@ -1,8 +1,16 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 
 export default function AdminNewsPage() {
+  const router = useRouter();
+  
+  useEffect(() => {
+    router.replace('/admin/dashboard');
+  }, [router]);
+  
+  return null;
   const [newsList, setNewsList] = useState([]);
   const [selectedNews, setSelectedNews] = useState(null);
   const [isEditing, setIsEditing] = useState(false);

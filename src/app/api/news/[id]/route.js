@@ -33,6 +33,20 @@ export async function GET(request, { params }) {
 
 export async function PUT(request, { params }) {
   try {
+    // Require authentication for updating news
+    const { requireAuth } = await import("@/lib/auth");
+    try {
+      await requireAuth();
+    } catch (authErr) {
+      return new Response(
+        JSON.stringify({ message: "Unauthorized" }),
+        {
+          status: 401,
+          headers: { 'Content-Type': 'application/json' },
+        }
+      );
+    }
+    
     await connectToDB();
     const { title, description, createdOn } = await request.json();
     
@@ -79,6 +93,20 @@ export async function PUT(request, { params }) {
 
 export async function DELETE(request, { params }) {
   try {
+    // Require authentication for deleting news
+    const { requireAuth } = await import("@/lib/auth");
+    try {
+      await requireAuth();
+    } catch (authErr) {
+      return new Response(
+        JSON.stringify({ message: "Unauthorized" }),
+        {
+          status: 401,
+          headers: { 'Content-Type': 'application/json' },
+        }
+      );
+    }
+    
     await connectToDB();
     const news = await News.findByIdAndDelete(params.id);
     
