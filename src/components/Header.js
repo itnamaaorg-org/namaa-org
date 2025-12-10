@@ -65,7 +65,7 @@ const Header = () => {
             </nav>
             
             {/* Action Buttons */}
-            <div className="hidden md:flex items-center space-x-3 space-x-reverse">
+            <div className="hidden md:flex items-center space-x-3 space-x-reverse" dir="ltr">
               <Link href="/volunteer">
                 <button className="bg-[#94C83D] hover:bg-[#7FB030] text-white px-6 py-2 rounded-lg transition-all duration-200 font-medium">
                   تطوع معنا
