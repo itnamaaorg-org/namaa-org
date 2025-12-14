@@ -9,7 +9,7 @@ const LeftArrowIcon = () => (
 
 const ImpactSection = () => {
   return (
-    <div dir="rtl" className="bg-[#FCFEFD] min-h-screen w-full flex items-center justify-center font-['Tajawal'] p-8 relative overflow-hidden">
+    <div dir="rtl" className="bg-[#FCFEFD] min-h-screen w-full flex items-center justify-center p-8 relative overflow-hidden">
       {/* Background pattern */}
       <div className="absolute top-0 right-0 w-1/2 h-1/2 z-0" style={{
         backgroundImage: `url("data:image/svg+xml,%3Csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cpattern id='p' width='100' height='100' patternUnits='userSpaceOnUse' patternTransform='rotate(45)'%3E%3Cpath id='a' data-color='outline' fill='none' stroke='%23E5F3E9' stroke-width='1.5' d='M0 0 L50 50 M50 0 L0 50'/%3E%3C/pattern%3E%3C/defs%3E%3Crect fill='url(%23p)' width='100%25' height='100%25'/%3E%3C/svg%3E")`,
@@ -114,23 +114,6 @@ const ImpactSection = () => {
         </div>
       </div>
     </div>
-  );
-};
-
-const App = () => {
-  return (
-    <>
-      <style>
-        {`
-          @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap');
-          body {
-            font-family: 'Tajawal', sans-serif;
-            overflow-x: hidden; /* Prevent horizontal scroll from card transforms */
-          }
-        `}
-      </style>
-      <ImpactSection />
-    </>
   );
 };
 

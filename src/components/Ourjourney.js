@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { Play } from 'lucide-react';
 
 function Ourjourney() {
@@ -18,9 +19,11 @@ function Ourjourney() {
               منصة أردنية ريادية، تجمع الشباب لصناعة أثر<br className="hidden md:block" />
               حقيقي ومستدام.
             </h1>
-            <button className="bg-green-500 hover:bg-green-600 text-white px-8 py-3 rounded-full font-medium text-base md:text-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
-              تصفح مشاريعنا
-            </button>
+            <Link href="/projects">
+              <button className="bg-[#94C83D] hover:bg-[#7FB030] text-white px-8 py-3 rounded-lg font-medium text-base md:text-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+                تصفح مشاريعنا
+              </button>
+            </Link>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center mt-16 lg:mt-24">

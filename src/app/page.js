@@ -1,42 +1,26 @@
-import Header from '@/app/components/Header'
-import Partners from './components/Partner';
-import Ourjourney from './components/Ourjourney'
-import Achievements from './components/Achievements';
-import Footer from './components/Footer';
-import Impactsection from './components/Impactsection';
+import Header from '@/components/Header'
+import Partners from '@/components/Partner';
+import Ourjourney from '@/components/Ourjourney'
+import Achievements from '@/components/Achievements';
+import Footer from '@/components/Footer';
+import Impactsection from '@/components/Impactsection';
+import NewsSection from '@/components/NewsSection';
 
-import Head from 'next/head';
-
-
+export const metadata = {
+  title: 'نماء - جمعية تنموية شبابية',
+  description: 'جمعية تنموية شبابية غير ربحية، تأسست في الأردن في عام 2012، لتشارك بفعالية في الجهود الوطنية تجاه تمكين الشباب الأردني',
+};
 
 const Home = () => {
-  
   return (
-<div>
-        <Head>
-        <link 
-          href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap" 
-          rel="stylesheet"
-        />
-        <style>{`
-          body {
-            font-family: 'Tajawal', sans-serif;
-            overflow-x: hidden;
-          }
-        `}</style>
-      </Head>
-
-   <Header></Header>
-   <Impactsection></Impactsection>
-
-    <Partners></Partners>
-    <Ourjourney></Ourjourney>
-    <Achievements></Achievements>
-    <Footer></Footer>
-
-
+    <div>
+      <Impactsection />
+      <Partners />
+      <Ourjourney />
+      <Achievements />
+      <NewsSection />
+      <Footer />
     </div>
-   
   );
 };
 
