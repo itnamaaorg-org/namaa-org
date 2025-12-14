@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { uploadImageToFirebase, MAX_IMAGE_SIZE_BYTES } from '@/lib/uploadImage';
 
 export default function NewsManagement() {
   const [newsList, setNewsList] = useState([]);
@@ -10,9 +11,13 @@ export default function NewsManagement() {
     title: '',
     description: '',
     createdOn: '',
+    image: '',
   });
+  const [imageFile, setImageFile] = useState(null);
+  const [imagePreview, setImagePreview] = useState('');
   const [message, setMessage] = useState('');
   const [loading, setLoading] = useState(false);
+  const [uploading, setUploading] = useState(false);
   const [deletingId, setDeletingId] = useState(null);
   const [loadingNews, setLoadingNews] = useState(true);
 
@@ -45,7 +50,10 @@ export default function NewsManagement() {
       title: news.title,
       description: news.description,
       createdOn: news.createdOn ? new Date(news.createdOn).toISOString().slice(0, 16) : '',
+      image: news.image || '',
     });
+    setImageFile(null);
+    setImagePreview(news.image || '');
     setMessage('');
   };
 
@@ -56,7 +64,10 @@ export default function NewsManagement() {
       title: '',
       description: '',
       createdOn: '',
+      image: '',
     });
+    setImageFile(null);
+    setImagePreview('');
     setMessage('');
   };
 
@@ -68,12 +79,47 @@ export default function NewsManagement() {
     }));
   };
 
+  const handleImageChange = (e) => {
+    const file = e.target.files?.[0];
+    if (!file) {
+      setImageFile(null);
+      setImagePreview('');
+      setFormData((prev) => ({ ...prev, image: '' }));
+      return;
+    }
+
+    if (file.size > MAX_IMAGE_SIZE_BYTES) {
+      setMessage('⚠️ حجم الصورة يجب ألا يتجاوز 5MB.');
+      setImageFile(null);
+      setImagePreview('');
+      return;
+    }
+
+    setImageFile(file);
+    setImagePreview(URL.createObjectURL(file));
+    setFormData((prev) => ({ ...prev, image: '' }));
+    setMessage('');
+  };
+
+  const uploadImageIfNeeded = async () => {
+    if (!imageFile) return formData.image || '';
+
+    setUploading(true);
+    try {
+      const url = await uploadImageToFirebase(imageFile, 'news');
+      return url;
+    } finally {
+      setUploading(false);
+    }
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setMessage('');
     setLoading(true);
 
     try {
+      const imageUrl = await uploadImageIfNeeded();
       const url = selectedNews ? `/api/news/${selectedNews._id}` : '/api/news';
       const method = selectedNews ? 'PUT' : 'POST';
 
@@ -84,6 +130,7 @@ export default function NewsManagement() {
           title: formData.title,
           description: formData.description,
           createdOn: formData.createdOn ? new Date(formData.createdOn) : undefined,
+          image: imageUrl,
         }),
       });
 
@@ -91,19 +138,22 @@ export default function NewsManagement() {
 
       if (res.ok) {
         setMessage(selectedNews ? '✅ تم تحديث الخبر بنجاح!' : '✅ تم إضافة الخبر بنجاح!');
-        
+
         // Refresh news list from API
         await fetchNews();
-        
+
         // If editing, update selected news with new data
         if (selectedNews) {
-          const updatedNews = await fetch(`/api/news/${selectedNews._id}`).then(r => r.json());
+          const updatedNews = await fetch(`/api/news/${selectedNews._id}`).then((r) => r.json());
           setSelectedNews(updatedNews);
           setFormData({
             title: updatedNews.title,
             description: updatedNews.description,
             createdOn: updatedNews.createdOn ? new Date(updatedNews.createdOn).toISOString().slice(0, 16) : '',
+            image: updatedNews.image || '',
           });
+          setImageFile(null);
+          setImagePreview(updatedNews.image || '');
         } else {
           // Reset form after adding new
           handleAddNew();
@@ -134,7 +184,7 @@ export default function NewsManagement() {
         setMessage('✅ تم حذف الخبر بنجاح!');
         // Refresh news list from API
         await fetchNews();
-        
+
         // If deleted news was selected, reset form
         if (selectedNews?._id === newsId) {
           handleAddNew();
@@ -208,6 +258,36 @@ export default function NewsManagement() {
               </div>
 
               <div>
+                <label className="block mb-2 font-semibold text-gray-700">صورة الخبر (اختياري)</label>
+                <input
+                  type="file"
+                  accept="image/*"
+                  onChange={handleImageChange}
+                  className="w-full p-3 border border-dashed border-gray-300 rounded-md cursor-pointer focus:outline-none focus:ring-2 focus:ring-green-500 bg-gray-50"
+                />
+                {imagePreview && (
+                  <div className="mt-3 flex items-center gap-4">
+                    <img
+                      src={imagePreview}
+                      alt="معاينة الخبر"
+                      className="h-20 w-20 object-cover rounded-md border"
+                    />
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setImageFile(null);
+                        setImagePreview('');
+                        setFormData((prev) => ({ ...prev, image: '' }));
+                      }}
+                      className="px-3 py-2 text-sm text-red-700 bg-red-100 hover:bg-red-200 rounded-md transition-colors"
+                    >
+                      إزالة الصورة
+                    </button>
+                  </div>
+                )}
+              </div>
+
+              <div>
                 <label className="block mb-2 font-semibold text-gray-700">تاريخ ووقت الإنشاء (اختياري)</label>
                 <input
                   type="datetime-local"
@@ -221,16 +301,16 @@ export default function NewsManagement() {
               <div className="flex gap-3">
                 <button
                   type="submit"
-                  disabled={loading || deletingId}
+                  disabled={loading || deletingId || uploading}
                   className="flex-1 bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-md transition-colors font-semibold disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                 >
-                  {loading ? (
+                  {loading || uploading ? (
                     <>
                       <svg className="animate-spin h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                         <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                         <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                       </svg>
-                      <span>جاري الحفظ...</span>
+                      <span>{uploading ? 'جاري رفع الصورة...' : 'جاري الحفظ...'}</span>
                     </>
                   ) : (
                     <span>{selectedNews ? 'تحديث' : 'إضافة'}</span>
@@ -308,7 +388,7 @@ export default function NewsManagement() {
                         : 'border-gray-200 hover:border-gray-300 hover:bg-gray-50'
                     }`}
                   >
-                    <div className="flex items-start justify-between gap-2">
+                    <div className="flex items-start justify-between gap-3">
                       <div className="flex-1">
                         <h4 className="font-semibold text-gray-800 mb-2 line-clamp-2">
                           {news.title}
@@ -318,12 +398,21 @@ export default function NewsManagement() {
                         </p>
                         <p className="text-xs text-gray-400">{formatDate(news.createdOn)}</p>
                       </div>
-                      {deletingId === news._id && (
-                        <svg className="animate-spin h-5 w-5 text-red-600 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                        </svg>
-                      )}
+                      <div className="flex flex-col items-end gap-2">
+                        {news.image && (
+                          <img
+                            src={news.image}
+                            alt="صورة الخبر"
+                            className="h-12 w-16 object-cover rounded-md border"
+                          />
+                        )}
+                        {deletingId === news._id && (
+                          <svg className="animate-spin h-5 w-5 text-red-600 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                          </svg>
+                        )}
+                      </div>
                     </div>
                   </div>
                 ))
@@ -335,4 +424,3 @@ export default function NewsManagement() {
     </div>
   );
 }
-

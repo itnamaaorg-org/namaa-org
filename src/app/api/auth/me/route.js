@@ -1,6 +1,6 @@
-import connectToDB from "@/lib/db";
-import Admin from "@/models/Admin";
 import { getSession } from "@/lib/auth";
+import { db } from "@/lib/firestore";
+import { doc, getDoc } from "firebase/firestore";
 
 export async function GET() {
   try {
@@ -22,7 +22,7 @@ export async function GET() {
       return new Response(
         JSON.stringify({ 
           authenticated: true, 
-          admin: { id: 'local_admin', username: localAdminUsername } 
+          admin: { id: 'local_admin', email: localAdminUsername, role: 'admin' } 
         }),
         {
           status: 200,
@@ -31,11 +31,10 @@ export async function GET() {
       );
     }
     
-    // Check database for regular admin
-    await connectToDB();
-    const admin = await Admin.findById(session).select('-password');
+    const userRef = doc(db, "users", session);
+    const snapshot = await getDoc(userRef);
     
-    if (!admin) {
+    if (!snapshot.exists()) {
       return new Response(
         JSON.stringify({ authenticated: false }),
         {
@@ -45,8 +44,10 @@ export async function GET() {
       );
     }
     
+    const user = snapshot.data();
+    
     return new Response(
-      JSON.stringify({ authenticated: true, admin: { id: admin._id, username: admin.username } }),
+      JSON.stringify({ authenticated: true, admin: { id: snapshot.id, email: user.email, role: user.role } }),
       {
         status: 200,
         headers: { 'Content-Type': 'application/json' },
@@ -62,4 +63,3 @@ export async function GET() {
     );
   }
 }
-

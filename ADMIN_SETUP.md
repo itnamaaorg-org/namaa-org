@@ -7,7 +7,7 @@
 For local testing, you can use a hardcoded admin account that doesn't require database setup. This admin is stored in local state (environment variables) and never touches the database.
 
 **Default Credentials:**
-- Username: `admin`
+- Username: `admin@example.com`
 - Password: `admin123`
 
 You can customize these by creating a `.env.local` file with:

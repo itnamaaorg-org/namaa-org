@@ -1,12 +1,12 @@
-import connectToDB from "@/lib/db";
-import News from "@/models/News";
+import { db } from "@/lib/firestore";
+import { doc, getDoc, updateDoc, deleteDoc, Timestamp } from "firebase/firestore";
 
 export async function GET(request, { params }) {
   try {
-    await connectToDB();
-    const news = await News.findById(params.id);
+    const docRef = doc(db, "news", params.id);
+    const snapshot = await getDoc(docRef);
     
-    if (!news) {
+    if (!snapshot.exists()) {
       return new Response(
         JSON.stringify({ message: "News not found" }),
         {
@@ -15,7 +15,21 @@ export async function GET(request, { params }) {
         }
       );
     }
-    
+
+    const data = snapshot.data();
+    const toIso = (value) =>
+      value && typeof value.toDate === "function"
+        ? value.toDate().toISOString()
+        : value || null;
+    const news = {
+      _id: snapshot.id,
+      ...data,
+      createdOn: toIso(data.createdOn),
+      createdAt: toIso(data.createdAt),
+      updatedAt: toIso(data.updatedAt),
+      likes: data.likes || 0,
+      commentsCount: data.commentsCount || 0,
+    };
     return new Response(JSON.stringify(news), {
       status: 200,
       headers: { 'Content-Type': 'application/json' },
@@ -47,8 +61,7 @@ export async function PUT(request, { params }) {
       );
     }
     
-    await connectToDB();
-    const { title, description, createdOn } = await request.json();
+    const { title, description, createdOn, image } = await request.json();
     
     if (!title || !description) {
       return new Response(
@@ -60,13 +73,9 @@ export async function PUT(request, { params }) {
       );
     }
     
-    const news = await News.findByIdAndUpdate(
-      params.id,
-      { title, description, createdOn },
-      { new: true, runValidators: true }
-    );
-    
-    if (!news) {
+    const docRef = doc(db, "news", params.id);
+    const snapshot = await getDoc(docRef);
+    if (!snapshot.exists()) {
       return new Response(
         JSON.stringify({ message: "News not found" }),
         {
@@ -75,6 +84,29 @@ export async function PUT(request, { params }) {
         }
       );
     }
+
+    const updateData = {
+      title,
+      description,
+      ...(createdOn !== undefined ? { createdOn: createdOn ? Timestamp.fromDate(new Date(createdOn)) : null } : {}),
+      ...(image !== undefined ? { image } : {}),
+      updatedAt: Timestamp.now(),
+    };
+    
+    await updateDoc(docRef, updateData);
+    const updatedSnap = await getDoc(docRef);
+    const updatedData = updatedSnap.data();
+    const toIso = (value) =>
+      value && typeof value.toDate === "function"
+        ? value.toDate().toISOString()
+        : value || null;
+    const news = {
+      _id: updatedSnap.id,
+      ...updatedData,
+      createdOn: toIso(updatedData.createdOn),
+      createdAt: toIso(updatedData.createdAt),
+      updatedAt: toIso(updatedData.updatedAt),
+    };
     
     return new Response(JSON.stringify(news), {
       status: 200,
@@ -107,10 +139,9 @@ export async function DELETE(request, { params }) {
       );
     }
     
-    await connectToDB();
-    const news = await News.findByIdAndDelete(params.id);
-    
-    if (!news) {
+    const docRef = doc(db, "news", params.id);
+    const snapshot = await getDoc(docRef);
+    if (!snapshot.exists()) {
       return new Response(
         JSON.stringify({ message: "News not found" }),
         {
@@ -120,6 +151,8 @@ export async function DELETE(request, { params }) {
       );
     }
     
+    await deleteDoc(docRef);
+
     return new Response(
       JSON.stringify({ message: "News deleted successfully" }),
       {
@@ -137,4 +170,3 @@ export async function DELETE(request, { params }) {
     );
   }
 }
-

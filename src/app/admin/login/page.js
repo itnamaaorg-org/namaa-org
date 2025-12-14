@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 
 export default function AdminLoginPage() {
-  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [message, setMessage] = useState('');
   const [loading, setLoading] = useState(false);
@@ -36,7 +36,7 @@ export default function AdminLoginPage() {
       const res = await fetch('/api/auth/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ username, password }),
+        body: JSON.stringify({ email, password }),
       });
 
       const data = await res.json();
@@ -58,18 +58,18 @@ export default function AdminLoginPage() {
       <div className="max-w-md w-full bg-white rounded-2xl shadow-xl p-8">
         <div className="text-center mb-8">
           <h1 className="text-3xl font-bold text-gray-900 mb-2">تسجيل الدخول</h1>
-          <p className="text-gray-600">لوحة تحكم الإدارة</p>
+          <p className="text-gray-600">لوحة التحكم الخاصة بالإدارة</p>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
-            <label className="block mb-2 font-semibold text-gray-700">اسم المستخدم</label>
+            <label className="block mb-2 font-semibold text-gray-700">البريد الإلكتروني</label>
             <input
-              type="text"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
-              placeholder="أدخل اسم المستخدم"
+              placeholder="أدخل البريد الإلكتروني"
               required
               disabled={loading}
             />
@@ -122,4 +122,3 @@ export default function AdminLoginPage() {
     </div>
   );
 }
-

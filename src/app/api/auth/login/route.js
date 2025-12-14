@@ -1,14 +1,15 @@
-import connectToDB from "@/lib/db";
-import Admin from "@/models/Admin";
 import { createSession } from "@/lib/auth";
+import { db } from "@/lib/firestore";
+import { collection, query, where, getDocs } from "firebase/firestore";
+import bcrypt from "bcryptjs";
 
 export async function POST(req) {
   try {
-    const { username, password } = await req.json();
+    const { email, password } = await req.json();
     
-    if (!username || !password) {
+    if (!email || !password) {
       return new Response(
-        JSON.stringify({ message: "Username and password required" }),
+        JSON.stringify({ message: "Email and password required" }),
         {
           status: 400,
           headers: { 'Content-Type': 'application/json' },
@@ -17,17 +18,17 @@ export async function POST(req) {
     }
     
     // Check for local testing admin first (development only)
-    const localAdminUsername = process.env.LOCAL_ADMIN_USERNAME || 'admin';
+    const localAdminUsername = process.env.LOCAL_ADMIN_USERNAME || 'admin@example.com';
     const localAdminPassword = process.env.LOCAL_ADMIN_PASSWORD || 'admin123';
     
-    if (username === localAdminUsername && password === localAdminPassword) {
+    if (email === localAdminUsername && password === localAdminPassword) {
       // Create a session with a special local admin ID
       await createSession('local_admin');
       
       return new Response(
-        JSON.stringify({ 
-          message: "Login successful", 
-          admin: { id: 'local_admin', username: localAdminUsername } 
+      JSON.stringify({ 
+        message: "Login successful", 
+          admin: { id: 'local_admin', email: localAdminUsername, role: 'admin' } 
         }),
         {
           status: 200,
@@ -36,11 +37,10 @@ export async function POST(req) {
       );
     }
     
-    // If not local admin, check database
-    await connectToDB();
-    const admin = await Admin.findOne({ username });
-    
-    if (!admin) {
+    const usersRef = collection(db, "users");
+    const userQuery = query(usersRef, where("email", "==", email.toLowerCase()));
+    const snapshot = await getDocs(userQuery);
+    if (snapshot.empty) {
       return new Response(
         JSON.stringify({ message: "Invalid credentials" }),
         {
@@ -50,7 +50,10 @@ export async function POST(req) {
       );
     }
     
-    const isPasswordValid = await admin.comparePassword(password);
+    const doc = snapshot.docs[0];
+    const user = doc.data();
+    
+    const isPasswordValid = await bcrypt.compare(password, user.password);
     
     if (!isPasswordValid) {
       return new Response(
@@ -62,10 +65,10 @@ export async function POST(req) {
       );
     }
     
-    await createSession(admin._id.toString());
+    await createSession(doc.id);
     
     return new Response(
-      JSON.stringify({ message: "Login successful", admin: { id: admin._id, username: admin.username } }),
+      JSON.stringify({ message: "Login successful", admin: { id: doc.id, email: user.email, role: user.role } }),
       {
         status: 200,
         headers: { 'Content-Type': 'application/json' },
@@ -82,4 +85,3 @@ export async function POST(req) {
     );
   }
 }
-

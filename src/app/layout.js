@@ -2,6 +2,7 @@ import { Tajawal } from 'next/font/google';
 import Script from 'next/script';
 import './globals.css';
 import Header from '@/components/Header';
+import HeaderGate from '@/components/HeaderGate';
 
 const tajawal = Tajawal({ 
   subsets: ['arabic', 'latin'], 
@@ -26,7 +27,9 @@ export default function RootLayout({ children }) {
           src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.7.2/js/all.min.js"
           strategy="lazyOnload"
         />
-        <Header />
+        <HeaderGate>
+          <Header />
+        </HeaderGate>
         
         {children}
       </body>
