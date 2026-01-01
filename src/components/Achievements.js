@@ -35,7 +35,7 @@ function Achievements() {
               <div className="absolute -top-8 left-1/2 -translate-x-1/2 w-40 h-40 bg-green-200/30 blur-3xl rounded-full"></div>
               <h3 className="text-3xl font-bold mb-2">+700</h3>
               <p className="text-gray-700">
-                مشروع تم إنشاؤه مع "تمكين"
+                مشروع تم إنشاؤه مع &rdquo;تمكين&rdquo;
               </p>
             </div>
 
