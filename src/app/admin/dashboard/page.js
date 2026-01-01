@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import NewsManagement from '@/components/admin/NewsManagement';
+import MediaManagement from '@/components/admin/MediaManagement';
 import VolunteerRequests from '@/components/admin/VolunteerRequests';
 
 export default function AdminDashboard() {
@@ -91,6 +92,16 @@ export default function AdminDashboard() {
                 إدارة الأخبار
               </button>
               <button
+                onClick={() => setActiveTab('media')}
+                className={`px-6 py-4 text-sm font-medium border-b-2 transition-colors ${
+                  activeTab === 'media'
+                    ? 'border-green-500 text-green-600'
+                    : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+                }`}
+              >
+                نماء في الإعلام
+              </button>
+              <button
                 onClick={() => setActiveTab('volunteers')}
                 className={`px-6 py-4 text-sm font-medium border-b-2 transition-colors ${
                   activeTab === 'volunteers'
@@ -107,6 +118,7 @@ export default function AdminDashboard() {
         {/* Tab Content */}
         <div>
           {activeTab === 'news' && <NewsManagement />}
+          {activeTab === 'media' && <MediaManagement />}
           {activeTab === 'volunteers' && <VolunteerRequests />}
         </div>
       </div>
