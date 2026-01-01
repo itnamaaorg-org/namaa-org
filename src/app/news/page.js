@@ -6,43 +6,19 @@ import Link from 'next/link';
 
 export default function NewsPage() {
   const [newsList, setNewsList] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [mediaList, setMediaList] = useState([]);
+  const [loadingNews, setLoadingNews] = useState(true);
+  const [loadingMedia, setLoadingMedia] = useState(true);
   const [activeTab, setActiveTab] = useState('news'); // 'news' | 'media'
-
-  const mediaItems = [
-    {
-      id: 'media-1',
-      title: 'نماء تحصد المركز الأول في مسابقة قادة الأمير محمد بن فهد العالمية',
-      description: 'حصدت جمعية نماء للتنمية المجتمعية على المركز الأول في الوطن العربي، بمسابقة قادة الأمير محمد بن فهد العالمية في مجال التمكين الاقتصادي، عن فئة المنظمات والجمعيات غير الربحية بنسختها الرابعة.',
-      actionLabel: 'مشاهدة الخبر',
-      image: '/cover.jpg',
-      href: '#',
-    },
-    {
-      id: 'media-2',
-      title: 'نماء في برنامج صباح الخير يا أردن',
-      description: 'استضافة تلفزيون الأردن فريق نماء للحديث عن آخر برامج التمكين الاقتصادي والمجتمعي التي تنفذها الجمعية مع شركائها.',
-      actionLabel: 'مشاهدة اللقاء',
-      image: '/cover.jpg',
-      href: '#',
-    },
-    {
-      id: 'media-3',
-      title: 'تقرير صحفي حول مبادرة نماء للأسر المنتجة',
-      description: 'تغطية إعلامية موسعة حول أثر مبادرة نماء في دعم الأسر المنتجة في محافظات المملكة وتعزيز فرص الاستدامة الاقتصادية.',
-      actionLabel: 'قراءة التقرير',
-      image: '/cover.jpg',
-      href: '#',
-    },
-  ];
 
   useEffect(() => {
     fetchNews();
+    fetchMedia();
   }, []);
 
   const fetchNews = async () => {
     try {
-      setLoading(true);
+      setLoadingNews(true);
       const res = await fetch('/api/news');
       if (res.ok) {
         const data = await res.json();
@@ -51,7 +27,22 @@ export default function NewsPage() {
     } catch (err) {
       console.error('Error fetching news:', err);
     } finally {
-      setLoading(false);
+      setLoadingNews(false);
+    }
+  };
+
+  const fetchMedia = async () => {
+    try {
+      setLoadingMedia(true);
+      const res = await fetch('/api/media');
+      if (res.ok) {
+        const data = await res.json();
+        setMediaList(data);
+      }
+    } catch (err) {
+      console.error('Error fetching media:', err);
+    } finally {
+      setLoadingMedia(false);
     }
   };
 
@@ -97,7 +88,7 @@ export default function NewsPage() {
 
       <div className="max-w-7xl mx-auto px-4 pb-20">
         {activeTab === 'news' ? (
-          loading ? (
+          loadingNews ? (
             <div className="flex items-center justify-center py-20">
               <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-green-600"></div>
             </div>
@@ -142,41 +133,51 @@ export default function NewsPage() {
               ))}
             </div>
           )
+        ) : loadingMedia ? (
+          <div className="flex items-center justify-center py-20">
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-green-600"></div>
+          </div>
+        ) : mediaList.length === 0 ? (
+          <div className="bg-white/80 backdrop-blur-sm rounded-3xl shadow-xl p-12 text-center">
+            <p className="text-xl text-gray-600">لا توجد مواد إعلامية حالياً</p>
+          </div>
         ) : (
-          <div className="space-y-6">
-            {mediaItems.map((item) => (
-              <div
-                key={item.id}
-                className="bg-white rounded-3xl shadow-xl border border-gray-100 overflow-hidden hover:shadow-2xl transition-all"
-              >
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 p-6 lg:p-8 items-center">
-                  <div className="lg:col-span-2 order-2 lg:order-1">
-                    <h3 className="text-2xl font-bold text-indigo-900 mb-4 leading-snug">
-                      {item.title}
-                    </h3>
+            <div className="space-y-6">
+              {mediaList.map((item) => (
+                <div
+                  key={item._id}
+                  className="bg-white rounded-3xl shadow-xl border border-gray-100 overflow-hidden hover:shadow-2xl transition-all"
+                >
+                  <div className="flex flex-col md:flex-row-reverse items-stretch gap-6 p-6 lg:p-8">
+                    <div className="md:w-1/3">
+                      <div className="w-full overflow-hidden border border-indigo-100 rounded-2xl">
+                        <img
+                          src={item.image || '/cover.jpg'}
+                          alt={item.title}
+                          className="w-full h-auto object-cover"
+                        />
+                      </div>
+                    </div>
+                    <div className="md:w-2/3">
+                      <h3 className="text-2xl font-bold text-indigo-900 mb-4 leading-snug">
+                        {item.title}
+                      </h3>
                     <p className="text-gray-700 mb-6 leading-relaxed">
                       {item.description}
                     </p>
-                    <a
-                      href={item.href}
-                      className="inline-flex items-center px-6 py-3 bg-indigo-900 text-white rounded-full font-semibold hover:bg-indigo-800 transition-colors"
-                    >
-                      {item.actionLabel}
-                    </a>
-                  </div>
-                  <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
-                    <div className="w-full max-w-[280px] h-auto bg-indigo-50 rounded-2xl overflow-hidden border border-indigo-100">
-                      <img
-                        src={item.image}
-                        alt={item.title}
-                        className="w-full h-full object-cover"
-                      />
+                      <a
+                        href={item.link}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-flex items-center px-6 py-3 bg-indigo-900 text-white rounded-full font-semibold hover:bg-indigo-800 transition-colors"
+                      >
+                        مشاهدة الخبر
+                      </a>
                     </div>
                   </div>
                 </div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
         )}
       </div>
 
