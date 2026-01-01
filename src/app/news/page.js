@@ -100,6 +100,7 @@ export default function NewsPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {newsList.map((news) => (
                 <Link
+                  key={news._id}
                   href={`/news/${news._id}`}
                   className="block bg-white/80 backdrop-blur-sm rounded-3xl shadow-xl p-8 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
                 >
