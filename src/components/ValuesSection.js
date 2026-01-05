@@ -28,9 +28,7 @@ const ValuesSection = () => {
                   <span>{value.icon}</span>
                 </div>
                 <p className="text-lg font-medium text-gray-900">{value.name}</p>
-                {index < values.length - 1 && (
-                  <div className="hidden md:block absolute w-12 h-0.5 bg-gray-300" style={{ position: 'relative', left: '50%', marginTop: '-2.5rem' }}></div>
-                )}
+               
               </div>
             ))}
           </div>

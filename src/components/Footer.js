@@ -1,9 +1,11 @@
 import React from 'react';
 import Image from 'next/image';
 
-const SocialIcon = ({ icon }) => (
+const SocialIcon = ({ icon, href }) => (
   <a
-    href="#"
+    href={href}
+    target="_blank"
+    rel="noopener noreferrer"
     aria-label={icon.replace('fa-', '')}
     className="w-9 h-9 rounded-full border border-white flex items-center justify-center text-white hover:bg-white hover:text-[#0A2337] transition-colors"
   >
@@ -92,7 +94,7 @@ const Footer = () => {
                   <div>
                     <h2 className="text-xl font-bold mb-4">أوقات العمل</h2>
                     <ul className="space-y-3 text-gray-300">
-                      <li>الأحد - الخميس: 9:30 صباحاً - 4:00 مساءً</li>
+                      <li>الأحد - الخميس: 9:00 صباحاً - 4:00 مساءً</li>
                       <li>الجمعة: مغلق</li>
                     </ul>
                   </div>
@@ -102,11 +104,15 @@ const Footer = () => {
                     <ul className="space-y-3 text-gray-300">
                       <li className="flex items-center">
                         <i className="fas fa-phone-alt ml-3"></i>
-                        <span>+966 12 345 6789</span>
+                        <span style={{ direction: 'ltr' }}>(05) 3851335</span>
+
                       </li>
                       <li className="flex items-center">
                         <i className="fas fa-envelope ml-3"></i>
-                        <span>username@email.ae</span>
+                        <span>
+                          <a data-auto-recognition="true" href="mailto:info@namaa-ngo.org" class="wixui-rich-text__text">info@namaa-ngo.org</a>
+                          
+                         </span>
                       </li>
                     </ul>
                   </div>
@@ -140,13 +146,12 @@ const Footer = () => {
                 height={40}
                 className="mb-4"
               />
-              <p className="text-gray-300 mb-4">جمعية نماء</p>
-              <div className="flex space-x-4 space-x-reverse">
-                <SocialIcon icon="fa-facebook-f" />
-                <SocialIcon icon="fa-twitter" />
-                <SocialIcon icon="fa-instagram" />
-                <SocialIcon icon="fa-linkedin-in" />
-                <SocialIcon icon="fa-youtube" />
+              <div className="flex space-x-2 space-x-reverse">
+                <SocialIcon icon="fa-facebook-f" href="https://www.facebook.com/namaa.society?_rdc=1&_rdr#"/>
+                <SocialIcon icon="fa-x-twitter" href="https://x.com/i/flow/login?redirect_after_login=%2FNamaaSociety"/>
+                <SocialIcon icon="fa-instagram" href="https://www.instagram.com/namaasociety/"/>
+                <SocialIcon icon="fa-linkedin-in" href="https://www.linkedin.com/company/%D8%AC%D9%85%D8%B9%D9%8A%D8%A9-%D9%86%D9%85%D8%A7%D8%A1/about/"/>
+                <SocialIcon icon="fa-youtube"  href="https://www.youtube.com/@namaasociety"/>
               </div>
             </div>
 
