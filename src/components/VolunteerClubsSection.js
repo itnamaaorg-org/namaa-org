@@ -8,23 +8,23 @@ const VolunteerClubsSection = () => {
   const clubs = [
     {
       title: 'الفريق الطبي',
-      description: 'يقوم الفريق على تقديم الخدمات الطبية والصحية داخل الأد...',
-      image: '/cover.jpg',
+      description: 'يقوم الفريق على تقديم الخدمات الطبية والصحية داخل الأردن..',
+      image: '/nama15.jpeg',
     },
     {
       title: 'فريق المبادرات التطوعية',
       description: 'يقوم الفريق على تنفيذ الحملات التطوعية الموسمية وإدارتها (رمضان، الشتاء، ال...)',
-      image: '/cover.jpg',
+      image: '/nama17.jpeg',
     },
     {
       title: 'فريق الأيتام (رفقاء نماء)',
       description: 'يقوم الفريق على دراسة طلبات انضمام الأطفال الأيتام للكفالة ليتم بعدها تجهيز...',
-      image: '/cover.jpg',
+      image: '/nama14.jpeg',
     },
     {
       title: 'فريق تمكين',
-      description: 'يقوم الفريق على دراسة طلبات الاسر المتقدمة للحصول على مشاريع إنتاجية. و...',
-      image: '/cover.jpg',
+      description: 'يقوم الفريق على دراسة طلبات الاسر المتقدمة للحصول على مشاريع إنتاجية. ..',
+      image: '/nama16.jpeg',
     },
   ];
 
@@ -56,7 +56,7 @@ const VolunteerClubsSection = () => {
                   <img
                     src={club.image}
                     alt={club.title}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-fill"
                   />
                 </div>
                 <div className="p-6">

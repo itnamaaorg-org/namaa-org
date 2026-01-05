@@ -79,17 +79,17 @@ function Achievements() {
             {/* الصورة الكبيرة */}
             <div className="w-72 h-[420px] rounded-[200px] overflow-hidden shadow-md">
               <img
-                src="/image11.png"
+                src="/nama11.jpeg"
                 alt=""
                 className="w-full h-full object-cover"
               />
             </div>
 
             {/* الصورة الصغيرة */}
-            <div className="absolute -bottom-10 -right-10 w-40 h-56 rounded-[120px] overflow-hidden shadow-lg">
+            <div className="absolute -bottom-10 -right-3 w-40 h-56 rounded-[120px] overflow-hidden shadow-lg">
               <img
-                src="/image10.png"
-                alt=""
+  src="/nama13.jpeg"
+                  alt=""
                 className="w-full h-full object-cover"
               />
             </div>

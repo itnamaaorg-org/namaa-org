@@ -37,15 +37,15 @@ function Ourjourney() {
               <p className="text-gray-700 text-base md:text-lg leading-relaxed mb-6 max-w-2xl mx-auto lg:mx-0">
                 نحن جمعية تنموية شبابية غير ربحية، تأسست في الأردن في عام 2012، لتشارك بفعالية في الجهود الوطنية تجاه تمكين الشباب الأردني وتعزيز دوره في تنمية المجتمع بكافة مكوناته من أطفال ونساء وأسر، وصولا الى رؤيتها في شباب ريادي مجتمع ممكن.
               </p>
-              <a href="#" className="inline-flex items-center text-green-600 hover:text-green-700 font-medium text-base md:text-lg group">
+              <a href="/about" className="inline-flex items-center text-green-600 hover:text-green-700 font-medium text-base md:text-lg group">
                 <span className="ml-2">تعرف علينا أكثر</span>
-                <span className="transform group-hover:-translate-x-1 transition-transform">‹</span>
+                <span className="transform group-hover:-translate-x-1 transition-transform">&gt;</span>
               </a>
             </div>
 
             <div className="order-1 lg:order-1 px-4">
               <div className="relative rounded-3xl  p-8 md:p-12 max-w-lg mx-auto lg:max-w-none">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/5Xe9C5Izshw?si=GW75DNQcYud-1VVm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/bFlS7ecsWFo?si=_TnF-66XgyRmwSml" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
               </div>
             </div>
           </div>
