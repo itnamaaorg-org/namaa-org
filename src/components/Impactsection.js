@@ -19,7 +19,7 @@ const ImpactSection = () => {
       <div className="container mx-auto px-4 z-10 max-w-6xl">
         <div className="flex flex-col gap-20">
           {/* Top Section */}
-          <div className="flex justify-between items-center">
+          <div className="flex flex-col lg:flex-row justify-between items-center gap-6">
           
             <div className="text-right">
               <h1 className="text-5xl lg:text-6xl font-extrabold text-gray-800 leading-tight">

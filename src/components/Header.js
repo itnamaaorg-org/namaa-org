@@ -76,7 +76,7 @@ const Header = () => {
               <Link href="/news" className="block px-3 py-2 text-gray-700 hover:text-green-600 hover:bg-white/30 rounded-xl transition-colors">أخبارنا</Link>
               <div className="px-3 py-2 space-y-2">
                 <Link href="/volunteer">
-                  <button className="w-full bg-[#94C83D] hover:bg-[#7FB030] text-white px-6 py-2 rounded-lg transition-all duration-200 font-medium">
+                  <button className="w-full bg-[#94C83D] hover:bg-[#7FB030] text-white px-6 py-2 mb-2 rounded-lg transition-all duration-200 font-medium">
                     انضم متطوعًا
                   </button>
                 </Link>
