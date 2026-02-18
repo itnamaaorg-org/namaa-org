@@ -14,11 +14,8 @@ export const metadata = {
 const AboutPage = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-white via-green-50/30 to-teal-50/50">
-      {/* ================= Hero Section ================= */}
       <div className="relative pt-32 pb-20 px-4">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 items-center gap-6 lg:gap-8 lg:[direction:ltr]">
-          {/* ================= IMAGE SIDE (NEW) ================= */}
-          {/* ✅ تعديل: صورة مايلة مثل فيقما */}
           <div className="order-1 flex justify-center lg:justify-start">
             <div className="relative w-full max-w-[560px]">
               <div className="relative overflow-hidden rounded-[28px] shadow-2xl bg-white/40">

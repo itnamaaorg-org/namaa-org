@@ -6,10 +6,8 @@ const CTASection = () => {
   return (
     <div dir="rtl" className="w-full py-16 lg:py-24">
       <div className="container mx-auto px-4">
-        {/* ✅ البوكس */}
         <div className="max-w-6xl mx-auto">
           <div className="relative overflow-hidden rounded-[48px] shadow-2xl">
-            {/* ✅ BG Image */}
             <div className="absolute inset-0">
               <Image
                 src="/images/Join-us.png"
@@ -19,11 +17,10 @@ const CTASection = () => {
                 className="object-cover scale-[1.08]"
                 style={{ objectPosition: "50% 55%" }}
               />
-              {/* ✅ تظليل خفيف (ما بخرب شكل الورقة) */}
+
               <div className="absolute inset-0 bg-[#0A2337]/20" />
             </div>
 
-            {/* ✅ Content */}
             <div className="relative z-10 px-6 md:px-16 py-14 md:py-20 text-center text-white">
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-6">
                 كن جزءاً من رحلتنا
@@ -42,7 +39,6 @@ const CTASection = () => {
             </div>
           </div>
         </div>
-        {/* ✅ End box */}
       </div>
     </div>
   );

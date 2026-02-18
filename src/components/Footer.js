@@ -56,7 +56,7 @@ const Footer = () => {
     },
   };
 
-  // ✅ رابط ثابت لنماء (أي كبسة على الخريطة تروح عليه)
+  
   const NAMAA_MAPS_URL =
     "https://www.google.com/maps?q=32.08633797396,36.10104742369705";
 
@@ -68,7 +68,7 @@ const Footer = () => {
       <main className="flex-grow py-16 px-4">
         <div className="w-full max-w-6xl mx-auto">
           <div className="shadow-xl rounded-2xl overflow-hidden">
-            {/* ✅ البوكس الأزرق + BG كخلفية */}
+           
             <div
               className="text-white p-8 md:p-12 relative"
               style={{

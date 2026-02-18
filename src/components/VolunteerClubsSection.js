@@ -30,16 +30,14 @@ const VolunteerClubsSection = () => {
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [visibleCount, setVisibleCount] = useState(2); // موبايل افتراضي: فريقين
+  const [visibleCount, setVisibleCount] = useState(2); // موبايل : فريقين
 
   // تحديد كم كارد يظهر حسب حجم الشاشة
   useEffect(() => {
     const updateVisibleCount = () => {
       const w = window.innerWidth;
-      if (w >= 1024)
-        setVisibleCount(4); // lg
-      else if (w >= 768)
-        setVisibleCount(2); // md
+      if (w >= 1024) setVisibleCount(4);
+      else if (w >= 768) setVisibleCount(2);
       else setVisibleCount(2); // mobile
     };
 
@@ -63,7 +61,6 @@ const VolunteerClubsSection = () => {
     setCurrentIndex((prev) => (prev - 1 + clubs.length) % clubs.length);
   };
 
-  // إذا اللابتوب بعرض 4 و عندك 4 أندية، ما في داعي أسهم
   const showArrows = clubs.length > visibleCount;
 
   return (
@@ -79,7 +76,6 @@ const VolunteerClubsSection = () => {
         </div>
 
         <div className="relative max-w-7xl mx-auto">
-          {/* بدل ما نعرض الكل، نعرض اللي حسب currentIndex */}
           <div
             className={`grid gap-6 ${
               visibleCount === 4 ? "grid-cols-4" : "grid-cols-2"

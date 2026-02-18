@@ -30,7 +30,7 @@ const ImpactSection = () => {
   return (
     <div
       dir="rtl"
-      className="bg-[#FCFEFD] min-h-screen w-full flex items-center justify-center p-8 relative overflow-hidden"
+      className="bg-[#FCFEFD] min-h-screen w-full flex items-start justify-center pt-28 p-8 relative overflow-hidden"
     >
       {/* Background pattern */}
       <div
@@ -44,7 +44,12 @@ const ImpactSection = () => {
       <div className="container mx-auto px-4 z-10 max-w-6xl">
         <div className="flex flex-col gap-20">
           {/* Top Section */}
-          <div className="flex flex-col lg:flex-row justify-between items-center gap-6">
+          <div
+            className="flex flex-col lg:flex-row justify-between items-center gap-6 relative
+             bg-[url('/images/line8.png')] bg-no-repeat
+             bg-[position:right_top_-20px] sm:bg-right-top
+             bg-[length:140%] sm:bg-[length:120%] md:bg-[length:90%] lg:bg-[length:70%]"
+          >
             <div className="text-right">
               <h1 className="text-5xl lg:text-6xl font-extrabold text-gray-800 leading-tight">
                 طاقتك تصنع - الأثر مع
@@ -68,7 +73,6 @@ const ImpactSection = () => {
             </div>
           </div>
 
-          {/* Bottom Section - Cards */}
           {/* Bottom Section - Cards */}
           <div className="flex justify-center items-center gap-[6px]">
             {/* Card 1: Volunteer Campaigns */}
@@ -95,7 +99,6 @@ const ImpactSection = () => {
             {/* Card 2: Locations */}
             <div className="relative flex justify-center">
               <div className="relative w-full md:w-56 h-80">
-                {/* Pin image from Figma */}
                 <img
                   src="/images/Map.png"
                   alt="مواقع عملنا"
