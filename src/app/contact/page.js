@@ -1,9 +1,9 @@
-import Footer from '@/components/Footer';
-import { MapPin, Phone, Mail, Clock } from 'lucide-react';
+import Footer from "@/components/Footer";
+import { MapPin, Phone, Mail, Clock } from "lucide-react";
 
 export const metadata = {
-  title: 'اتصل بنا - نماء',
-  description: 'معلومات الاتصال بجمعية نماء',
+  title: "اتصل بنا - نماء",
+  description: "معلومات الاتصال بجمعية نماء",
 };
 
 const ContactPage = () => {
@@ -30,7 +30,9 @@ const ContactPage = () => {
                   <MapPin className="w-6 h-6 text-green-600" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">العنوان</h3>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">
+                    العنوان
+                  </h3>
                   <p className="text-gray-700 leading-relaxed">
                     الزرقاء الجديدة - شارع 36 - مجمع سامح مول - الطابق الثاني
                   </p>
@@ -44,8 +46,13 @@ const ContactPage = () => {
                   <Phone className="w-6 h-6 text-green-600" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">الهاتف</h3>
-                  <a href="tel:053851335" className="text-green-600 hover:text-green-700 text-lg">
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">
+                    الهاتف
+                  </h3>
+                  <a
+                    href="tel:053851335"
+                    className="text-green-600 hover:text-green-700 text-lg"
+                  >
                     (05) 3851335
                   </a>
                 </div>
@@ -58,8 +65,13 @@ const ContactPage = () => {
                   <Mail className="w-6 h-6 text-green-600" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">البريد الإلكتروني</h3>
-                  <a href="mailto:info@namaa-ngo.org" className="text-green-600 hover:text-green-700 text-lg">
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">
+                    البريد الإلكتروني
+                  </h3>
+                  <a
+                    href="mailto:info@namaa-ngo.org"
+                    className="text-green-600 hover:text-green-700 text-lg"
+                  >
                     info@namaa-ngo.org
                   </a>
                 </div>
@@ -72,9 +84,12 @@ const ContactPage = () => {
                   <Clock className="w-6 h-6 text-green-600" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">ساعات العمل</h3>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">
+                    ساعات العمل
+                  </h3>
                   <p className="text-gray-700 leading-relaxed">
-                    السبت - الخميس: 9:00 صباحًا – 4:00 مساءً<br />
+                    الأحد - الخميس: 9:00 صباحًا – 4:00 مساءً
+                    <br />
                     الجمعة: مغلق
                   </p>
                 </div>
@@ -84,10 +99,14 @@ const ContactPage = () => {
 
           {/* Contact Form */}
           <div className="bg-white/80 backdrop-blur-sm rounded-3xl shadow-xl p-8">
-            <h2 className="text-3xl font-bold text-gray-900 mb-8">أرسل لنا رسالة</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-8">
+              أرسل لنا رسالة
+            </h2>
             <form className="space-y-6">
               <div>
-                <label className="block text-gray-700 font-medium mb-2">الاسم</label>
+                <label className="block text-gray-700 font-medium mb-2">
+                  الاسم
+                </label>
                 <input
                   type="text"
                   className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-green-500 focus:border-transparent"
@@ -95,7 +114,9 @@ const ContactPage = () => {
                 />
               </div>
               <div>
-                <label className="block text-gray-700 font-medium mb-2">البريد الإلكتروني</label>
+                <label className="block text-gray-700 font-medium mb-2">
+                  البريد الإلكتروني
+                </label>
                 <input
                   type="email"
                   className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-green-500 focus:border-transparent"
@@ -103,7 +124,9 @@ const ContactPage = () => {
                 />
               </div>
               <div>
-                <label className="block text-gray-700 font-medium mb-2">الموضوع</label>
+                <label className="block text-gray-700 font-medium mb-2">
+                  الموضوع
+                </label>
                 <input
                   type="text"
                   className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-green-500 focus:border-transparent"
@@ -111,7 +134,9 @@ const ContactPage = () => {
                 />
               </div>
               <div>
-                <label className="block text-gray-700 font-medium mb-2">الرسالة</label>
+                <label className="block text-gray-700 font-medium mb-2">
+                  الرسالة
+                </label>
                 <textarea
                   rows="5"
                   className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-green-500 focus:border-transparent"
@@ -135,4 +160,3 @@ const ContactPage = () => {
 };
 
 export default ContactPage;
-
