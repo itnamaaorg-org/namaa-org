@@ -70,7 +70,7 @@ const Footer = () => {
             <div
               className='text-white p-8 md:p-12 relative'
               style={{
-                backgroundImage: "url('/images/BG1.png')",
+                backgroundImage: "url('/images/wave-lines-bg.png')",
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
                 backgroundRepeat: 'no-repeat',
