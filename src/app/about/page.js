@@ -12,6 +12,14 @@ export const metadata = {
 };
 
 const AboutPage = () => {
+  const goals = [
+    'توجيه طاقات الشباب لخدمة الوطن.',
+    'توفير بيئة حاضنة لاستثمار طاقات الشباب.',
+    'نقل أحدث الممارسات العالمية للعمل الشبابي.',
+    'غرس ثقافة التمكين لدى المؤسسات.',
+    'تحقيق التنمية المستدامة.',
+  ];
+
   return (
     <div className='min-h-screen bg-gradient-to-br from-white via-green-50/30 to-teal-50/50'>
       <div className='relative pt-32 pb-20 px-4'>
@@ -107,13 +115,7 @@ const AboutPage = () => {
           </h2>
 
           <div className='space-y-4'>
-            {[
-              'توجيه طاقات الشباب لخدمة الوطن.',
-              'توفير بيئة حاضنة لاستثمار طاقات الشباب.',
-              'نقل أحدث الممارسات العالمية للعمل الشبابي.',
-              'غرس ثقافة التمكين لدى المؤسسات.',
-              'تحقيق التنمية المستدامة.',
-            ].map((goal, i) => (
+            {goals.map((goal, i) => (
               <div
                 key={i}
                 className='flex items-start space-x-4 space-x-reverse'

@@ -58,7 +58,8 @@ const Footer = () => {
 
   const NAMAA_MAPS_URL =
     'https://www.google.com/maps?q=32.08633797396,36.10104742369705';
-
+  const googleMapFrame =
+    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3380.3680175832633!2d36.10104742369705!3d32.08633797396!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151b7002be089ffb%3A0x2c97b68de3b956a9!2z2KzZhdi52YrYqSDZhtmF2KfYoSDZhNmE2KrZhtmF2YrYqSDYp9mE2YXYrNiq2YXYudmK2Kk!5e0!3m2!1sar!2sjo!4v1762798192499!5m2!1sar!2sjo';
   return (
     <div
       dir='rtl'
@@ -67,16 +68,7 @@ const Footer = () => {
       <main className='flex-grow py-16 px-4'>
         <div className='w-full max-w-6xl mx-auto'>
           <div className='shadow-xl rounded-2xl overflow-hidden'>
-            <div
-              className='text-white p-8 md:p-12 relative'
-              style={{
-                backgroundImage: "url('/images/wave-lines-bg.png')",
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-                backgroundRepeat: 'no-repeat',
-                backgroundColor: '#0A2337',
-              }}
-            >
+            <div className="text-white p-8 md:p-12 relative bg-[#0A2337] bg-[url('/images/wave-lines-bg.png')] bg-cover bg-center bg-no-repeat">
               <div className='absolute inset-0 bg-[#0A2337]/50'></div>
 
               <div className='relative z-10'>
@@ -135,7 +127,7 @@ const Footer = () => {
               />
 
               <iframe
-                src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3380.3680175832633!2d36.10104742369705!3d32.08633797396!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151b7002be089ffb%3A0x2c97b68de3b956a9!2z2KzZhdi52YrYqSDZhtmF2KfYoSDZhNmE2KrZhtmF2YrYqSDYp9mE2YXYrNiq2YXYudmK2Kk!5e0!3m2!1sar!2sjo!4v1762798192499!5m2!1sar!2sjo'
+                src={googleMapFrame}
                 width='100%'
                 height='450'
                 style={{ border: 0 }}
