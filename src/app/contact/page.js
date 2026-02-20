@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState } from 'react';
 import Footer from '@/components/Footer';
 import { MapPin, Phone, Mail, Clock } from 'lucide-react';
@@ -28,7 +30,12 @@ const ContactPage = () => {
     message: false,
   });
 
-  const [errors, setErrors] = useState({});
+  const [errors, setErrors] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: '',
+  });
 
   const setField = (field, value) => {
     let nextValue = value;
@@ -41,7 +48,12 @@ const ContactPage = () => {
   };
 
   const validate = (data) => {
-    const nextErrors = {};
+    const nextErrors = {
+      name: '',
+      email: '',
+      subject: '',
+      message: '',
+    };
 
     if (!data.name.trim()) nextErrors.name = 'الاسم مطلوب';
     else if (data.name.trim().length > LIMITS.name)
@@ -81,7 +93,10 @@ const ContactPage = () => {
       message: true,
     });
 
-    if (Object.keys(nextErrors).length) return;
+    const hasErrors = Object.values(nextErrors).some(Boolean);
+    if (hasErrors) return;
+
+    // هون لاحقاً بتقدر تبعث للـ API
   };
 
   return (

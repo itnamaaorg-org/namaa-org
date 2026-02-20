@@ -33,12 +33,7 @@ const ImpactSection = () => {
       className='bg-[#FCFEFD] min-h-screen w-full flex items-start justify-center pt-28 p-8 relative overflow-hidden'
     >
       {/* Background pattern */}
-      <div
-        className='absolute top-0 right-0 w-1/2 h-1/2 z-0'
-        style={{
-          opacity: 0.6,
-        }}
-      ></div>
+      <div className='absolute top-0 right-0 w-1/2 h-1/2 z-0 opacity-60'></div>
 
       <div className='container mx-auto px-4 z-10 max-w-6xl'>
         <div className='flex flex-col gap-20'>
@@ -88,8 +83,7 @@ const ImpactSection = () => {
                   <img
                     src='/images/image12.png'
                     alt='Volunteer campaign'
-                    className='absolute bottom-0 -left-16 w-full h-full object-contain'
-                    style={{ filter: 'grayscale(100%)' }}
+                    className='absolute bottom-0 -left-16 w-full h-full object-contain grayscale'
                   />
                 </div>
               </div>
@@ -120,13 +114,7 @@ const ImpactSection = () => {
             {/* Card 4: 300k Beneficiaries */}
             <div className='relative flex justify-center '>
               <div className='w-full md:w-52 h-72 bg-[#94C83D] rounded-[10rem] flex flex-col items-center justify-center text-center p-4 relative overflow-hidden'>
-                <div
-                  className='absolute inset-0 z-0 opacity-20'
-                  style={{
-                    backgroundImage: `url("data:image/svg+xml,%3Csvg width='208' height='288' viewBox='0 0 208 288' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cfilter id='f1' x='-50%25' y='-50%25' width='200%25' height='200%25'%3E%3CfeGaussianBlur stdDeviation='10'/%3E%3C/filter%3E%3C/defs%3E%3Cpath d='M-20 144 C 50 100, 150 180, 228 144' stroke='%23000' stroke-width='1.5' fill='none'/%3E%3Cpath d='M-20 164 C 50 120, 150 200, 228 164' stroke='%23000' stroke-width='1.5' fill='none'/%3E%3Cpath d='M-20 184 C 50 140, 150 220, 228 184' stroke='%23000' stroke-width='1.5' fill='none'/%3E%3C/svg%3E")`,
-                    backgroundSize: 'cover',
-                  }}
-                ></div>
+                <div className='absolute inset-0 z-0 opacity-20 bg-[url("/images/waves-pattern.svg")] bg-cover'></div>
                 <div className='relative z-10 text-gray-800'>
                   <span className='text-6xl font-extrabold block'>300</span>
                   <span className='text-5xl font-extrabold block leading-none'>
