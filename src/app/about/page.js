@@ -30,7 +30,7 @@ const AboutPage = () => {
                 <div className='absolute inset-0 z-10 bg-gradient-to-tr from-[#0A2337]/15 to-transparent' />
 
                 <Image
-                  src='/images/about-us.png'
+                  src='/images/About-us.png'
                   alt='Hero'
                   width={1100}
                   height={800}
