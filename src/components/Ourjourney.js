@@ -45,7 +45,7 @@ function Ourjourney() {
 
             <div className="order-1 lg:order-1 px-4">
               <div className="relative rounded-3xl  p-0 lg:p-8 md:p-12  max-w-lg mx-auto lg:max-w-none">
-                <iframe className="w-full lg:w-[560px] aspect-video" src="https://www.youtube.com/embed/bFlS7ecsWFo?si=_TnF-66XgyRmwSml" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+                <iframe className="w-full lg:w-[560px] aspect-video" src="https://www.youtube.com/embed/M1do4zPWcJo"title="YouTube video player"frameBorder="0"allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"referrerPolicy="strict-origin-when-cross-origin"allowFullScreen></iframe>
               </div>
             </div>
           </div>

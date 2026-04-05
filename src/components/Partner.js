@@ -24,8 +24,8 @@ const Partners = () => {
             أبرز شركائنا
           </h2>
           <p className="text-xl md:text-2xl text-gray-700">
-            أكثر من <span className="font-bold text-gray-900">34 شريك</span>{" "}
-            يساهمون في تحقيق رؤيتنا
+            أكثر من <span className="font-bold text-gray-900"> 100 شريك</span>{" "}
+            يساهموا في صناعة رؤيتنا وتحقيق أهدافنا
           </p>
         </div>
 

@@ -25,7 +25,8 @@ const RefaqaNamaaPage = () => {
               </div>
               <h2 className="text-3xl font-bold text-gray-900 mb-6">عن المشروع</h2>
               <p className="text-lg md:text-xl text-gray-700 leading-relaxed mb-6">
-                مشروع رفقاء نماء يهدف إلى تقديم نموذج مميز في كفالة ورعاية الأيتام. يعمل المشروع على توفير بيئة اجتماعية آمنة للأيتام، مع تقديم برامج تعليمية وتربوية وصحية شاملة تساهم في بناء شخصياتهم وتأهيلهم للمستقبل.
+يعمل مشروع رفقاء نماء لرعاية الأيتام على دعم الأيتام وأسرهم لتوفير حياة كريمة، من خلال تقديم برامج متكاملة تشمل الرعاية الصحية، النفسية، التعليمية والتربوية، إضافة إلى كفالة مالية تساعد في تلبية الاحتياجات الأساسية للأطفال وتأمين مستلزمات حياتهم اليومية.
+
               </p>
             </div>
 
@@ -34,31 +35,31 @@ const RefaqaNamaaPage = () => {
               <ul className="space-y-4">
                 <li className="flex items-start space-x-4 space-x-reverse">
                   <div className="flex-shrink-0 w-2 h-2 bg-green-500 rounded-full mt-3"></div>
-                  <p className="text-lg text-gray-700">تقديم نموذج مميز في كفالة ورعاية الأيتام</p>
+                  <p className="text-lg text-gray-700">  يهدف المشروع إلى تحسين جودة حياة الأيتام، وتعزيز استقرار أسرهم.   </p>
                 </li>
                 <li className="flex items-start space-x-4 space-x-reverse">
                   <div className="flex-shrink-0 w-2 h-2 bg-green-500 rounded-full mt-3"></div>
-                  <p className="text-lg text-gray-700">توفير بيئة اجتماعية آمنة للأيتام</p>
+                  <p className="text-lg text-gray-700">توفير الرعاية الشاملة اللازمة للأطفال الأيتام بما يضمن بيئة آمنة وداعمة.    </p>
                 </li>
                 <li className="flex items-start space-x-4 space-x-reverse">
                   <div className="flex-shrink-0 w-2 h-2 bg-green-500 rounded-full mt-3"></div>
-                  <p className="text-lg text-gray-700">تقديم برامج تعليمية وتربوية وصحية شاملة</p>
+                  <p className="text-lg text-gray-700">     المساهمة في بناء وتطوير القدرات الشخصية للأطفال.</p>
                 </li>
                 <li className="flex items-start space-x-4 space-x-reverse">
                   <div className="flex-shrink-0 w-2 h-2 bg-green-500 rounded-full mt-3"></div>
-                  <p className="text-lg text-gray-700">بناء شخصيات متوازنة ومستقلة</p>
+                  <p className="text-lg text-gray-700">تنمية وتعزيز مهاراتهم الاجتماعية لتمكينهم من الاندماج في المجتمع.</p>
                 </li>
                 <li className="flex items-start space-x-4 space-x-reverse">
                   <div className="flex-shrink-0 w-2 h-2 bg-green-500 rounded-full mt-3"></div>
-                  <p className="text-lg text-gray-700">تأهيل الأيتام للمستقبل ودمجهم في المجتمع</p>
+                  <p className="text-lg text-gray-700">تمكين الأيتام من التغلب على التحديات المعيشية والنفسية ومواجهة صعوبات الحياة. </p>
                 </li>
               </ul>
             </div>
 
             <div className="bg-white rounded-2xl p-8 border-2 border-green-100">
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">برامج المشروع</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4"> آليات العمل والوسائل المستخدمة   </h3>
               <p className="text-lg text-gray-700 mb-4">
-                يشمل المشروع برامج تعليمية لدعم التحصيل الأكاديمي، وبرامج تربوية لبناء القيم والمبادئ، وبرامج صحية للعناية بالصحة البدنية والنفسية، بالإضافة إلى أنشطة ترفيهية واجتماعية متنوعة.
+                  تبدأ مراحل تنفيذ المشروع بدراسة حالة كل يتيم وأسرته لتحديد احتياجاتهم الأساسية، ومن ثم تصميم برنامج رعاية متكامل يشمل الجوانب الصحية والنفسية والتعليمية والتربوية. بعد ذلك يتم متابعة تنفيذ البرامج بشكل مستمر لضمان تحقيق التأثير المرجو، مع تقديم الدعم المالي لتغطية الاحتياجات الأساسية، ومتابعة النمو والتطور للأطفال بشكل دوري.  
               </p>
             </div>
           </div>
