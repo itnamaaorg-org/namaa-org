@@ -50,7 +50,7 @@ const SeasonalProjectsPage = () => {
               </div>
             </div>
 
-            <div className="bg-white rounded-2xl p-8 border-2 border-green-100 mb-8">
+            <div className="bg-gradient-to-br from-green-50 to-teal-50 rounded-2xl p-8 mb-8">
               <h3 className="text-2xl font-bold text-gray-900 mb-4">أهداف الحملة</h3>
               <ul className="space-y-3">
                 <li className="flex items-start space-x-4 space-x-reverse">
@@ -72,7 +72,7 @@ const SeasonalProjectsPage = () => {
               </ul>
             </div>
 
-            <div className="bg-white rounded-2xl p-8 border-2 border-green-100 mb-8">
+            <div className="bg-gradient-to-br from-green-50 to-teal-50 rounded-2xl p-8 mb-8">
               <h3 className="text-2xl font-bold text-gray-900 mb-4">أهداف المشاريع الموسمية</h3>
               <ul className="space-y-3">
                 <li className="flex items-start space-x-4 space-x-reverse">

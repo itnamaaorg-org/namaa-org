@@ -7,8 +7,8 @@ const campaigns = [
     id: 'dafa',
     title: 'حملة دفء وعطاء',
     icon: '🧥',
-    color: 'from-blue-50 to-cyan-50',
-    borderColor: 'border-blue-200',
+    color: 'from-green-50 to-teal-50',
+    borderColor: 'border-green-200',
     projects: [
       {
         id: 'clothes',

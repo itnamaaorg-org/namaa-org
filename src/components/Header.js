@@ -1,16 +1,46 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import Link from 'next/link';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, ChevronDown } from 'lucide-react';
 import { usePathname } from 'next/navigation';
+
+const clubDropdownItems = [
+  { label: 'تعريف النادي', href: '/volunteer-club#about' },
+  { label: 'الرؤية', href: '/volunteer-club#vision' },
+  { label: 'ميثاق الشرف', href: '/volunteer-club#charter' },
+  { label: 'مراتب التطوع', href: '/volunteer-club#ranks' },
+];
+
+const clubTeamItems = [
+  { label: 'فريق الحملات والمبادرات', href: '/volunteer-club/campaigns' },
+  { label: 'فريق رفقاء نماء', href: '/volunteer-club/companions' },
+  { label: 'فريق تمكين', href: '/volunteer-club/empowerment' },
+  { label: 'الفريق الطبي', href: '/volunteer-club/medical' },
+  { label: 'الفريق الإعلامي', href: '/volunteer-club/media' },
+];
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isClubOpen, setIsClubOpen] = useState(false);
+  const [isMobileClubOpen, setIsMobileClubOpen] = useState(false);
+  const closeTimeoutRef = useRef(null);
   const pathname = usePathname();
 
+  const handleClubMouseEnter = () => {
+    if (closeTimeoutRef.current) clearTimeout(closeTimeoutRef.current);
+    setIsClubOpen(true);
+  };
+
+  const handleClubMouseLeave = () => {
+    closeTimeoutRef.current = setTimeout(() => setIsClubOpen(false), 200);
+  };
+
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
-  const closeMenu = () => setIsMenuOpen(false);
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+    setIsMobileClubOpen(false);
+  };
 
   return (
     <header className='fixed top-4 left-4 right-4 z-50'>
@@ -21,7 +51,7 @@ const Header = () => {
               <img src='/logo.png' alt='namaa logo' className='h-10' />
             </div>
 
-            <nav className='hidden md:flex items-center space-x-8'>
+            <nav className='hidden md:flex items-center space-x-6'>
               <Link
                 href='/'
                 className={`text-gray-700 hover:text-green-800 transition-colors duration-200 font-medium ${
@@ -75,6 +105,50 @@ const Header = () => {
               >
                 أخبارنا
               </Link>
+
+              {/* Club Dropdown - Desktop - آخر عنصر */}
+              <div
+                className='relative'
+                onMouseEnter={handleClubMouseEnter}
+                onMouseLeave={handleClubMouseLeave}
+              >
+                <button
+                  className={`flex items-center gap-1 text-gray-700 hover:text-green-800 transition-colors duration-200 font-medium ${
+                    pathname.startsWith('/volunteer-club') ? 'text-green-800' : ''
+                  }`}
+                >
+                  نادي نماء التطوعي
+                  <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isClubOpen ? 'rotate-180' : ''}`} />
+                </button>
+
+                {isClubOpen && (
+                  <div
+                    className='absolute top-full left-0 mt-2 w-56 bg-white rounded-2xl shadow-xl border border-gray-100 py-2 z-50'
+                    onMouseEnter={handleClubMouseEnter}
+                    onMouseLeave={handleClubMouseLeave}
+                  >
+                    {clubDropdownItems.map((item) => (
+                      <Link
+                        key={item.href}
+                        href={item.href}
+                        className='block px-4 py-2 text-gray-700 hover:text-green-800 hover:bg-green-50 transition-colors duration-150 text-sm'
+                      >
+                        {item.label}
+                      </Link>
+                    ))}
+                    <div className='my-2 border-t border-gray-100' />
+                    {clubTeamItems.map((item) => (
+                      <Link
+                        key={item.href}
+                        href={item.href}
+                        className='block px-4 py-2 text-gray-700 hover:text-green-800 hover:bg-green-50 transition-colors duration-150 text-sm'
+                      >
+                        {item.label}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
             </nav>
 
             <div
@@ -170,6 +244,45 @@ const Header = () => {
               >
                 أخبارنا
               </Link>
+
+              {/* Club Dropdown - Mobile - آخر عنصر */}
+              <div>
+                <button
+                  onClick={() => setIsMobileClubOpen((prev) => !prev)}
+                  className={`flex items-center justify-between w-full px-3 py-2 text-gray-700 hover:text-green-800 hover:bg-white/30 rounded-xl transition-colors ${
+                    pathname.startsWith('/volunteer-club') ? 'text-green-800' : ''
+                  }`}
+                >
+                  نادي نماء التطوعي
+                  <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isMobileClubOpen ? 'rotate-180' : ''}`} />
+                </button>
+
+                {isMobileClubOpen && (
+                  <div className='mr-4 mt-1 border-r-2 border-green-200 pr-3 space-y-1'>
+                    {clubDropdownItems.map((item) => (
+                      <Link
+                        key={item.href}
+                        href={item.href}
+                        onClick={closeMenu}
+                        className='block px-3 py-1.5 text-sm text-gray-700 hover:text-green-800 hover:bg-white/30 rounded-lg transition-colors'
+                      >
+                        {item.label}
+                      </Link>
+                    ))}
+                    <div className='my-1 border-t border-white/30' />
+                    {clubTeamItems.map((item) => (
+                      <Link
+                        key={item.href}
+                        href={item.href}
+                        onClick={closeMenu}
+                        className='block px-3 py-1.5 text-sm text-gray-700 hover:text-green-800 hover:bg-white/30 rounded-lg transition-colors'
+                      >
+                        {item.label}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
 
               <div className='px-3 py-2 space-y-2'>
                 <Link href='/volunteer' onClick={closeMenu}>

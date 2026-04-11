@@ -1,6 +1,5 @@
 import Footer from '@/components/Footer';
 import ValuesSection from '@/components/ValuesSection';
-import VolunteerClubsSection from '@/components/VolunteerClubsSection';
 import MediaSection from '@/components/MediaSection';
 import CTASection from '@/components/CTASection';
 import Image from 'next/image';
@@ -129,8 +128,7 @@ const AboutPage = () => {
       </div>
 
       <ValuesSection />
-      <VolunteerClubsSection />
-      <MediaSection />
+<MediaSection />
       <CTASection />
       <Footer />
     </div>
