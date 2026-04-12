@@ -46,10 +46,10 @@ const ImpactSection = () => {
           >
             <div className='text-right'>
               <h1 className='text-5xl lg:text-6xl font-extrabold text-gray-800 leading-tight'>
-                طاقتك تصنع - الأثر مع
+            طاقتك تصنع الأثر… 
               </h1>
               <h1 className='text-5xl lg:text-6xl font-extrabold text-gray-800 leading-tight mt-2'>
-                كل خطوة.
+               ومع كل خطوة تُولد حكاية التغيير
               </h1>
             </div>
 
@@ -94,9 +94,10 @@ const ImpactSection = () => {
               <div className='relative w-full md:w-56 h-80'>
                 <img
                   src='/images/Map.png'
-                  alt='مواقع عملنا'
+                  alt=' مواقع عملنا'
                   className='w-full h-full object-contain'
                 />
+                
               </div>
             </div>
 
@@ -116,7 +117,7 @@ const ImpactSection = () => {
               <div className='w-full md:w-52 h-72 bg-[#94C83D] rounded-[10rem] flex flex-col items-center justify-center text-center p-4 relative overflow-hidden'>
                 <div className='absolute inset-0 z-0 opacity-20 bg-[url("/images/waves-pattern.svg")] bg-cover'></div>
                 <div className='relative z-10 text-gray-800'>
-                  <span className='text-6xl font-extrabold block'>300</span>
+                  <span className='text-6xl font-extrabold block'>400</span>
                   <span className='text-5xl font-extrabold block leading-none'>
                     الف
                   </span>

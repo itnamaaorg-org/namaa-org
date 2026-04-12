@@ -25,7 +25,7 @@ function Achievements() {
 
             <div className="relative">
               <div className="absolute -top-8 left-1/2 -translate-x-1/2 w-40 h-40 bg-teal-200/30 blur-3xl rounded-full"></div>
-              <h3 className="text-3xl font-bold mb-2">350 ألف</h3>
+              <h3 className="text-3xl font-bold mb-2">400 ألف</h3>
               <p className="text-gray-700">
                 ساعة تطوعية من شباب وشابات مؤمنين بالتغيير
               </p>
@@ -33,7 +33,7 @@ function Achievements() {
 
             <div className="relative">
               <div className="absolute -top-8 left-1/2 -translate-x-1/2 w-40 h-40 bg-green-200/30 blur-3xl rounded-full"></div>
-              <h3 className="text-3xl font-bold mb-2">+700</h3>
+              <h3 className="text-3xl font-bold mb-2">900</h3>
               <p className="text-gray-700">
                 مشروع تم إنشاؤه مع &rdquo;تمكين&rdquo;
               </p>
@@ -43,7 +43,7 @@ function Achievements() {
               <div className="absolute -top-8 left-1/2 -translate-x-1/2 w-40 h-40 bg-teal-200/30 blur-3xl rounded-full"></div>
               <h3 className="text-3xl font-bold mb-2">5</h3>
               <p className="text-gray-700">
-                حملة موسمية غيّرت ملامح المجتمعات المحلية
+               حملة موسمية غيّرت ملامح المجتمع المحلي
               </p>
             </div>
 
@@ -79,7 +79,7 @@ function Achievements() {
             {/* الصورة الكبيرة */}
             <div className="w-72 h-[420px] rounded-[200px] overflow-hidden shadow-md">
               <img
-                src="/nama11.jpeg"
+                src="/award.jpeg"
                 alt=""
                 className="w-full h-full object-cover"
               />
@@ -88,7 +88,7 @@ function Achievements() {
             {/* الصورة الصغيرة */}
             <div className="absolute -bottom-10 -right-3 w-40 h-56 rounded-[120px] overflow-hidden shadow-lg">
               <img
-  src="/nama13.jpeg"
+  src="/nama11.jpeg"
                   alt=""
                 className="w-full h-full object-cover"
               />
