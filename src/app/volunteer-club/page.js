@@ -26,7 +26,7 @@ const VolunteerClubPage = () => {
 
       <div className='max-w-7xl mx-auto px-4 pb-20'>
 
-        {/* تعريف النادي */}
+
         <div id='about' className='bg-white/80 backdrop-blur-sm rounded-3xl shadow-xl p-8 md:p-12 mb-12'>
           <h2 className='text-3xl md:text-4xl font-bold text-gray-900 mb-8'>
             عن النادي
@@ -50,7 +50,7 @@ const VolunteerClubPage = () => {
           </div>
         </div>
 
-        {/* الرؤية */}
+
         <div id='vision' className='bg-gradient-to-br from-green-50 to-teal-50 rounded-3xl shadow-xl p-8 md:p-12 mb-12'>
           <h2 className='text-3xl md:text-4xl font-bold text-gray-900 mb-8 text-center'>
             الرؤية والأهداف
@@ -62,7 +62,7 @@ const VolunteerClubPage = () => {
           </div>
         </div>
 
-        {/* ميثاق الشرف */}
+
         <div id='charter' className='bg-white/80 backdrop-blur-sm rounded-3xl shadow-xl p-8 md:p-12 mb-12'>
           <h2 className='text-3xl md:text-4xl font-bold text-gray-900 mb-4'>
             ميثاق الشرف
@@ -87,7 +87,7 @@ const VolunteerClubPage = () => {
           </div>
         </div>
 
-        {/* مراتب التطوع */}
+
         <div id='ranks' className='bg-gradient-to-br from-green-50 to-teal-50 rounded-3xl shadow-xl p-8 md:p-12 mb-12'>
           <h2 className='text-3xl md:text-4xl font-bold text-gray-900 mb-8 text-center'>
             مراتب التطوع
@@ -107,7 +107,7 @@ const VolunteerClubPage = () => {
           </div>
         </div>
 
-        {/* الفرق */}
+
         <div id='teams' className='bg-white/80 backdrop-blur-sm rounded-3xl shadow-xl p-8 md:p-12 mb-12'>
           <h2 className='text-3xl md:text-4xl font-bold text-gray-900 mb-8 text-center'>
             الفرق التطوعية

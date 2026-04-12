@@ -106,7 +106,7 @@ const Header = () => {
                 أخبارنا
               </Link>
 
-              {/* Club Dropdown - Desktop - آخر عنصر */}
+              {/* Club Dropdown - Desktop */}
               <div
                 className='relative'
                 onMouseEnter={handleClubMouseEnter}
@@ -245,7 +245,7 @@ const Header = () => {
                 أخبارنا
               </Link>
 
-              {/* Club Dropdown - Mobile - آخر عنصر */}
+              {/* Club Dropdown - Mobile */}
               <div>
                 <button
                   onClick={() => setIsMobileClubOpen((prev) => !prev)}

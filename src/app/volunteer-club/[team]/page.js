@@ -48,7 +48,7 @@ const TeamPage = ({ params }) => {
 
       <div className='max-w-7xl mx-auto px-4 pb-20'>
 
-        {/* الوصف الكامل */}
+
         <div className='bg-white/80 backdrop-blur-sm rounded-3xl shadow-xl p-8 md:p-12 mb-12'>
           <h2 className='text-3xl md:text-4xl font-bold text-gray-900 mb-6'>
             عن الفريق
@@ -58,7 +58,7 @@ const TeamPage = ({ params }) => {
           </p>
         </div>
 
-        {/* الأهداف */}
+
         <div className='bg-gradient-to-br from-green-50 to-teal-50 rounded-3xl shadow-xl p-8 md:p-12 mb-12'>
           <h2 className='text-3xl md:text-4xl font-bold text-gray-900 mb-8 text-center'>
             أهداف الفريق
@@ -73,7 +73,7 @@ const TeamPage = ({ params }) => {
           </div>
         </div>
 
-        {/* صور الأنشطة */}
+
         {team.images.length > 0 && (
           <div className='bg-white/80 backdrop-blur-sm rounded-3xl shadow-xl p-8 md:p-12 mb-12'>
             <h2 className='text-3xl md:text-4xl font-bold text-gray-900 mb-8'>
@@ -94,7 +94,7 @@ const TeamPage = ({ params }) => {
           </div>
         )}
 
-        {/* زر العودة */}
+
         <div className='text-center'>
           <Link href='/volunteer-club'>
             <button className='bg-transparent border-2 border-[#94C83D] text-[#94C83D] hover:bg-[#94C83D] hover:text-white px-8 py-3 rounded-lg transition-all duration-200 font-medium'>
