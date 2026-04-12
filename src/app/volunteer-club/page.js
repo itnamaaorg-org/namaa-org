@@ -19,7 +19,7 @@ const VolunteerClubPage = () => {
             {clubInfo.title}
           </h1>
           <p className='text-xl md:text-2xl text-[#94C83D] font-semibold'>
-            "{clubInfo.slogan}"
+            &ldquo;{clubInfo.slogan}&rdquo;
           </p>
         </div>
       </div>

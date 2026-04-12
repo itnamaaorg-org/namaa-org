@@ -4,11 +4,6 @@ import React, { useState } from 'react';
 import Footer from '@/components/Footer';
 import { MapPin, Phone, Mail, Clock } from 'lucide-react';
 
-export const metadata = {
-  title: 'اتصل بنا - نماء',
-  description: 'معلومات الاتصال بجمعية نماء',
-};
-
 const LIMITS = {
   name: 60,
   subject: 80,
