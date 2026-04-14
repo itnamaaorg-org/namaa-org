@@ -1,7 +1,10 @@
+import fs from 'fs';
+import path from 'path';
 import Link from 'next/link';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import Footer from '@/components/Footer';
+import ImageSlider from '@/components/ImageSlider';
 import { teams } from '@/lib/volunteerClubData';
 
 export async function generateStaticParams() {
@@ -17,10 +20,24 @@ export async function generateMetadata({ params }) {
   };
 }
 
+function getTeamImages(slug) {
+  const folderPath = path.join(process.cwd(), 'public', 'images', slug);
+  try {
+    const files = fs.readdirSync(folderPath);
+    return files
+      .filter((f) => /\.(jpe?g|png|webp)$/i.test(f) && f !== `${slug}.jpg`)
+      .map((f) => `/images/${slug}/${f}`);
+  } catch {
+    return [];
+  }
+}
+
 const TeamPage = ({ params }) => {
   const team = teams.find((t) => t.slug === params.team);
 
   if (!team) notFound();
+
+  const activityImages = getTeamImages(team.slug);
 
   return (
     <div className='min-h-screen bg-gradient-to-br from-white via-green-50/30 to-teal-50/50'>
@@ -48,7 +65,6 @@ const TeamPage = ({ params }) => {
 
       <div className='max-w-7xl mx-auto px-4 pb-20'>
 
-
         <div className='bg-white/80 backdrop-blur-sm rounded-3xl shadow-xl p-8 md:p-12 mb-12'>
           <h2 className='text-3xl md:text-4xl font-bold text-gray-900 mb-6'>
             عن الفريق
@@ -57,7 +73,6 @@ const TeamPage = ({ params }) => {
             {team.fullDescription}
           </p>
         </div>
-
 
         <div className='bg-gradient-to-br from-green-50 to-teal-50 rounded-3xl shadow-xl p-8 md:p-12 mb-12'>
           <h2 className='text-3xl md:text-4xl font-bold text-gray-900 mb-8 text-center'>
@@ -73,27 +88,7 @@ const TeamPage = ({ params }) => {
           </div>
         </div>
 
-
-        {team.images.length > 0 && (
-          <div className='bg-white/80 backdrop-blur-sm rounded-3xl shadow-xl p-8 md:p-12 mb-12'>
-            <h2 className='text-3xl md:text-4xl font-bold text-gray-900 mb-8'>
-              من أنشطة الفريق
-            </h2>
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
-              {team.images.map((src, i) => (
-                <div key={i} className='relative h-64 rounded-2xl overflow-hidden shadow-md'>
-                  <Image
-                    src={src}
-                    alt={`${team.name} - نشاط ${i + 1}`}
-                    fill
-                    className='object-cover'
-                  />
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
-
+        <ImageSlider images={activityImages} teamName={team.name} />
 
         <div className='text-center'>
           <Link href='/volunteer-club'>

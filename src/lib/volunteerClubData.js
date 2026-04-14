@@ -51,12 +51,7 @@ export const teams = [
       'تعزيز قيم التكافل والتعاون الاجتماعي.',
       'تطوير مهارات الشباب القيادية والتنظيمية من خلال العمل الميداني.',
     ],
-    logo: '/images/campaigns.jpg',
-    images: [
-      '/images/campaigns1.jpg',
-      '/images/campaigns2.jpg',
-      '/images/campaigns3.jpg',
-    ],
+    logo: '/images/campaigns/campaigns.jpg',
   },
   {
     slug: 'companions',
@@ -71,8 +66,7 @@ export const teams = [
       'تعزيز الصحة العامة من خلال برامج توعوية ورعاية صحية.',
       'تنمية الوعي الاجتماعي لدى الأطفال ليصبحوا أفراداً مسؤولين وفاعلين في المجتمع.',
     ],
-    logo: '/images/companions.jpg',
-    images: ['/images/companions1.jpg', '/images/companions2.jpg', '/images/companions3.jpg'],
+    logo: '/images/companions/companions.jpg',
   },
   {
     slug: 'empowerment',
@@ -87,8 +81,7 @@ export const teams = [
       'تنفيذ المشاريع ومتابعتها لضمان الاستدامة وتحقيق الأثر الاقتصادي.',
       'تعزيز ثقافة الاعتماد على النفس والمبادرة لدى الأسر المستفيدة.',
     ],
-    logo: '/images/empowerment.jpg',
-    images: ['/images/empowerment1.jpg', '/images/empowerment2.jpg', '/images/empowerment3.jpg'],
+    logo: '/images/empowerment/empowerment.jpg',
   },
   {
     slug: 'medical',
@@ -103,8 +96,7 @@ export const teams = [
       'نشر الوعي الصحي والوقاية بين أفراد المجتمع.',
       'المشاركة في الفعاليات الطبية لدعم الصحة العامة.',
     ],
-    logo: '/images/medical.jpg',
-    images: ['/images/medical1.jpg', '/images/medical2.jpg', '/images/medical3.jpg'],
+    logo: '/images/medical/medical.jpg',
   },
   {
     slug: 'media',
@@ -119,7 +111,6 @@ export const teams = [
       'تطوير مهارات الإعلام والتواصل لدى المتطوعين.',
       'التنسيق مع وسائل الإعلام لضمان وصول المبادرات والفعاليات للجمهور.',
     ],
-    logo: '/images/media.jpg',
-    images: [],
+    logo: '/images/media/media.jpg',
   },
 ];

@@ -53,6 +53,10 @@ const RefaqaNamaaPage = () => {
                   <div className="flex-shrink-0 w-2 h-2 bg-green-500 rounded-full mt-3"></div>
                   <p className="text-lg text-gray-700">تمكين الأيتام من التغلب على التحديات المعيشية والنفسية ومواجهة صعوبات الحياة. </p>
                 </li>
+                <li className="flex items-start space-x-4 space-x-reverse">
+                  <div className="flex-shrink-0 w-2 h-2 bg-green-500 rounded-full mt-3"></div>
+                  <p className="text-lg text-gray-700">تعزيز القيم الدينية والأخلاقية لدى الأيتام، وترسيخ مبادئ الرحمة والتكافل، بما يسهم في بناء شخصية متوازنة قائمة على الأخلاق والإيمان.</p>
+                </li>
               </ul>
             </div>
 

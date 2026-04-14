@@ -40,27 +40,49 @@ const TamkeenPage = () => {
             </div>
 
             <div className="bg-gradient-to-br from-green-50 to-teal-50 rounded-2xl p-8 mb-8">
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">مبررات المشروع</h3>
+              <ul className="space-y-4">
+                <li className="flex items-start space-x-4 space-x-reverse">
+                  <div className="flex-shrink-0 w-2 h-2 bg-green-500 rounded-full mt-3"></div>
+                  <p className="text-lg text-gray-700">شدة المعاناة التي تعيشها الأسر الفقيرة، خاصة تلك التي تعاني من الفقر الشديد.</p>
+                </li>
+                <li className="flex items-start space-x-4 space-x-reverse">
+                  <div className="flex-shrink-0 w-2 h-2 bg-green-500 rounded-full mt-3"></div>
+                  <p className="text-lg text-gray-700">ارتفاع الأعباء المالية اللازمة لتأمين الاحتياجات اليومية الأساسية.</p>
+                </li>
+                <li className="flex items-start space-x-4 space-x-reverse">
+                  <div className="flex-shrink-0 w-2 h-2 bg-green-500 rounded-full mt-3"></div>
+                  <p className="text-lg text-gray-700">الضغوط النفسية على أرباب الأسر نتيجة قلة الموارد والدخل، وما يترتب عليها من آثار سلبية متعددة.</p>
+                </li>
+                <li className="flex items-start space-x-4 space-x-reverse">
+                  <div className="flex-shrink-0 w-2 h-2 bg-green-500 rounded-full mt-3"></div>
+                  <p className="text-lg text-gray-700">امتلاك الأسر الفقيرة القدرة على العمل والإنتاج، مع نقص في الدعم المادي والاجتماعي اللازم.</p>
+                </li>
+                <li className="flex items-start space-x-4 space-x-reverse">
+                  <div className="flex-shrink-0 w-2 h-2 bg-green-500 rounded-full mt-3"></div>
+                  <p className="text-lg text-gray-700">تأثير الظروف الاقتصادية الصعبة على استقرار الأسرة، مما قد يؤدي إلى التفكك أو الطلاق.</p>
+                </li>
+              </ul>
+            </div>
+
+            <div className="bg-gradient-to-br from-green-50 to-teal-50 rounded-2xl p-8 mb-8">
               <h3 className="text-2xl font-bold text-gray-900 mb-6">أهداف المشروع</h3>
               <ul className="space-y-4">
                 <li className="flex items-start space-x-4 space-x-reverse">
                   <div className="flex-shrink-0 w-2 h-2 bg-green-500 rounded-full mt-3"></div>
-                  <p className="text-lg text-gray-700"> يهدف المشروع إلى الإسهام في خفض نسب الفقر في المجتمع.  </p>
+                  <p className="text-lg text-gray-700">تمكين الأسر المستهدفة من امتلاك مصادر دخل مستدامة تُحسّن من مستوى معيشتها.</p>
                 </li>
                 <li className="flex items-start space-x-4 space-x-reverse">
                   <div className="flex-shrink-0 w-2 h-2 bg-green-500 rounded-full mt-3"></div>
-                  <p className="text-lg text-gray-700">  العمل على تقليل معدلات البطالة في المملكة الأردنية الهاشمية.</p>
+                  <p className="text-lg text-gray-700">تعزيز قدرة الأسر على إدارة مشاريع إنتاجية ناجحة وتحقيق الاكتفاء الذاتي.</p>
                 </li>
                 <li className="flex items-start space-x-4 space-x-reverse">
                   <div className="flex-shrink-0 w-2 h-2 bg-green-500 rounded-full mt-3"></div>
-                  <p className="text-lg text-gray-700">يمتد أثر المشروع ليشمل خمس محافظات داخل المملكة.</p>
+                  <p className="text-lg text-gray-700">ضمان استمرارية المشاريع وتحقيق أثر اقتصادي ملموس على المدى الطويل.</p>
                 </li>
                 <li className="flex items-start space-x-4 space-x-reverse">
                   <div className="flex-shrink-0 w-2 h-2 bg-green-500 rounded-full mt-3"></div>
-                  <p className="text-lg text-gray-700"> تعزيز قدرة الأسر على الاعتماد على ذاتها.  </p>
-                </li>
-                <li className="flex items-start space-x-4 space-x-reverse">
-                  <div className="flex-shrink-0 w-2 h-2 bg-green-500 rounded-full mt-3"></div>
-                  <p className="text-lg text-gray-700">  تحقيق العيش الكريم من خلال توفير دخل شهري ثابت للأسر المستفيدة.</p>
+                  <p className="text-lg text-gray-700">تنفيذ زيارات ميدانية دورية لمتابعة تقدم المشاريع وتقييم أثرها.</p>
                 </li>
               </ul>
             </div>
