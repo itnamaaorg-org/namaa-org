@@ -146,7 +146,7 @@ const Footer = () => {
           <div className='flex flex-col-reverse md:flex-row justify-between items-center md:items-start text-center md:text-right gap-10'>
             <div className='flex flex-col items-center md:items-start flex-shrink-0'>
               <Image
-                src='/images/logo.png'
+                src='/logo.png'
                 alt='شعار نماء'
                 width={120}
                 height={40}

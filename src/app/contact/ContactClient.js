@@ -91,7 +91,7 @@ const ContactClient = () => {
     const hasErrors = Object.values(nextErrors).some(Boolean);
     if (hasErrors) return;
 
-    // هون لاحقاً بتقدر تبعث للـ API
+    
   };
 
   return (
