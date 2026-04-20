@@ -124,6 +124,19 @@ const AboutPage = () => {
               </div>
             ))}
           </div>
+
+        </div>
+
+        {/* Vision Box */}
+        <div className='bg-gradient-to-br from-green-50 to-teal-50 rounded-3xl shadow-xl p-8 md:p-12 mb-12'>
+          <h2 className='text-3xl md:text-4xl font-bold text-gray-900 mb-8 text-center'>
+            رؤيتنا
+          </h2>
+          <div className='bg-white/60 backdrop-blur-sm rounded-2xl p-8 md:p-10'>
+            <p className='text-xl md:text-2xl text-gray-800 leading-relaxed text-center font-medium'>
+              شباب ريادي مجتمع ممكن.
+            </p>
+          </div>
         </div>
       </div>
 

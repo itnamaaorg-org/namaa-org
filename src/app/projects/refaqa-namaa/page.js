@@ -1,4 +1,5 @@
 import Footer from '@/components/Footer';
+import RefaqaVideo from './RefaqaVideo';
 
 export const metadata = {
   title: 'مشروع رفقاء نماء - نماء',
@@ -15,6 +16,8 @@ const RefaqaNamaaPage = () => {
           </h1>
         </div>
       </div>
+
+      <RefaqaVideo />
 
       <div className="max-w-7xl mx-auto px-4 pb-20">
         <div className="bg-white/80 backdrop-blur-sm rounded-3xl shadow-xl p-8 md:p-12">

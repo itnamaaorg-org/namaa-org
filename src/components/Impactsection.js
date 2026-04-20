@@ -30,10 +30,10 @@ const ImpactSection = () => {
   return (
     <div
       dir='rtl'
-      className='bg-[#FCFEFD] min-h-screen w-full flex items-start justify-center pt-28 p-8 relative overflow-hidden'
+      className='bg-[#FCFEFD] min-h-screen w-full flex items-start justify-center pt-28 p-8 relative'
     >
       {/* Background pattern */}
-      <div className='absolute top-0 right-0 w-1/2 h-1/2 z-0 opacity-60'></div>
+      <div className='absolute top-0 right-0 w-1/2 h-1/2 z-0 opacity-60 overflow-hidden'></div>
 
       <div className='container mx-auto px-4 z-10 max-w-6xl'>
         <div className='flex flex-col gap-20'>
@@ -68,16 +68,17 @@ const ImpactSection = () => {
           </div>
 
           {/* Bottom Section - Cards */}
-          <div className='flex justify-center items-center gap-[6px]'>
+          <div className='overflow-x-auto pb-2 scrollbar-hide'>
+          <div className='flex items-center gap-[6px] mx-auto w-max snap-x snap-mandatory'>
             {/* Card 1: Volunteer Campaigns */}
-            <div className='relative flex justify-center'>
-              <div className='w-full md:w-64 h-72 rounded-3xl bg-gradient-to-br from-[#A4E0B2] to-[#6DD3C8] p-6 text-right relative overflow-hidden shadow-2xl'>
+            <div className='relative flex justify-center flex-shrink-0 snap-start'>
+              <div className='w-56 md:w-64 h-72 rounded-3xl bg-gradient-to-br from-[#A4E0B2] to-[#6DD3C8] p-6 text-right relative overflow-hidden shadow-2xl'>
                 <span className='absolute -bottom-10 -left-5 text-[14rem] font-extrabold text-white opacity-25 select-none pointer-events-none'>
                   295
                 </span>
                 <div className='relative z-10'>
-                  <p className='text-6xl font-extrabold text-gray-800'>+295</p>
-                  <p className='text-2xl text-gray-700 mt-2'>حملات تطوعية</p>
+                  <p className='text-4xl md:text-6xl font-extrabold text-gray-800'>+295</p>
+                  <p className='text-lg md:text-2xl text-gray-700 mt-2'>حملات تطوعية</p>
                 </div>
                 <div className='absolute bottom-0 right-0 w-full h-3/4'>
                   <img
@@ -90,8 +91,8 @@ const ImpactSection = () => {
             </div>
 
             {/* Card 2: Locations */}
-            <div className='relative flex justify-center'>
-              <div className='relative w-full md:w-56 h-80'>
+            <div className='relative flex justify-center flex-shrink-0 snap-start'>
+              <div className='relative w-48 md:w-56 h-80'>
                 <img
                   src='/images/Map.png'
                   alt=' مواقع عملنا'
@@ -102,8 +103,8 @@ const ImpactSection = () => {
             </div>
 
             {/* Card 3: Group Photo */}
-            <div className='relative flex justify-center'>
-              <div className='w-full h-64 rounded-3xl overflow-hidden shadow-2xl'>
+            <div className='relative flex justify-center flex-shrink-0 snap-start'>
+              <div className='w-48 md:w-64 h-64 rounded-3xl overflow-hidden shadow-2xl'>
                 <img
                   src='/images/image13.png'
                   alt='A group of five smiling young girls outdoors, looking towards the right.'
@@ -112,19 +113,20 @@ const ImpactSection = () => {
               </div>
             </div>
 
-            {/* Card 4: 300k Beneficiaries */}
-            <div className='relative flex justify-center '>
-              <div className='w-full md:w-52 h-72 bg-[#94C83D] rounded-[10rem] flex flex-col items-center justify-center text-center p-4 relative overflow-hidden'>
+            {/* Card 4: 400k Beneficiaries */}
+            <div className='relative flex justify-center flex-shrink-0 snap-start'>
+              <div className='w-44 md:w-52 h-72 bg-[#94C83D] rounded-[10rem] flex flex-col items-center justify-center text-center p-4 relative overflow-hidden'>
                 <div className='absolute inset-0 z-0 opacity-20 bg-[url("/images/waves-pattern.svg")] bg-cover'></div>
                 <div className='relative z-10 text-gray-800'>
-                  <span className='text-6xl font-extrabold block'>400</span>
-                  <span className='text-5xl font-extrabold block leading-none'>
+                  <span className='text-5xl md:text-6xl font-extrabold block'>400</span>
+                  <span className='text-4xl md:text-5xl font-extrabold block leading-none'>
                     الف
                   </span>
                   <span className='text-lg font-medium mt-4 block'>مستفيد</span>
                 </div>
               </div>
             </div>
+          </div>
           </div>
           {/* End Cards */}
         </div>

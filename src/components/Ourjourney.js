@@ -1,7 +1,11 @@
+'use client';
+
+import { useState } from 'react';
 import Link from 'next/link';
 import { Play } from 'lucide-react';
 
 function Ourjourney() {
+  const [playing, setPlaying] = useState(false);
   return (
     <div className="min-h-screen bg-gradient-to-br from-white via-green-50/30 to-teal-50/50 relative overflow-hidden">
       <div className="absolute inset-0 opacity-[0.03]">
@@ -44,8 +48,33 @@ function Ourjourney() {
             </div>
 
             <div className="order-1 lg:order-1 px-4">
-              <div className="relative rounded-3xl overflow-hidden max-w-lg mx-auto lg:max-w-none">
-                <iframe className="w-full aspect-video rounded-2xl" src="https://www.youtube.com/embed/M1do4zPWcJo" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+              <div className="relative rounded-2xl overflow-hidden max-w-lg mx-auto lg:max-w-none aspect-video bg-white">
+                {playing ? (
+                  <iframe
+                    className="absolute inset-0 w-full h-full"
+                    src="https://www.youtube.com/embed/bFlS7ecsWFo?t=14&autoplay=1"
+                    title="YouTube video player"
+                    style={{ border: 0 }}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                  />
+                ) : (
+                  <button
+                    onClick={() => setPlaying(true)}
+                    className="absolute inset-0 w-full h-full group"
+                  >
+                    <img
+                      src="/coverassociation.jpeg"
+                      alt="cover"
+                      className="w-full h-full object-contain group-hover:opacity-90 transition-opacity"
+                    />
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform shadow-xl">
+                        <Play className="w-7 h-7 text-white ml-1" fill="white" />
+                      </div>
+                    </div>
+                  </button>
+                )}
               </div>
             </div>
           </div>

@@ -2,73 +2,68 @@ import Footer from '@/components/Footer';
 
 export const metadata = {
   title: 'برنامج الرخصة الدولية للعمل التطوعي - نماء',
-  description: 'برنامج الرخصة الدولية للعمل التطوعي - شهادة معترف بها دوليًا',
+  description: 'برنامج تدريبي معتمد من الاتحاد العربي للعمل التطوعي',
 };
 
-const InternationalVolunteerLicensePage = () => {
+const goals = [
+  'تأهيل المشاركين وفق معايير دولية معتمدة في العمل التطوعي.',
+  'تنمية مهارات القيادة والعمل الجماعي في البيئات التطوعية المختلفة.',
+  'تمكين المشاركين من تصميم وتنفيذ مبادرات تطوعية ذات أثر مستدام.',
+  'تعزيز ثقافة العمل التطوعي المنظم على المستويين المحلي والدولي.',
+  'إعداد كوادر قادرة على تمثيل العمل التطوعي باحترافية في مختلف المحافل.',
+  'تطوير قدرات المشاركين في التخطيط وإدارة البرامج والمشاريع التطوعية.',
+];
+
+export default function InternationalVolunteerLicensePage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-white via-green-50/30 to-teal-50/50">
       <div className="relative pt-32 pb-20 px-4">
-        <div className="max-w-7xl mx-auto">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 text-center mb-8">
-            برنامج الرخصة الدولية للعمل التطوعي
+        <div className="max-w-7xl mx-auto text-center">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
+            الرخصة الدولية للعمل التطوعي
           </h1>
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 pb-20">
-        <div className="bg-white/80 backdrop-blur-sm rounded-3xl shadow-xl p-8 md:p-12">
-          <div className="prose prose-lg max-w-none">
-            <div className="mb-8">
-              <div className="w-20 h-20 bg-green-100 rounded-2xl flex items-center justify-center text-4xl mb-6">
-                🏆
-              </div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">عن البرنامج</h2>
-              <p className="text-lg md:text-xl text-gray-700 leading-relaxed mb-6">
-                برنامج الرخصة الدولية للعمل التطوعي يوفر شهادة معترف بها دوليًا في مجال العمل التطوعي. يساعد هذا البرنامج المتطوعين على تطوير مهاراتهم والحصول على اعتماد مهني يؤهلهم للعمل في مختلف المجالات التطوعية محليًا ودوليًا.
-              </p>
-            </div>
+      <div className="max-w-7xl mx-auto px-4 pb-20 space-y-6">
 
-            <div className="bg-gradient-to-br from-green-50 to-teal-50 rounded-2xl p-8 mb-8">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">مميزات الرخصة</h3>
-              <ul className="space-y-4">
-                <li className="flex items-start space-x-4 space-x-reverse">
-                  <div className="flex-shrink-0 w-2 h-2 bg-green-500 rounded-full mt-3"></div>
-                  <p className="text-lg text-gray-700">شهادة معترف بها دوليًا</p>
-                </li>
-                <li className="flex items-start space-x-4 space-x-reverse">
-                  <div className="flex-shrink-0 w-2 h-2 bg-green-500 rounded-full mt-3"></div>
-                  <p className="text-lg text-gray-700">تطوير المهارات التطوعية الاحترافية</p>
-                </li>
-                <li className="flex items-start space-x-4 space-x-reverse">
-                  <div className="flex-shrink-0 w-2 h-2 bg-green-500 rounded-full mt-3"></div>
-                  <p className="text-lg text-gray-700">فتح آفاق جديدة للعمل التطوعي</p>
-                </li>
-                <li className="flex items-start space-x-4 space-x-reverse">
-                  <div className="flex-shrink-0 w-2 h-2 bg-green-500 rounded-full mt-3"></div>
-                  <p className="text-lg text-gray-700">إضافة قيمة للملف الشخصي المهني</p>
-                </li>
-                <li className="flex items-start space-x-4 space-x-reverse">
-                  <div className="flex-shrink-0 w-2 h-2 bg-green-500 rounded-full mt-3"></div>
-                  <p className="text-lg text-gray-700">الانضمام إلى شبكة عالمية من المتطوعين المعتمدين</p>
-                </li>
-              </ul>
-            </div>
-
-            <div className="bg-white rounded-2xl p-8 border-2 border-green-100">
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">متطلبات الحصول على الرخصة</h3>
-              <p className="text-lg text-gray-700 mb-4">
-                إكمال برنامج التدريب المطلوب، والمشاركة الفعالة في الأنشطة التطوعية، واجتياز التقييمات المقررة.
-              </p>
-            </div>
-          </div>
+        {/* مقدمة — أبيض */}
+        <div className="bg-gradient-to-br from-green-50 to-teal-50 rounded-3xl shadow-xl p-8 md:p-12">
+          <h2 className="text-3xl font-bold text-gray-900 mb-6">مقدمة البرنامج</h2>
+          <p className="text-lg md:text-xl text-gray-700 leading-relaxed mb-4">
+            انطلاقاً من أهمية العمل التطوعي كأحد الركائز الأساسية في تنمية المجتمعات، وعلى المستوى الدولي، جاء برنامج "الرخصة الدولية للعمل التطوعي" ليُسهم في إعداد كوادر مؤهلة وفق معايير مهنية عالمية، تمكنهم من المشاركة الفاعلة في العمل المجتمعي.
+          </p>
+          <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
+            ويتميّز البرنامج بكونه معتمداً من الاتحاد العربي للعمل التطوعي، مما يعزز من موثوقيته وقيمته المهنية.
+          </p>
         </div>
-      </div>
 
+        {/* وصف — أخضر */}
+        <div className="bg-white/80 backdrop-blur-sm rounded-3xl shadow-xl p-8 md:p-12">
+          <h2 className="text-3xl font-bold text-gray-900 mb-6">وصف البرنامج</h2>
+          <p className="text-lg md:text-xl text-gray-700 leading-relaxed mb-4">
+            برنامج "الرخصة الدولية للعمل التطوعي" هو برنامج تدريبي معتمد يهدف إلى تأهيل المشاركين بالمعارف والمهارات اللازمة لممارسة العمل التطوعي باحترافية، وفق أفضل الممارسات الدولية.
+          </p>
+          <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
+            يركز البرنامج على تطوير قدرات المشاركين في إدارة المبادرات التطوعية، والتخطيط للمشاريع المجتمعية، والعمل ضمن فرق بكفاءة، إضافة إلى تعزيز فهمهم لأخلاقيات العمل التطوعي وأثره في تحقيق التنمية المستدامة، بما يؤهلهم للعمل في بيئات محلية ودولية.
+          </p>
+        </div>
+
+        {/* أهداف — أبيض */}
+        <div className="bg-gradient-to-br from-green-50 to-teal-50 rounded-3xl shadow-xl p-8 md:p-12">
+          <h2 className="text-3xl font-bold text-gray-900 mb-8">أهداف البرنامج</h2>
+          <ul className="space-y-4">
+            {goals.map((goal, i) => (
+              <li key={i} className="flex items-start space-x-4 space-x-reverse">
+                <div className="flex-shrink-0 w-2 h-2 bg-green-500 rounded-full mt-3"></div>
+                <p className="text-lg text-gray-700">{goal}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+      </div>
       <Footer />
     </div>
   );
-};
-
-export default InternationalVolunteerLicensePage;
-
+}
