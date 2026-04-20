@@ -31,7 +31,7 @@ export default function CommunityEntrepreneurSpecialistPage() {
         <div className="bg-gradient-to-br from-green-50 to-teal-50 rounded-3xl shadow-xl p-8 md:p-12">
           <h2 className="text-3xl font-bold text-gray-900 mb-6">مقدمة البرنامج</h2>
           <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
-            انطلاقاً من أهمية الريادة المجتمعية في إيجاد حلول مستدامة للتحديات الاجتماعية، جاء برنامج "أخصائي الريادة المجتمعية" ليُسهم في إعداد كوادر شبابية قادرة على إحداث تغيير إيجابي في مجتمعاتهم، من خلال تبني أفكار مبتكرة وتحويلها إلى مبادرات عملية ذات أثر.
+            انطلاقاً من أهمية الريادة المجتمعية في إيجاد حلول مستدامة للتحديات الاجتماعية، جاء برنامج &quot;أخصائي الريادة المجتمعية&quot; ليُسهم في إعداد كوادر شبابية قادرة على إحداث تغيير إيجابي في مجتمعاتهم، من خلال تبني أفكار مبتكرة وتحويلها إلى مبادرات عملية ذات أثر.
           </p>
         </div>
 
@@ -39,7 +39,7 @@ export default function CommunityEntrepreneurSpecialistPage() {
         <div className="bg-white/80 backdrop-blur-sm rounded-3xl shadow-xl p-8 md:p-12">
           <h2 className="text-3xl font-bold text-gray-900 mb-6">وصف البرنامج</h2>
           <p className="text-lg md:text-xl text-gray-700 leading-relaxed mb-4">
-            برنامج "أخصائي الريادة المجتمعية" هو برنامج تدريبي متخصص يهدف إلى تأهيل المشاركين بالمعارف والمهارات اللازمة للعمل في مجال الريادة المجتمعية.
+            برنامج &quot;أخصائي الريادة المجتمعية&quot; هو برنامج تدريبي متخصص يهدف إلى تأهيل المشاركين بالمعارف والمهارات اللازمة للعمل في مجال الريادة المجتمعية.
           </p>
           <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
             يركز البرنامج على تطوير قدرات المشاركين في تحليل المشكلات المجتمعية، وتصميم مبادرات إبداعية، وإدارة المشاريع ذات الأثر الاجتماعي، إضافة إلى تمكينهم من تقديم الاستشارات وبناء حلول مبتكرة تسهم في تنمية المجتمع.
