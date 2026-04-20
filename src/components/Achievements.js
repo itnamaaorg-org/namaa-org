@@ -74,24 +74,26 @@ function Achievements() {
 
           </div>
 
-                    {/* الصور */}
-          <div className="relative w-full flex justify-center lg:center">
-            {/* الصورة الكبيرة */}
-            <div className="w-72 h-[420px] rounded-[200px] overflow-hidden shadow-md">
-              <img
-                src="/award.jpeg"
-                alt=""
-                className="w-full h-full object-cover"
-              />
-            </div>
-
-            {/* الصورة الصغيرة */}
-            <div className="absolute -bottom-10 -right-3 w-40 h-56 rounded-[120px] overflow-hidden shadow-lg">
-              <img
-  src="/nama11.jpeg"
+          <div className="w-full flex justify-center">
+            {/* الصورة الكبيرة + الصغيرة ملصوقة فيها */}
+            <div className="relative w-56 h-80 sm:w-64 sm:h-96 md:w-72 md:h-[420px] flex-shrink-0">
+              {/* the large image */}
+              <div className="w-full h-full rounded-[200px] overflow-hidden shadow-md">
+                <img
+                  src="/nama11.jpeg"
                   alt=""
-                className="w-full h-full object-cover"
-              />
+                  className="w-full h-full object-cover"
+                />
+              </div>
+
+              {/* the small image — دايماً ملصوقة بالصورة الكبيرة */}
+              <div className="absolute -bottom-8 -right-8 sm:-bottom-10 sm:-right-10 w-28 h-40 sm:w-32 sm:h-48 md:w-40 md:h-56 rounded-[120px] overflow-hidden shadow-lg">
+                <img
+                  src="/award.jpeg"
+                  alt=""
+                  className="w-full h-full object-cover"
+                />
+              </div>
             </div>
           </div>
 

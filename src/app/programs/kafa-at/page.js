@@ -2,69 +2,72 @@ import Footer from '@/components/Footer';
 
 export const metadata = {
   title: 'برنامج كفاءات - نماء',
-  description: 'برنامج متخصص في مجال ريادة الأعمال للشباب الأردني',
+  description: 'برنامج ريادي لتمكين الشباب من تأسيس مشاريعهم الخاصة',
 };
 
-const KafaAtPage = () => {
+const goals = [
+  'تمكين الشباب الأردني من دخول مجال ريادة الأعمال بثقة وكفاءة.',
+  'تطوير مهارات الرياديين في بناء وإدارة المشاريع الناشئة.',
+  'دعم تحويل الأفكار الإبداعية إلى مشاريع قابلة للتطبيق والاستثمار.',
+  'تعزيز ثقافة الابتكار والعمل الحر بين فئة الشباب.',
+  'ربط الرياديين بالمستثمرين وبناء شراكات استراتيجية داعمة.',
+  'المساهمة في الحد من البطالة من خلال توفير فرص عمل مستدامة.',
+  'دعم الاقتصاد المحلي عبر مشاريع شبابية منتجة وقابلة للنمو.',
+];
+
+export default function KafaatPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-white via-green-50/30 to-teal-50/50">
       <div className="relative pt-32 pb-20 px-4">
-        <div className="max-w-7xl mx-auto">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 text-center mb-8">
+        <div className="max-w-7xl mx-auto text-center">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
             برنامج كفاءات
           </h1>
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 pb-20">
-        <div className="bg-white/80 backdrop-blur-sm rounded-3xl shadow-xl p-8 md:p-12">
-          <div className="prose prose-lg max-w-none">
-            <div className="mb-8">
-              <div className="w-20 h-20 bg-green-100 rounded-2xl flex items-center justify-center text-4xl mb-6">
-                💼
-              </div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">عن البرنامج</h2>
-              <p className="text-lg md:text-xl text-gray-700 leading-relaxed mb-6">
-                برنامج كفاءات هو برنامج متخصص في مجال ريادة الأعمال، يستهدف الشباب الأردني الطامح لإنشاء مشروعه الخاص. يقدم البرنامج تدريبًا شاملاً على مهارات ريادة الأعمال التجارية، من خلال ورش عمل متخصصة وبرامج تأهيلية تساعد الشباب على تحويل أفكارهم إلى مشاريع ناجحة.
-              </p>
-            </div>
+      <div className="max-w-7xl mx-auto px-4 pb-20 space-y-6">
 
-            <div className="bg-gradient-to-br from-green-50 to-teal-50 rounded-2xl p-8 mb-8">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">أهداف البرنامج</h3>
-              <ul className="space-y-4">
-                <li className="flex items-start space-x-4 space-x-reverse">
-                  <div className="flex-shrink-0 w-2 h-2 bg-green-500 rounded-full mt-3"></div>
-                  <p className="text-lg text-gray-700">تطوير مهارات ريادة الأعمال لدى الشباب</p>
-                </li>
-                <li className="flex items-start space-x-4 space-x-reverse">
-                  <div className="flex-shrink-0 w-2 h-2 bg-green-500 rounded-full mt-3"></div>
-                  <p className="text-lg text-gray-700">تأهيل الشباب لإنشاء وإدارة مشاريعهم الخاصة</p>
-                </li>
-                <li className="flex items-start space-x-4 space-x-reverse">
-                  <div className="flex-shrink-0 w-2 h-2 bg-green-500 rounded-full mt-3"></div>
-                  <p className="text-lg text-gray-700">توفير بيئة داعمة لتحويل الأفكار إلى واقع</p>
-                </li>
-                <li className="flex items-start space-x-4 space-x-reverse">
-                  <div className="flex-shrink-0 w-2 h-2 bg-green-500 rounded-full mt-3"></div>
-                  <p className="text-lg text-gray-700">بناء شبكة من رواد الأعمال الشباب</p>
-                </li>
-              </ul>
-            </div>
-
-            <div className="bg-white rounded-2xl p-8 border-2 border-green-100">
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">الفئة المستهدفة</h3>
-              <p className="text-lg text-gray-700">
-                الشباب الأردني من الجنسين، الذين لديهم أفكار لمشاريع تجارية أو رغبة في تطوير مهاراتهم في ريادة الأعمال.
-              </p>
-            </div>
-          </div>
+        {/* مقدمة — أبيض */}
+        <div className="bg-gradient-to-br from-green-50 to-teal-50 rounded-3xl shadow-xl p-8 md:p-12">
+          <h2 className="text-3xl font-bold text-gray-900 mb-6">مقدمة البرنامج</h2>
+          <p className="text-lg md:text-xl text-gray-700 leading-relaxed mb-4">
+            انطلقت فكرة برنامج كفاءات استجابةً للتحديات التي يواجهها الشباب الأردني، خاصة في ظل ارتفاع نسب البطالة وتزايد توجه الشباب نحو ريادة الأعمال كخيار مهني مستقبلي.
+          </p>
+          <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
+            وجاء البرنامج ليكون منصة داعمة تستثمر طاقات الشباب، وتحول أفكارهم إلى مشاريع حقيقية قادرة على إحداث أثر اقتصادي واجتماعي مستدام.
+          </p>
         </div>
-      </div>
 
+        {/* وصف — أخضر */}
+        <div className="bg-white/80 backdrop-blur-sm rounded-3xl shadow-xl p-8 md:p-12">
+          <h2 className="text-3xl font-bold text-gray-900 mb-6">وصف البرنامج</h2>
+          <p className="text-lg md:text-xl text-gray-700 leading-relaxed mb-4">
+            برنامج كفاءات هو مبادرة ريادية تنفذها جمعية نماء للتنمية المجتمعية بالشراكة مع جهات داعمة، ويستهدف الشباب الطموحين الراغبين في تأسيس مشاريعهم الخاصة.
+          </p>
+          <p className="text-lg md:text-xl text-gray-700 leading-relaxed mb-4">
+            يعمل البرنامج على استقطاب الرياديين، وتأهيلهم من خلال برنامج تدريبي متكامل يغطي مختلف مراحل تأسيس المشاريع، بدءاً من تطوير الفكرة وبناء نموذج العمل، مروراً بدراسة السوق وإعداد الخطط التشغيلية، وصولاً إلى مهارات العرض والإقناع أمام المستثمرين.
+          </p>
+          <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
+            كما يوفر البرنامج بيئة حاضنة تتيح للمشاركين فرصة التواصل المباشر مع رجال الأعمال والممولين، بما يسهم في تحويل أفكارهم إلى مشاريع قائمة على أرض الواقع، ضمن إشراف مهني يضمن استدامتها ونموها.
+          </p>
+        </div>
+
+        {/* أهداف — أبيض */}
+        <div className="bg-gradient-to-br from-green-50 to-teal-50 rounded-3xl shadow-xl p-8 md:p-12">
+          <h2 className="text-3xl font-bold text-gray-900 mb-8">أهداف البرنامج</h2>
+          <ul className="space-y-4">
+            {goals.map((goal, i) => (
+              <li key={i} className="flex items-start space-x-4 space-x-reverse">
+                <div className="flex-shrink-0 w-2 h-2 bg-green-500 rounded-full mt-3"></div>
+                <p className="text-lg text-gray-700">{goal}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+      </div>
       <Footer />
     </div>
   );
-};
-
-export default KafaAtPage;
-
+}

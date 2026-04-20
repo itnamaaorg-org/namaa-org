@@ -1,133 +1,204 @@
-'use client';
-
-import { useState } from 'react';
 import Link from 'next/link';
 import Footer from '@/components/Footer';
 
+export const metadata = {
+  title: 'برامجنا - نماء',
+  description: 'برامج جمعية نماء للتنمية المجتمعية',
+};
+
+const programs = [
+  {
+    id: 'kafa-at',
+    label: 'كفاءات',
+    href: '/programs/kafa-at',
+    number: '01',
+    tagline: 'من الفكرة إلى المشروع',
+    summary: 'برنامج ريادي يحوّل أفكار الشباب إلى مشاريع حقيقية قابلة للنمو والاستثمار.',
+    title: 'من الفكرة إلى الاستثمار: برنامجنا لريادة الأعمال يصنع رواد أعمال ناجحين',
+    description: 'برنامج كفاءات هو مبادرة ريادية تنفذها جمعية نماء للتنمية المجتمعية بالشراكة مع جهات داعمة، ويستهدف الشباب الطامحين الراغبين في تأسيس مشاريعهم الخاصة. يعمل البرنامج على استقطاب الرياديين وتأهيلهم من خلال برنامج تدريبي متكامل يغطي مختلف مراحل تأسيس المشاريع.',
+    videoId: '5Xe9C5Izshw',
+    stages: [
+      'مدخل إلى ريادة الأعمال',
+      'ابتكار فكرة المشروع',
+      'بناء النموذج التجاري',
+      'دراسة السوق والمنافسين',
+      'كتابة خطة العمل',
+      'إدارة الموارد المالية',
+      'التسويق والبيع',
+      'عرض المشروع على المستثمرين',
+      'إطلاق المشروع',
+    ],
+  },
+  {
+    id: 'community-entrepreneur',
+    label: 'الريادي المجتمعي',
+    href: '/programs/community-entrepreneur',
+    number: '02',
+    tagline: 'قيادة التغيير المجتمعي',
+    summary: 'برنامج تطبيقي يطوّر مهارات الشباب في العمل التطوعي وتنفيذ مبادرات مؤثرة.',
+    title: 'الريادي المجتمعي: نُعدّ جيلاً قادراً على قيادة التغيير',
+    description: 'برنامج "الريادي المجتمعي" هو برنامج تدريبي تطبيقي يهدف إلى تطوير مهارات الشباب في مجال العمل التطوعي والخدمة المجتمعية، من خلال مزيج متكامل من التدريب النظري والتطبيق العملي.',
+    videoId: 'bFlS7ecsWFo',
+    stages: [
+      'مقدمة في العمل التطوعي وأثره المجتمعي',
+      'تطوير المهارات القيادية والتنظيمية',
+      'تصميم المبادرات المجتمعية',
+      'التطبيق الميداني وتنفيذ المبادرات',
+      'بناء الشراكات مع مؤسسات المجتمع',
+      'قياس الأثر وتقييم النتائج',
+    ],
+  },
+  {
+    id: 'community-entrepreneur-specialist',
+    label: 'أخصائي الريادي المجتمعي',
+    href: '/programs/community-entrepreneur-specialist',
+    number: '03',
+    tagline: 'تخصص عميق وأثر مستدام',
+    summary: 'برنامج متخصص لتأهيل كوادر قادرة على تحليل المشكلات وتقديم حلول مجتمعية مبتكرة.',
+    title: 'أخصائي الريادي المجتمعي: كوادر متخصصة لأثر مستدام',
+    description: 'برنامج "أخصائي الريادة المجتمعية" هو برنامج تدريبي متخصص يهدف إلى تأهيل المشاركين بالمعارف والمهارات اللازمة للعمل في مجال الريادة المجتمعية وتقديم الاستشارات وبناء حلول مبتكرة.',
+    videoId: 'bFlS7ecsWFo',
+    stages: [
+      'أسس الريادة المجتمعية والابتكار الاجتماعي',
+      'تحليل المشكلات المجتمعية',
+      'تصميم الحلول الإبداعية',
+      'إدارة المشاريع ذات الأثر الاجتماعي',
+      'تقديم الاستشارات المجتمعية',
+      'بناء مبادرات مستدامة',
+    ],
+  },
+  {
+    id: 'international-volunteer-license',
+    label: 'الرخصة الدولية للعمل التطوعي',
+    href: '/programs/international-volunteer-license',
+    number: '04',
+    tagline: 'معتمد عربياً وعالمياً',
+    summary: 'برنامج معتمد من الاتحاد العربي للعمل التطوعي يؤهّل المشاركين وفق معايير مهنية دولية.',
+    title: 'الرخصة الدولية للعمل التطوعي: معتمدة عربياً وعالمياً',
+    description: 'برنامج "الرخصة الدولية للعمل التطوعي" هو برنامج تدريبي معتمد من الاتحاد العربي للعمل التطوعي، يهدف إلى تأهيل المشاركين بالمعارف والمهارات اللازمة لممارسة العمل التطوعي باحترافية وفق أفضل الممارسات الدولية.',
+    videoId: 'bFlS7ecsWFo',
+    stages: [
+      'مفاهيم العمل التطوعي الدولي وأخلاقياته',
+      'معايير الجودة في البرامج التطوعية',
+      'القيادة والعمل الجماعي في البيئات التطوعية',
+      'تصميم وتنفيذ المبادرات التطوعية',
+      'التخطيط وإدارة البرامج التطوعية',
+      'تمثيل العمل التطوعي في المحافل المحلية والدولية',
+    ],
+  },
+];
+
 export default function ProgramsPage() {
-  const [activeTab, setActiveTab] = useState('kafa-at');
-
-  const tabs = [
-    { id: 'kafa-at', label: 'كفاءات', href: '/programs/kafa-at' },
-    { id: 'community-entrepreneur', label: 'الريادي المجتمعي', href: '/programs/community-entrepreneur' },
-    { id: 'community-entrepreneur-specialist', label: 'اخصائي الريادي المجتمعي', href: '/programs/community-entrepreneur-specialist' },
-    { id: 'international-volunteer-license', label: 'الرخصة الدولية للعمل التطوعي', href: '/programs/international-volunteer-license' },
-  ];
-
-  const programContent = {
-    'kafa-at': {
-      title: 'من الفكرة إلى الاستثمار: برنامجنا لريادة الأعمال يصنع رواد أعمال ناجحين',
-      description: 'برنامج كفاءات هو برنامج متخصص في مجال ريادة الأعمال، يستهدف الشباب الأردني الطامح لإنشاء مشروعه الخاص. يقدم البرنامج تدريبًا شاملاً على مهارات ريادة الأعمال التجارية، من خلال ورش عمل متخصصة وبرامج تأهيلية تساعد الشباب على تحويل أفكارهم إلى مشاريع ناجحة.',
-      stages: [
-        'مدخل إلى ريادة الأعمال',
-        'ابتكار فكرة المشروع',
-        'بناء نموذج التجاري',
-        'دراسة السوق والمنافسين',
-        'كتابة خطة العمل',
-        'إدارة الموارد المالية',
-        'التسويق والبيع',
-        'عرض المشروع على المستثمرين',
-        'إطلاق المشروع',
-      ],
-    },
-  };
-
-  const currentContent = programContent[activeTab] || programContent['kafa-at'];
-
   return (
     <div className="min-h-screen bg-gradient-to-br from-white via-green-50/30 to-teal-50/50">
-      {/* Hero Section */}
-      <div className="relative pt-32 pb-12 px-4">
-        <div className="max-w-7xl mx-auto">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 text-center mb-8">
+
+      {/* Hero */}
+      <div className="relative pt-32 pb-16 px-4">
+        <div className="max-w-7xl mx-auto text-center">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
             ثلاث مسارات تصنع فرقاً
           </h1>
-          <p className="text-xl md:text-2xl text-gray-700 text-center max-w-3xl mx-auto">
+          <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto">
             من خلال برامجنا الرئيسية، تمكّن الشباب ونصنع أثراً مستداماً في المجتمع
           </p>
         </div>
       </div>
 
-      {/* Tabs Navigation */}
-      <div className="max-w-7xl mx-auto px-4 pb-8">
-        <div className="flex flex-wrap justify-center gap-4 border-b-2 border-gray-200">
-          {tabs.map((tab) => (
-            <button
-              key={tab.id}
-              onClick={() => setActiveTab(tab.id)}
-              className={`px-6 py-3 font-medium text-lg transition-colors relative ${
-                activeTab === tab.id
-                  ? 'text-gray-900'
-                  : 'text-gray-500 hover:text-gray-700'
-              }`}
-            >
-              {tab.label}
-              {activeTab === tab.id && (
-                <span className="absolute bottom-0 left-0 right-0 h-1 bg-[#94C83D] rounded-t-full"></span>
-              )}
-            </button>
+      {/* Cards */}
+      <div className="max-w-7xl mx-auto px-4 pb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {programs.map((p) => (
+            <Link key={p.id} href={p.href}>
+              <div className="text-right rounded-3xl p-8 flex flex-col gap-3 transition-all duration-300 shadow-md hover:shadow-xl hover:-translate-y-1 border-2 border-transparent hover:border-[#94C83D] bg-white/80 backdrop-blur-sm cursor-pointer h-full">
+                <h2 className="text-xl md:text-2xl font-bold text-gray-900">
+                  {p.label}
+                </h2>
+                <p className="text-sm md:text-base leading-relaxed text-gray-500 flex-1">
+                  {p.summary}
+                </p>
+                <div className="flex items-center gap-2 font-semibold text-sm mt-1 text-[#94C83D]">
+                  <span>اقرأ المزيد ←</span>
+                </div>
+              </div>
+            </Link>
           ))}
         </div>
       </div>
 
-      {/* Program Content */}
-      <div className="max-w-7xl mx-auto px-4 pb-20">
-        <div className="bg-white/80 backdrop-blur-sm rounded-3xl shadow-xl p-8 md:p-12 mb-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-            {currentContent.title}
-          </h2>
-          <p className="text-lg md:text-xl text-gray-700 leading-relaxed mb-8">
-            {currentContent.description}
-          </p>
+      {/* Static section — video + text + gallery */}
+      <div className="bg-gray-50 border-t border-gray-200">
+        <div className="max-w-7xl mx-auto px-4 py-16">
+          <div className="bg-white/80 backdrop-blur-sm rounded-3xl shadow-xl p-8 md:p-12">
 
-          {/* Video Section */}
-          <div className="mb-8 rounded-2xl overflow-hidden">
-            <div className="relative w-full h-0 pb-[56.25%] bg-gray-200">
-              <iframe
-                className="absolute top-0 left-0 w-full h-full"
-                src="https://www.youtube.com/embed/5Xe9C5Izshw?si=GW75DNQcYud-1VVm"
-                title="YouTube video player"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen
-              ></iframe>
-            </div>
-          </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              من الفكرة إلى الاستثمار: برنامجنا لريادة الأعمال يصنع رواد أعمال ناجحين
+            </h2>
+            <p className="text-lg md:text-xl text-gray-700 leading-relaxed mb-8">
+              برنامج كفاءات هو مبادرة ريادية تنفذها جمعية نماء للتنمية المجتمعية بالشراكة مع جهات داعمة، ويستهدف الشباب الطموحين الراغبين في تأسيس مشاريعهم الخاصة. يعمل البرنامج على استقطاب الرياديين وتأهيلهم من خلال برنامج تدريبي متكامل يغطي مختلف مراحل تأسيس المشاريع.
+            </p>
 
-          {/* Program Stages */}
-          <div className="mb-8">
-            <h3 className="text-2xl font-bold text-gray-900 mb-6">مراحل البرنامج</h3>
-            <ol className="space-y-4">
-              {currentContent.stages.map((stage, index) => (
-                <li key={index} className="flex items-start space-x-4 space-x-reverse">
-                  <div className="flex-shrink-0 w-8 h-8 bg-[#94C83D] text-white rounded-full flex items-center justify-center font-bold">
-                    {index + 1}
-                  </div>
-                  <p className="text-lg text-gray-700 pt-1">{stage}</p>
-                </li>
-              ))}
-            </ol>
-          </div>
-
-          {/* Image Gallery */}
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-            {[1, 2, 3, 4, 5, 6].map((item) => (
-              <div
-                key={item}
-                className="relative h-48 bg-gradient-to-br from-green-100 to-teal-100 rounded-xl overflow-hidden"
-              >
-                <img
-                  src={`/image${item}.png`}
-                  alt={`Gallery ${item}`}
-                  className="w-full h-full object-cover"
-                />
-                {item === 6 && (
-                  <div className="absolute inset-0 bg-black/50 flex items-center justify-center text-white text-2xl font-bold">
-                    +9
-                  </div>
-                )}
+            {/* Video */}
+            <div className="mb-8 flex justify-center">
+              <div className="w-full max-w-2xl rounded-2xl overflow-hidden shadow-lg">
+                <div className="relative w-full h-0 pb-[56.25%] bg-gray-200">
+                  <iframe
+                    className="absolute top-0 left-0 w-full h-full"
+                    src="https://www.youtube.com/embed/5Xe9C5Izshw?si=GW75DNQcYud-1VVm"
+                    title="برامج نماء"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                  />
+                </div>
               </div>
-            ))}
+            </div>
+
+            {/* Stages */}
+            <div className="mb-8">
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">مراحل البرنامج</h3>
+              <ol className="space-y-4">
+                {[
+                  'مدخل إلى ريادة الأعمال',
+                  'ابتكار فكرة المشروع',
+                  'بناء النموذج التجاري',
+                  'دراسة السوق والمنافسين',
+                  'كتابة خطة العمل',
+                  'إدارة الموارد المالية',
+                  'التسويق والبيع',
+                  'عرض المشروع على المستثمرين',
+                  'إطلاق المشروع',
+                ].map((stage, index) => (
+                  <li key={index} className="flex items-start gap-4">
+                    <div className="flex-shrink-0 w-8 h-8 bg-[#94C83D] text-white rounded-full flex items-center justify-center font-bold text-sm">
+                      {index + 1}
+                    </div>
+                    <p className="text-lg text-gray-700 pt-1">{stage}</p>
+                  </li>
+                ))}
+              </ol>
+            </div>
+
+            {/* Image Gallery */}
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+              {[1, 2, 3, 4, 5, 6].map((item) => (
+                <div
+                  key={item}
+                  className="relative h-48 bg-gradient-to-br from-green-100 to-teal-100 rounded-xl overflow-hidden"
+                >
+                  <img
+                    src={`/image${item}.png`}
+                    alt={`Gallery ${item}`}
+                    className="w-full h-full object-cover"
+                  />
+                  {item === 6 && (
+                    <div className="absolute inset-0 bg-black/50 flex items-center justify-center text-white text-2xl font-bold">
+                      +9
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+
           </div>
         </div>
       </div>

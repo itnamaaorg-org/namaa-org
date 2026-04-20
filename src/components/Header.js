@@ -106,6 +106,15 @@ const Header = () => {
                 أخبارنا
               </Link>
 
+              <Link
+                href='/awards'
+                className={`text-gray-700 hover:text-green-800 transition-colors duration-200 font-medium ${
+                  pathname === '/awards' ? 'text-green-800' : ''
+                }`}
+              >
+                الجوائز والأوسمة
+              </Link>
+
               {/* Club Dropdown - Desktop */}
               <div
                 className='relative'
@@ -243,6 +252,16 @@ const Header = () => {
                 }`}
               >
                 أخبارنا
+              </Link>
+
+              <Link
+                href='/awards'
+                onClick={closeMenu}
+                className={`block px-3 py-2 text-gray-700 hover:text-green-800 hover:bg-white/30 rounded-xl transition-colors ${
+                  pathname === '/awards' ? 'text-green-800' : ''
+                }`}
+              >
+                الجوائز والأوسمة
               </Link>
 
               {/* Club Dropdown - Mobile */}

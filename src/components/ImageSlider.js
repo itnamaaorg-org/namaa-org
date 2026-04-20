@@ -19,12 +19,12 @@ const ImageSlider = ({ images, teamName }) => {
       </h2>
 
       <div className='relative'>
-        <div className='relative h-72 md:h-96 rounded-2xl overflow-hidden shadow-md'>
+        <div className='relative h-72 md:h-96 rounded-2xl overflow-hidden shadow-md bg-gray-50'>
           <Image
             src={images[current]}
             alt={`${teamName} - نشاط ${current + 1}`}
             fill
-            className='object-cover transition-opacity duration-300'
+            className='object-contain transition-opacity duration-300'
             priority={current === 0}
           />
         </div>
