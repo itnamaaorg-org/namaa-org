@@ -4,7 +4,7 @@ import { useState } from 'react';
 import Image from 'next/image';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
-const ImageSlider = ({ images, teamName }) => {
+const ImageSlider = ({ images, teamName, title = 'من أنشطة الفريق' }) => {
   const [current, setCurrent] = useState(0);
 
   const prev = () => setCurrent((i) => (i === 0 ? images.length - 1 : i - 1));
@@ -15,7 +15,7 @@ const ImageSlider = ({ images, teamName }) => {
   return (
     <div className='bg-white/80 backdrop-blur-sm rounded-3xl shadow-xl p-8 md:p-12 mb-12'>
       <h2 className='text-3xl md:text-4xl font-bold text-gray-900 mb-8'>
-        من أنشطة الفريق
+        {title}
       </h2>
 
       <div className='relative'>

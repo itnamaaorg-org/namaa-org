@@ -1,16 +1,16 @@
 "use client";
 const Partners = () => {
   const partners_arr = [
-    { name: "Near East Foundation", logo: "/image.png" },
-    { name: "Tamayuz", logo: "/image1.png" },
-    { name: "Al-Rikaa", logo: "/image2.png" },
-    { name: "Barooj", logo: "/image3.png" },
-    { name: "Nahno", logo: "/image4.png" },
-    { name: "Crown Prince Foundation", logo: "/image5.png" },
-    { name: "Naua", logo: "/image6.png" },
-    { name: "Social Impact Center", logo: "/image7.png" },
-    { name: "Organization", logo: "/image8.png" },
-    { name: "Partner B", logo: "/image9.png" },
+    { name: "Near East Foundation", logo: "https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776858143/image_xlj5lz.png" },
+    { name: "Arab Volunteer Union", logo: "https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776858161/image9_lszz7f.png" },
+    { name: "Al-Rikaa", logo: "https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776858144/image2_o5ml4j.png" },
+    { name: "Barooj", logo: "https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776858124/image3_y6puzc.png" },
+    { name: "Nahno", logo: "https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776858124/image4_vdxi4f.png" },
+    { name: "Crown Prince Foundation", logo: "https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776858124/image5_dw2fqm.png" },
+    { name: "Naua", logo: "https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776858125/image6_w4p2bo.png" },
+    { name: "Social Impact Center", logo: "https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776858160/image7_krvna7.png" },
+    { name: "Organization", logo: "https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776858143/image1_bjevi2.png" },
+    { name: "Partner B", logo: "https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776858160/image8_bh1cpr.png" },
   ];
 
   return (

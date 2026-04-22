@@ -8,25 +8,25 @@ const VolunteerClubsSection = () => {
     {
       title: 'الفريق الطبي',
       description: 'يقوم الفريق على تقديم الخدمات الطبية والصحية داخل الأردن..',
-      image: '/nama15.jpeg',
+      image: 'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776855995/medical_ubbeih.jpg',
     },
     {
       title: 'فريق المبادرات التطوعية',
       description:
         'يقوم الفريق على تنفيذ الحملات التطوعية الموسمية وإدارتها (رمضان، الشتاء، ال...)',
-      image: '/nama17.jpeg',
+      image: 'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776855087/campaigns_asq90a.jpg',
     },
     {
       title: 'فريق الأيتام (رفقاء نماء)',
       description:
         'يقوم الفريق على دراسة طلبات انضمام الأطفال الأيتام للكفالة ليتم بعدها تجهيز...',
-      image: '/nama14.jpeg',
+      image: 'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776855636/companions_urmu3g.jpg',
     },
     {
       title: 'فريق تمكين',
       description:
         'يقوم الفريق على دراسة طلبات الاسر المتقدمة للحصول على مشاريع إنتاجية. ..',
-      image: '/nama16.jpeg',
+      image: 'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776856186/empowerment_ldj3ev.jpg',
     },
   ];
 

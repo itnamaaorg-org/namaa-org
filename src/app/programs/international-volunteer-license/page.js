@@ -1,4 +1,16 @@
 import Footer from '@/components/Footer';
+import VolunteerVideo from './VolunteerVideo';
+import ImageSlider from '@/components/ImageSlider';
+
+const sliderImages = [
+  'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776852190/IMG_9623_ohlv11.jpg',
+  'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776852190/IMG_7979_k5xfog.jpg',
+  'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776852190/IMG_9644_oz3pzh.jpg',
+  'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776852189/IMG_7904_k5iffa.jpg',
+  'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776852188/IMG_7885_jjtzgi.jpg',
+  'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776852188/IMG_7893_qsssps.jpg',
+  'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776852189/IMG_7940_yy0z24.jpg',
+];
 
 export const metadata = {
   title: 'برنامج الرخصة الدولية للعمل التطوعي - نماء',
@@ -24,6 +36,8 @@ export default function InternationalVolunteerLicensePage() {
           </h1>
         </div>
       </div>
+
+      <VolunteerVideo />
 
       <div className="max-w-7xl mx-auto px-4 pb-20 space-y-6">
 
@@ -62,6 +76,7 @@ export default function InternationalVolunteerLicensePage() {
           </ul>
         </div>
 
+        <ImageSlider images={sliderImages} title="من أنشطة البرنامج" />
       </div>
       <Footer />
     </div>

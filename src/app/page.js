@@ -5,10 +5,9 @@ import Achievements from '@/components/Achievements';
 import Footer from '@/components/Footer';
 import Impactsection from '@/components/Impactsection';
 import NewsSection from '@/components/NewsSection';
-
 export const metadata = {
   title: 'نماء - جمعية تنموية شبابية',
-  description: 'جمعية تنموية شبابية غير ربحية، تأسست في الأردن في عام 2012، لتشارك بفعالية في الجهود الوطنية تجاه تمكين الشباب الأردني',
+  description: 'جمعية تنموية شبابية غير ربحية...',
 };
 
 const Home = () => {
