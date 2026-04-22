@@ -1,6 +1,36 @@
 'use client';
 
 import { useState } from 'react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
+
+const MiniSlider = ({ images, label }) => {
+  const [current, setCurrent] = useState(0);
+  if (!images || images.length === 0) return null;
+  const prev = () => setCurrent((i) => (i === 0 ? images.length - 1 : i - 1));
+  const next = () => setCurrent((i) => (i === images.length - 1 ? 0 : i + 1));
+  return (
+    <div className="w-3/4 mx-auto">
+      <div className="relative w-full rounded-xl overflow-hidden shadow-md aspect-video bg-gray-100">
+        <img
+          src={images[current]}
+          alt={`صورة ${current + 1}`}
+          className="w-full h-full object-cover transition-opacity duration-300"
+        />
+        {images.length > 1 && (
+          <>
+            <button onClick={prev} className="absolute right-2 top-1/2 -translate-y-1/2 w-7 h-7 bg-white/80 hover:bg-white rounded-full shadow flex items-center justify-center transition-all">
+              <ChevronRight className="w-4 h-4 text-gray-700" />
+            </button>
+            <button onClick={next} className="absolute left-2 top-1/2 -translate-y-1/2 w-7 h-7 bg-white/80 hover:bg-white rounded-full shadow flex items-center justify-center transition-all">
+              <ChevronLeft className="w-4 h-4 text-gray-700" />
+            </button>
+          </>
+        )}
+      </div>
+      <p className="text-center text-xs text-gray-400 mt-1">{current + 1} / {images.length}</p>
+    </div>
+  );
+};
 
 const campaigns = [
   {
@@ -19,12 +49,29 @@ const campaigns = [
         id: 'wishes',
         title: 'مشروع تحقيق أمنيات الأيتام',
         description: 'مشروع مختص بتحقيق أمنيات الأطفال الأيتام من خلال سؤال كل طفل عن أمنية يتمنى تحقيقها، والعمل على توفير هذه الأمنيات ومفاجأتهم بها قبل عيد الفطر لإدخال السرور على قلوبهم.',
+        images: [
+          'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776869024/DSC00815_ge605p.jpg',
+          'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776869025/DSC00823_q34qln.jpg',
+          'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776869025/DSC01064_szdffn.jpg',
+          'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776869026/DSC01121_ninmqb.jpg',
+          'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776869028/DSC01154_vuwn8q.jpg',
+          'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776869030/DSC01238_cpnfgy.jpg',
+          'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776869031/DSC01231_oboanc.jpg',
+        ],
       },
       {
         id: 'meals',
         title: 'مشروع وجبات الخير',
         description: 'مشروع مختص بتوزيع وجبات الطعام الجاهزة على العائلات العفيفة طوال شهر رمضان، بالإضافة إلى إقامة إفطارات خيرية لكافة فئات المجتمع، بما في ذلك الأطفال ذوي الاحتياجات الخاصة، المسنين، وعمال الوطن.',
         videoId: 'MLAI0_ATWLw',
+        images: [
+          'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776868040/DSC07137_yiayiu.jpg',
+          'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776868038/DSC07065_m2rk9b.jpg',
+          'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776868036/DSC06665_sccwys.jpg',
+          'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776868033/DSC06554-copy-0_cvpcsv.jpg',
+          'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776868032/DSC06548_ixvafa.jpg',
+          'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776868032/DSC06542_ssrpa8.jpg',
+        ],
       },
       {
         id: 'food-boxes',
@@ -35,6 +82,15 @@ const campaigns = [
         id: 'eid-clothes',
         title: 'مشروع كسوة العيد',
         description: 'مشروع مختص بتأمين ملابس العيد للأطفال الأيتام وأبناء الأسر العفيفة، مع اصطحاب الأطفال للتسوق وشراء الملابس التي تناسبهم، بالإضافة إلى تنظيم زيارة لمدينة الألعاب وإقامة إفطار جماعي.',
+        images: [
+          'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776867251/DSC09145_c0s6u1.jpg',
+          'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776867251/DSC08519_ikkxzq.jpg',
+          'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776867250/DSC08681_q15dut.jpg',
+          'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776867252/DSC09267_eac1sc.jpg',
+          'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776867251/DSC08576_qyyrhv.jpg',
+          'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776867252/DSC09374_kaeqfh.jpg',
+          'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776867251/DSC09427_yqzier.jpg',
+        ],
       },
       {
         id: 'eid-gift',
@@ -46,6 +102,15 @@ const campaigns = [
         title: 'السوق الخيري للخضار والفواكه والمواد الغذائية',
         description: 'مشروع مختص بإقامة معرض خيري يحتوي على أصناف متنوعة من الخضار والفواكه والمواد الغذائية الأساسية، حيث تتسوق الأسر العفيفة ضمن سقف محدد وبطريقة منظمة يديرها المتطوعون.',
         videoId: 'KOvWpFk5ISA',
+
+        images: [
+          'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776866230/DSC08360_zlj92y.jpg',
+          'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776866232/DSC07720_ece0x8.jpg',
+          'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776866226/DSC08171_vnc8xr.jpg',
+          'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776866226/DSC08025_rslgqi.jpg',
+          'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776866213/DSC07689_kwwqo9.jpg',
+          'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776866212/DSC08390_ledes9.jpg',
+        ],
       },
     ],
   },
@@ -167,8 +232,8 @@ const VideoPlayer = ({ videoId }) => {
   const [playing, setPlaying] = useState(false);
 
   return (
-    <div className="mt-4 flex justify-center">
-      <div className="w-full max-w-md rounded-xl overflow-hidden shadow-md aspect-video relative bg-gray-900">
+    <div className="w-full">
+      <div className="w-full rounded-xl overflow-hidden shadow-md aspect-video relative bg-gray-900">
         {playing ? (
           <iframe
             width="100%"
@@ -275,8 +340,20 @@ const SeasonalProjectsAccordion = () => {
 
                         {openProject === project.id && (
                           <div className="p-5 bg-white">
-                            <p className="text-gray-700 leading-relaxed">{project.description}</p>
-                            {project.videoId && <VideoPlayer videoId={project.videoId} />}
+                            <p className="text-gray-700 leading-relaxed mb-4">{project.description}</p>
+                            {project.videoId && project.images && project.images.length > 0 ? (
+                              <div className="grid grid-cols-2 gap-4 items-start">
+                                <VideoPlayer videoId={project.videoId} />
+                                <MiniSlider images={project.images} label={project.imagesLabel} />
+                              </div>
+                            ) : (
+                              <>
+                                {project.videoId && <VideoPlayer videoId={project.videoId} />}
+                                {project.images && project.images.length > 0 && (
+                                  <MiniSlider images={project.images} label={project.imagesLabel} />
+                                )}
+                              </>
+                            )}
                           </div>
                         )}
                       </div>

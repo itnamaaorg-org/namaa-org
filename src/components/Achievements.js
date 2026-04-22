@@ -80,7 +80,7 @@ function Achievements() {
               {/* the large image */}
               <div className="w-full h-full rounded-[200px] overflow-hidden shadow-md">
                 <img
-                  src="/nama11.jpeg"
+                  src="https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776857473/nama11_zlcbob.jpg"
                   alt=""
                   className="w-full h-full object-cover"
                 />
@@ -89,7 +89,7 @@ function Achievements() {
               {/* the small image — دايماً ملصوقة بالصورة الكبيرة */}
               <div className="absolute -bottom-8 -right-8 sm:-bottom-10 sm:-right-10 w-28 h-40 sm:w-32 sm:h-48 md:w-40 md:h-56 rounded-[120px] overflow-hidden shadow-lg">
                 <img
-                  src="/award.jpeg"
+                  src="https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776850989/award_vvyzya.jpg"
                   alt=""
                   className="w-full h-full object-cover"
                 />

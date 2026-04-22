@@ -1,4 +1,14 @@
 import Footer from '@/components/Footer';
+import SpecialistVideo from './SpecialistVideo';
+import ImageSlider from '@/components/ImageSlider';
+
+const sliderImages = [
+  'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776853186/IMG_0089_micaos.jpg',
+  'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776853186/IMG_0398_x6clmi.jpg',
+  'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776853185/IMG_0081_p27veg.jpg',
+  'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776853185/IMG_0073_dcqrch.jpg',
+  'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776853185/IMG_0383_inje61.jpg',
+];
 
 export const metadata = {
   title: 'برنامج أخصائي الريادي المجتمعي - نماء',
@@ -24,6 +34,8 @@ export default function CommunityEntrepreneurSpecialistPage() {
           </h1>
         </div>
       </div>
+
+      <SpecialistVideo />
 
       <div className="max-w-7xl mx-auto px-4 pb-20 space-y-6">
 
@@ -59,6 +71,7 @@ export default function CommunityEntrepreneurSpecialistPage() {
           </ul>
         </div>
 
+        <ImageSlider images={sliderImages} title="من أنشطة البرنامج" />
       </div>
       <Footer />
     </div>

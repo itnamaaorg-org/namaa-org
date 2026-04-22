@@ -37,7 +37,7 @@ const TeamPage = ({ params }) => {
 
   if (!team) notFound();
 
-  const activityImages = getTeamImages(team.slug);
+  const activityImages = team.images ?? getTeamImages(team.slug);
 
   return (
     <div className='min-h-screen bg-gradient-to-br from-white via-green-50/30 to-teal-50/50'>

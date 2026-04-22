@@ -1,4 +1,15 @@
 import Footer from '@/components/Footer';
+import CommunityVideo from './CommunityVideo';
+import ImageSlider from '@/components/ImageSlider';
+
+const sliderImages = [
+  'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776853409/IMG_3831_vdnxts.jpg',
+  'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776853409/IMG_3813_eloxt8.jpg',
+  'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776853408/IMG_3694_swbi5c.jpg',
+  'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776853407/DSC06769_qzontt.jpg',
+  'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776853406/DSC03472_wqvklu.jpg',
+  'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776853407/DSC03660_o43vew.jpg',
+];
 
 export const metadata = {
   title: 'برنامج الريادي المجتمعي - نماء',
@@ -25,6 +36,8 @@ export default function CommunityEntrepreneurPage() {
           </h1>
         </div>
       </div>
+
+      <CommunityVideo />
 
       <div className="max-w-7xl mx-auto px-4 pb-20 space-y-6">
 
@@ -60,6 +73,7 @@ export default function CommunityEntrepreneurPage() {
           </ul>
         </div>
 
+        <ImageSlider images={sliderImages} title="من أنشطة البرنامج" />
       </div>
       <Footer />
     </div>

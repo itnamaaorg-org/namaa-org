@@ -1,5 +1,6 @@
 import Footer from '@/components/Footer';
 import SeasonalProjectsAccordion from '@/components/SeasonalProjectsAccordion';
+import ProjectTabs from '@/components/ProjectTabs';
 
 export const metadata = {
   title: 'المشاريع الموسمية - نماء',
@@ -9,9 +10,10 @@ export const metadata = {
 const SeasonalProjectsPage = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-white via-green-50/30 to-teal-50/50">
-      <div className="relative pt-32 pb-20 px-4">
-        <div className="max-w-7xl mx-auto">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 text-center mb-8">
+      <div className="relative pt-32 pb-8 px-4">
+        <div className="max-w-7xl mx-auto text-center">
+          <ProjectTabs />
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-8">
             المشاريع الموسمية
           </h1>
         </div>

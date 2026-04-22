@@ -9,7 +9,7 @@ export const metadata = {
 const programs = [
   {
     id: 'kafa-at',
-    label: 'كفاءات',
+    label: 'برنامج كفاءات لريادة الأعمال',
     href: '/programs/kafa-at',
     number: '01',
     tagline: 'من الفكرة إلى المشروع',
@@ -96,10 +96,10 @@ export default function ProgramsPage() {
       <div className="relative pt-32 pb-16 px-4">
         <div className="max-w-7xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
-            ثلاث مسارات تصنع فرقاً
+            أربع برامج تصنع فرقاً
           </h1>
           <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto">
-            من خلال برامجنا الرئيسية، تمكّن الشباب ونصنع أثراً مستداماً في المجتمع
+            من خلال برامجنا الرئيسية، نمكّن الشباب، ونصنع أثراً مستداماً في المجتمع
           </p>
         </div>
       </div>
@@ -122,84 +122,6 @@ export default function ProgramsPage() {
               </div>
             </Link>
           ))}
-        </div>
-      </div>
-
-      {/* Static section — video + text + gallery */}
-      <div className="bg-gray-50 border-t border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 py-16">
-          <div className="bg-white/80 backdrop-blur-sm rounded-3xl shadow-xl p-8 md:p-12">
-
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              من الفكرة إلى الاستثمار: برنامجنا لريادة الأعمال يصنع رواد أعمال ناجحين
-            </h2>
-            <p className="text-lg md:text-xl text-gray-700 leading-relaxed mb-8">
-              برنامج كفاءات هو مبادرة ريادية تنفذها جمعية نماء للتنمية المجتمعية بالشراكة مع جهات داعمة، ويستهدف الشباب الطموحين الراغبين في تأسيس مشاريعهم الخاصة. يعمل البرنامج على استقطاب الرياديين وتأهيلهم من خلال برنامج تدريبي متكامل يغطي مختلف مراحل تأسيس المشاريع.
-            </p>
-
-            {/* Video */}
-            <div className="mb-8 flex justify-center">
-              <div className="w-full max-w-2xl rounded-2xl overflow-hidden shadow-lg">
-                <div className="relative w-full h-0 pb-[56.25%] bg-gray-200">
-                  <iframe
-                    className="absolute top-0 left-0 w-full h-full"
-                    src="https://www.youtube.com/embed/5Xe9C5Izshw?si=GW75DNQcYud-1VVm"
-                    title="برامج نماء"
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowFullScreen
-                  />
-                </div>
-              </div>
-            </div>
-
-            {/* Stages */}
-            <div className="mb-8">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">مراحل البرنامج</h3>
-              <ol className="space-y-4">
-                {[
-                  'مدخل إلى ريادة الأعمال',
-                  'ابتكار فكرة المشروع',
-                  'بناء النموذج التجاري',
-                  'دراسة السوق والمنافسين',
-                  'كتابة خطة العمل',
-                  'إدارة الموارد المالية',
-                  'التسويق والبيع',
-                  'عرض المشروع على المستثمرين',
-                  'إطلاق المشروع',
-                ].map((stage, index) => (
-                  <li key={index} className="flex items-start gap-4">
-                    <div className="flex-shrink-0 w-8 h-8 bg-[#94C83D] text-white rounded-full flex items-center justify-center font-bold text-sm">
-                      {index + 1}
-                    </div>
-                    <p className="text-lg text-gray-700 pt-1">{stage}</p>
-                  </li>
-                ))}
-              </ol>
-            </div>
-
-            {/* Image Gallery */}
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-              {[1, 2, 3, 4, 5, 6].map((item) => (
-                <div
-                  key={item}
-                  className="relative h-48 bg-gradient-to-br from-green-100 to-teal-100 rounded-xl overflow-hidden"
-                >
-                  <img
-                    src={`/image${item}.png`}
-                    alt={`Gallery ${item}`}
-                    className="w-full h-full object-cover"
-                  />
-                  {item === 6 && (
-                    <div className="absolute inset-0 bg-black/50 flex items-center justify-center text-white text-2xl font-bold">
-                      +9
-                    </div>
-                  )}
-                </div>
-              ))}
-            </div>
-
-          </div>
         </div>
       </div>
 

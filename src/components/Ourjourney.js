@@ -64,9 +64,9 @@ function Ourjourney() {
                     className="absolute inset-0 w-full h-full group"
                   >
                     <img
-                      src="/coverassociation.jpeg"
+                      src="https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776854166/coverassociation_wbdeds.jpg"
                       alt="cover"
-                      className="w-full h-full object-contain group-hover:opacity-90 transition-opacity"
+                      className="w-full h-full object-cover group-hover:opacity-90 transition-opacity"
                     />
                     <div className="absolute inset-0 flex items-center justify-center">
                       <div className="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform shadow-xl">

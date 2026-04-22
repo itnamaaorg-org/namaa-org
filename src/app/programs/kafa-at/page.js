@@ -1,4 +1,16 @@
 import Footer from '@/components/Footer';
+import KafaatVideo from './KafaatVideo';
+import ImageSlider from '@/components/ImageSlider';
+
+const sliderImages = [
+  'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776851500/IMG_0087_vzeaqb.jpg',
+  'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776851501/IMG_0407_tenavv.jpg',
+  'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776851501/IMG_1247_ugh8vl.jpg',
+  'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776851501/IMG_0533_hs27s2.jpg',
+  'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776851502/IMG_1514_q7fcdh.jpg',
+  'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776851503/IMG_1538_yjitnt.jpg',
+  'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776851503/IMG_3231_vejmah.jpg',
+];
 
 export const metadata = {
   title: 'برنامج كفاءات - نماء',
@@ -21,10 +33,12 @@ export default function KafaatPage() {
       <div className="relative pt-32 pb-20 px-4">
         <div className="max-w-7xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
-            برنامج كفاءات
+            برنامج كفاءات لريادة الأعمال
           </h1>
         </div>
       </div>
+
+      <KafaatVideo />
 
       <div className="max-w-7xl mx-auto px-4 pb-20 space-y-6">
 
@@ -66,6 +80,7 @@ export default function KafaatPage() {
           </ul>
         </div>
 
+        <ImageSlider images={sliderImages} title="من أنشطة البرنامج" />
       </div>
       <Footer />
     </div>
