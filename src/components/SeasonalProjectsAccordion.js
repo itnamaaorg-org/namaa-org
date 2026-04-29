@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { seasonalImages } from '@/lib/images';
 
 const MiniSlider = ({ images, label }) => {
   const [current, setCurrent] = useState(0);
@@ -49,29 +50,14 @@ const campaigns = [
         id: 'wishes',
         title: 'مشروع تحقيق أمنيات الأيتام',
         description: 'مشروع مختص بتحقيق أمنيات الأطفال الأيتام من خلال سؤال كل طفل عن أمنية يتمنى تحقيقها، والعمل على توفير هذه الأمنيات ومفاجأتهم بها قبل عيد الفطر لإدخال السرور على قلوبهم.',
-        images: [
-          'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776869024/DSC00815_ge605p.jpg',
-          'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776869025/DSC00823_q34qln.jpg',
-          'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776869025/DSC01064_szdffn.jpg',
-          'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776869026/DSC01121_ninmqb.jpg',
-          'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776869028/DSC01154_vuwn8q.jpg',
-          'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776869030/DSC01238_cpnfgy.jpg',
-          'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776869031/DSC01231_oboanc.jpg',
-        ],
+        images: seasonalImages.wishes,
       },
       {
         id: 'meals',
         title: 'مشروع وجبات الخير',
         description: 'مشروع مختص بتوزيع وجبات الطعام الجاهزة على العائلات العفيفة طوال شهر رمضان، بالإضافة إلى إقامة إفطارات خيرية لكافة فئات المجتمع، بما في ذلك الأطفال ذوي الاحتياجات الخاصة، المسنين، وعمال الوطن.',
         videoId: 'MLAI0_ATWLw',
-        images: [
-          'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776868040/DSC07137_yiayiu.jpg',
-          'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776868038/DSC07065_m2rk9b.jpg',
-          'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776868036/DSC06665_sccwys.jpg',
-          'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776868033/DSC06554-copy-0_cvpcsv.jpg',
-          'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776868032/DSC06548_ixvafa.jpg',
-          'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776868032/DSC06542_ssrpa8.jpg',
-        ],
+        images: seasonalImages.meals,
       },
       {
         id: 'food-boxes',
@@ -82,15 +68,7 @@ const campaigns = [
         id: 'eid-clothes',
         title: 'مشروع كسوة العيد',
         description: 'مشروع مختص بتأمين ملابس العيد للأطفال الأيتام وأبناء الأسر العفيفة، مع اصطحاب الأطفال للتسوق وشراء الملابس التي تناسبهم، بالإضافة إلى تنظيم زيارة لمدينة الألعاب وإقامة إفطار جماعي.',
-        images: [
-          'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776867251/DSC09145_c0s6u1.jpg',
-          'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776867251/DSC08519_ikkxzq.jpg',
-          'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776867250/DSC08681_q15dut.jpg',
-          'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776867252/DSC09267_eac1sc.jpg',
-          'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776867251/DSC08576_qyyrhv.jpg',
-          'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776867252/DSC09374_kaeqfh.jpg',
-          'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776867251/DSC09427_yqzier.jpg',
-        ],
+        images: seasonalImages.eidClothes,
       },
       {
         id: 'eid-gift',
@@ -103,14 +81,7 @@ const campaigns = [
         description: 'مشروع مختص بإقامة معرض خيري يحتوي على أصناف متنوعة من الخضار والفواكه والمواد الغذائية الأساسية، حيث تتسوق الأسر العفيفة ضمن سقف محدد وبطريقة منظمة يديرها المتطوعون.',
         videoId: 'KOvWpFk5ISA',
 
-        images: [
-          'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776866230/DSC08360_zlj92y.jpg',
-          'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776866232/DSC07720_ece0x8.jpg',
-          'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776866226/DSC08171_vnc8xr.jpg',
-          'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776866226/DSC08025_rslgqi.jpg',
-          'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776866213/DSC07689_kwwqo9.jpg',
-          'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776866212/DSC08390_ledes9.jpg',
-        ],
+        images: seasonalImages.charityMarket,
       },
     ],
   },

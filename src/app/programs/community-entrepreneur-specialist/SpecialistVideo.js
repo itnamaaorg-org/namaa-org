@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { Play } from 'lucide-react';
+import { covers } from '@/lib/images';
 
 const SpecialistVideo = () => {
   const [playing, setPlaying] = useState(false);
@@ -24,7 +25,7 @@ const SpecialistVideo = () => {
             className="absolute inset-0 w-full h-full group"
           >
             <img
-              src="https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776854196/coverakhsasi_mkjcm3.jpg"
+              src={covers.specialist}
               alt="برنامج أخصائي الريادي المجتمعي"
               className="w-full h-full object-cover group-hover:opacity-90 transition-opacity"
             />

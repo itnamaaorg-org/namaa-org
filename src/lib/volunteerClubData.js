@@ -1,3 +1,5 @@
+import { teamLogos, charterImages, teamSliders } from './images';
+
 export const clubInfo = {
   title: 'نادي نماء التطوعي',
   slogan: 'أنا أتطوع إذاً أنا موجود',
@@ -18,14 +20,8 @@ export const charter = {
   intro:
     'يستند النادي في عمله إلى ميثاق شرف ينظم العلاقة بين الجمعية والمتطوعين، ويضمن بيئة قائمة على الاحترام والمسؤولية.',
   images: [
-    {
-      title: 'ميثاق المتطوع',
-      src: 'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776856648/charter-volunteer_vqtztb.jpg',
-    },
-    {
-      title: 'ميثاق الجمعية تجاه المتطوعين',
-      src: 'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776856647/charter-association_zslqp2.jpg',
-    },
+    { title: 'ميثاق المتطوع', src: charterImages.volunteer },
+    { title: 'ميثاق الجمعية تجاه المتطوعين', src: charterImages.association },
   ],
 };
 
@@ -51,19 +47,8 @@ export const teams = [
       'تعزيز قيم التكافل والتعاون الاجتماعي.',
       'تطوير مهارات الشباب القيادية والتنظيمية من خلال العمل الميداني.',
     ],
-    logo: 'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776855087/campaigns_asq90a.jpg',
-    images: [
-      'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776855090/DSC01931_dabv3h.webp',
-      'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776855089/DSC00314_tq3qgf.webp',
-      'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776855094/DSC02556_nyremg.webp',
-      'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776855092/DSC02026_wyr31d.webp',
-      'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776855097/DSC07947_db9meu.webp',
-      'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776855095/DSC06849_yvjmf5.webp',
-      'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776855099/DSC09743_sxafto.webp',
-      'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776855100/IMG_7643_jyelid.webp',
-      'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776855102/IMG_7919_y8bi9e.webp',
-      'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776855103/IMG_8099_c1fdhv.webp',
-    ],
+    logo: teamLogos.campaigns,
+    images: teamSliders.campaigns,
   },
   {
     slug: 'companions',
@@ -78,21 +63,8 @@ export const teams = [
       'تعزيز الصحة العامة من خلال برامج توعوية ورعاية صحية.',
       'تنمية الوعي الاجتماعي لدى الأطفال ليصبحوا أفراداً مسؤولين وفاعلين في المجتمع.',
     ],
-    logo: 'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776855636/companions_urmu3g.jpg',
-    images: [
-      'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776855635/C0983_fr2tjf.webp',
-      'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776855638/DSC01434_woeprd.webp',
-      'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776855640/DSC01970_cwifse.webp',
-      'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776855646/DSC06085_kgvmnn.webp',
-      'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776855644/DSC05743_v4wicc.webp',
-      'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776855649/DSC06260_r7ewvg.webp',
-      'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776855648/DSC06127_yicxij.webp',
-      'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776855653/DSC07181_vpmz5i.webp',
-      'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776855651/DSC06698_cd34y8.webp',
-      'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776855657/DSC08620_wcxwxm.webp',
-      'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776855655/DSC07821_l2dsmp.webp',
-      'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776855642/DSC04914_jajzuf.webp',
-    ],
+    logo: teamLogos.companions,
+    images: teamSliders.companions,
   },
   {
     slug: 'empowerment',
@@ -107,17 +79,8 @@ export const teams = [
       'ضمان استمرارية المشاريع وتحقيق أثر اقتصادي ملموس على المدى الطويل.',
       'تنفيذ زيارات ميدانية دورية لمتابعة تقدم المشاريع وتقييم أثرها.',
     ],
-    logo: 'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776856186/empowerment_ldj3ev.jpg',
-    images: [
-      'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776856199/IMG_6887_jcfurq.webp',
-      'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776856197/IMG_6789_fc2rio.webp',
-      'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776856194/IMG_5689_ctxcqi.webp',
-      'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776856192/IMG_2489_bjhvar.webp',
-      'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776856190/IMG_2390_ghwpj6.webp',
-      'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776856188/IMG_0154_hcw8bf.webp',
-      'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776856184/DSC04659_lmfw0a.webp',
-      'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776856182/DSC04358_wcr4ai.webp',
-    ],
+    logo: teamLogos.empowerment,
+    images: teamSliders.empowerment,
   },
   {
     slug: 'medical',
@@ -132,18 +95,8 @@ export const teams = [
       'نشر الوعي الصحي والوقاية بين أفراد المجتمع.',
       'المشاركة في الفعاليات الطبية لدعم الصحة العامة.',
     ],
-    logo: 'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776855995/medical_ubbeih.jpg',
-    images: [
-      'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776855993/IMG_7795_lwkcri.webp',
-      'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776855991/IMG_7598_gvxnfy.webp',
-      'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776855989/IMG_1055_scfagh.webp',
-      'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776855987/IMG_0981_cmt8zp.webp',
-      'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776855985/IMG_0904_ywk0ae.webp',
-      'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776855984/DSC08794_oyc5sv.webp',
-      'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776855981/DSC04790_cusyue.webp',
-      'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776855979/DSC04764_o7onso.webp',
-      'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776855978/DSC04594_fi8ion.webp',
-    ],
+    logo: teamLogos.medical,
+    images: teamSliders.medical,
   },
   {
     slug: 'media',
@@ -158,6 +111,6 @@ export const teams = [
       'تطوير مهارات الإعلام والتواصل لدى المتطوعين.',
       'التنسيق مع وسائل الإعلام لضمان وصول المبادرات والفعاليات للجمهور.',
     ],
-    logo: 'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776856380/media_obste5.jpg',
+    logo: teamLogos.media,
   },
 ];

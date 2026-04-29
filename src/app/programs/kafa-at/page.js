@@ -1,16 +1,9 @@
 import Footer from '@/components/Footer';
 import KafaatVideo from './KafaatVideo';
 import ImageSlider from '@/components/ImageSlider';
+import { programSliders } from '@/lib/images';
 
-const sliderImages = [
-  'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776851500/IMG_0087_vzeaqb.jpg',
-  'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776851501/IMG_0407_tenavv.jpg',
-  'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776851501/IMG_1247_ugh8vl.jpg',
-  'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776851501/IMG_0533_hs27s2.jpg',
-  'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776851502/IMG_1514_q7fcdh.jpg',
-  'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776851503/IMG_1538_yjitnt.jpg',
-  'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776851503/IMG_3231_vejmah.jpg',
-];
+const sliderImages = programSliders.kafaat;
 
 export const metadata = {
   title: 'برنامج كفاءات - نماء',
