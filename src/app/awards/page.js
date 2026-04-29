@@ -1,4 +1,5 @@
 import Footer from '@/components/Footer';
+import { awardImages } from '@/lib/images';
 
 export const metadata = {
   title: 'الجوائز والأوسمة - نماء',
@@ -11,35 +12,35 @@ const awards = [
     title: 'وسام اليوم العربي للتطوع',
     body: 'الاتحاد العربي للعمل التطوعي',
     description: 'حصدت الجمعية وسام اليوم العربي للتطوع لعام 2016 على مستوى الوطن العربي، تقديراً لجهودها في نشر ثقافة العمل التطوعي وترسيخ القيم الإنسانية وتعزيز المبادرات المجتمعية الهادفة.',
-    image: 'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776853664/award-arab-volunteer-day-2016_hahpxv.jpg',
+    image: awardImages.arabVolunteerDay2016,
   },
   {
     year: '2019',
     title: 'جائزة مسابقة بادر التطوعية',
     body: 'المركز الأول على مستوى المؤسسات المجتمعية',
     description: 'حصدت الجمعية المركز الأول على مستوى المؤسسات المجتمعية في مجال التمكين، ضمن مسابقة بادر التطوعية، تقديراً لجهودها في تمكين الشباب وتعزيز المسؤولية المجتمعية وترسيخ ثقافة التطوع في الأردن.',
-    image: 'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776853665/award-badr-2019_ufnjkr.jpg',
+    image: awardImages.badr2019,
   },
   {
     year: '2023',
     title: 'قلادة الأمير محمد بن فهد العالمية',
     body: 'المركز الأول على مستوى الوطن العربي',
     description: 'حصدت الجمعية المركز الأول على مستوى الوطن العربي في النسخة الرابعة من مسابقة قلادة الأمير محمد بن فهد العالمية، ضمن مجال التمكين الاقتصادي لفئة المنظمات والجمعيات غير الربحية.',
-    image: 'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776853690/award-prince-mohammed-bin-fahd_ztwck4.jpg',
+    image: awardImages.princeMohammedBinFahd,
   },
   {
     year: '2024',
     title: 'وسام المبادرات العربية الملهمة',
     body: 'جوائز الملهمين العرب – دبي',
     description: 'حصدت الجمعية من خلال مبادرة تمكين وسام المبادرات العربية الملهمة لعام 2024، تقديراً لما حققته المبادرة من أثر ملموس في مجال التمكين المجتمعي والتنمية المستدامة.',
-    image: 'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776850989/award_vvyzya.jpg',
+    image: awardImages.wisam2024,
   },
   {
     year: '2024',
     title: 'جائزة أفضل مشروع ملهم',
     body: 'مؤتمر عمران السنوي – إسطنبول',
     description: 'حصدت الجمعية جائزة أفضل مشروع ملهم في مجال التنمية وخدمة المجتمع عن مشروع رفقاء نماء لرعاية الأيتام، تقديراً لأثر المشروع في تقديم الرعاية الشاملة للأيتام وتعزيز قيم التكافل والتنمية المستدامة.',
-    image: 'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776853666/award-inspiring-project-2024_nmkbir.jpg',
+    image: awardImages.inspiring2024,
   },
 ];
 

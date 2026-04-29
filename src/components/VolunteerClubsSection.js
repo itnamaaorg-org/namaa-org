@@ -2,31 +2,32 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { teamLogos } from '@/lib/images';
 
 const VolunteerClubsSection = () => {
   const clubs = [
     {
       title: 'الفريق الطبي',
       description: 'يقوم الفريق على تقديم الخدمات الطبية والصحية داخل الأردن..',
-      image: 'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776855995/medical_ubbeih.jpg',
+      image: teamLogos.medical,
     },
     {
       title: 'فريق المبادرات التطوعية',
       description:
         'يقوم الفريق على تنفيذ الحملات التطوعية الموسمية وإدارتها (رمضان، الشتاء، ال...)',
-      image: 'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776855087/campaigns_asq90a.jpg',
+      image: teamLogos.campaigns,
     },
     {
       title: 'فريق الأيتام (رفقاء نماء)',
       description:
         'يقوم الفريق على دراسة طلبات انضمام الأطفال الأيتام للكفالة ليتم بعدها تجهيز...',
-      image: 'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776855636/companions_urmu3g.jpg',
+      image: teamLogos.companions,
     },
     {
       title: 'فريق تمكين',
       description:
         'يقوم الفريق على دراسة طلبات الاسر المتقدمة للحصول على مشاريع إنتاجية. ..',
-      image: 'https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776856186/empowerment_ldj3ev.jpg',
+      image: teamLogos.empowerment,
     },
   ];
 

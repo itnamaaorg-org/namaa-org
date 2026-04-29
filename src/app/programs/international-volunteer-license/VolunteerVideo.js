@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { Play } from 'lucide-react';
+import { covers } from '@/lib/images';
 
 const VolunteerVideo = () => {
   const [playing, setPlaying] = useState(false);
@@ -24,7 +25,7 @@ const VolunteerVideo = () => {
             className="absolute inset-0 w-full h-full group"
           >
             <img
-              src="https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776854168/coverrukhsa_fpzotg.jpg"
+              src={covers.volunteer}
               alt="برنامج الرخصة الدولية للعمل التطوعي"
               className="w-full h-full object-cover group-hover:opacity-90 transition-opacity"
             />

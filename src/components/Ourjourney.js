@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { Play } from 'lucide-react';
+import { covers } from '@/lib/images';
 
 function Ourjourney() {
   const [playing, setPlaying] = useState(false);
@@ -64,7 +65,7 @@ function Ourjourney() {
                     className="absolute inset-0 w-full h-full group"
                   >
                     <img
-                      src="https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776854166/coverassociation_wbdeds.jpg"
+                      src={covers.association}
                       alt="cover"
                       className="w-full h-full object-cover group-hover:opacity-90 transition-opacity"
                     />

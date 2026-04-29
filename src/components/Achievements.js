@@ -1,3 +1,5 @@
+import { achievementImages } from '@/lib/images';
+
 function Achievements() {
   return (
     <div className="w-full bg-white py-16 lg:py-24 relative overflow-hidden">
@@ -80,7 +82,7 @@ function Achievements() {
               {/* the large image */}
               <div className="w-full h-full rounded-[200px] overflow-hidden shadow-md">
                 <img
-                  src="https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776857473/nama11_zlcbob.jpg"
+                  src={achievementImages.main}
                   alt=""
                   className="w-full h-full object-cover"
                 />
@@ -89,7 +91,7 @@ function Achievements() {
               {/* the small image — دايماً ملصوقة بالصورة الكبيرة */}
               <div className="absolute -bottom-8 -right-8 sm:-bottom-10 sm:-right-10 w-28 h-40 sm:w-32 sm:h-48 md:w-40 md:h-56 rounded-[120px] overflow-hidden shadow-lg">
                 <img
-                  src="https://res.cloudinary.com/dg8rxv7jr/image/upload/v1776850989/award_vvyzya.jpg"
+                  src={achievementImages.award}
                   alt=""
                   className="w-full h-full object-cover"
                 />
