@@ -121,14 +121,15 @@ const Header = () => {
                 onMouseEnter={handleClubMouseEnter}
                 onMouseLeave={handleClubMouseLeave}
               >
-                <button
+                <Link
+                  href="/volunteer-club"
                   className={`flex items-center gap-1 text-gray-700 hover:text-green-800 transition-colors duration-200 font-medium ${
                     pathname.startsWith('/volunteer-club') ? 'text-green-800' : ''
                   }`}
                 >
                   نادي نماء التطوعي
                   <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isClubOpen ? 'rotate-180' : ''}`} />
-                </button>
+                </Link>
 
                 {isClubOpen && (
                   <div

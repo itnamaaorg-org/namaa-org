@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { Play } from 'lucide-react';
+import { covers } from '@/lib/images';
 
 const CommunityVideo = () => {
   const [playing, setPlaying] = useState(false);
@@ -24,7 +25,7 @@ const CommunityVideo = () => {
             className="absolute inset-0 w-full h-full group"
           >
             <img
-              src={`https://img.youtube.com/vi/pdEPGEuIF4E/maxresdefault.jpg`}
+              src={covers.communityEntrepreneur}
               alt="برنامج الريادي المجتمعي"
               className="w-full h-full object-cover group-hover:opacity-90 transition-opacity"
             />

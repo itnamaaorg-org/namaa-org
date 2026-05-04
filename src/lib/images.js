@@ -1,12 +1,13 @@
 import { getCdnImage } from './cdn';
 
 export const covers = {
-  association: getCdnImage('v1776854166/coverassociation_wbdeds.jpg'),
-  refaqa:      getCdnImage('v1776854168/covernamaa_kbrnaa.jpg'),
-  volunteer:   getCdnImage('v1776854168/coverrukhsa_fpzotg.jpg'),
-  specialist:  getCdnImage('v1776854196/coverakhsasi_mkjcm3.jpg'),
-  kafaat:      getCdnImage('v1776854222/kafaut_nkprdv.jpg'),
-  tamkeen:     getCdnImage('v1776854916/conertammken_ifbcf3.jpg'),
+  association:          getCdnImage('v1776854166/coverassociation_wbdeds.jpg'),
+  refaqa:               getCdnImage('v1776854168/covernamaa_kbrnaa.jpg'),
+  volunteer:            getCdnImage('v1776854168/coverrukhsa_fpzotg.jpg'),
+  specialist:           getCdnImage('v1776854196/coverakhsasi_mkjcm3.jpg'),
+  kafaat:               getCdnImage('v1776854222/kafaut_nkprdv.jpg'),
+  tamkeen:              getCdnImage('v1776854916/conertammken_ifbcf3.jpg'),
+  communityEntrepreneur: getCdnImage('v1777892160/%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D8%AC_%D8%A7%D9%84%D8%B1%D9%8A%D8%A7%D8%AF%D9%8A_%D8%A7%D9%84%D9%85%D8%AC%D8%AA%D9%85%D8%B9%D9%8A.jpg_1_uv80s2.jpg'),
 };
 
 export const achievementImages = {
@@ -37,7 +38,7 @@ export const charterImages = {
 
 export const partnerLogos = [
   getCdnImage('v1777473396/1_nbshyi.png'),
-  getCdnImage('v1777473395/3_t9qxn8.png'),
+  getCdnImage('v1777473396/2_hy38eh.png'),
   getCdnImage('v1777473396/4_hqcnza.png'),
   getCdnImage('v1777473395/5_h5mdb8.png'),
   getCdnImage('v1777473395/6_b1hcxk.png'),
@@ -137,6 +138,47 @@ export const teamSliders = {
     getCdnImage('v1776855981/DSC04790_cusyue.webp'),
     getCdnImage('v1776855979/DSC04764_o7onso.webp'),
     getCdnImage('v1776855978/DSC04594_fi8ion.webp'),
+  ],
+};
+
+export const initiativeSliders = {
+  mediaSchool: [
+    getCdnImage('v1777891815/IMG_0338_dwxvaw.jpg'),
+    getCdnImage('v1777891812/IMG_0327_mwdh8u.jpg'),
+    getCdnImage('v1777891809/2_uvfcko.jpg'),
+    getCdnImage('v1777891807/1_c21ic7.jpg'),
+    getCdnImage('v1777891804/0_azpjbq.jpg'),
+  ],
+  poorHousing: [
+    getCdnImage('v1777891557/IMG_8130_bwnatd.jpg'),
+    getCdnImage('v1777891554/IMG_7350_oi2trv.jpg'),
+    getCdnImage('v1777891551/IMG_6154_orsy52.jpg'),
+    getCdnImage('v1777891549/IMG_5964_prt6ci.jpg'),
+    getCdnImage('v1777891548/_SSP1859_h7pf2n.jpg'),
+    getCdnImage('v1777891545/IMG_5982_doqrkl.jpg'),
+  ],
+  rightToLearn: [
+    getCdnImage('v1777891013/IMG_8056_rsl8jw.jpg'),
+    getCdnImage('v1777891003/IMG_9429_wu1xc9.jpg'),
+    getCdnImage('v1777891002/IMG_7978_zmi4cv.jpg'),
+    getCdnImage('v1777891001/IMG_9362_jbacpk.jpg'),
+    getCdnImage('v1777890998/IMG_2150_k0qpmj.jpg'),
+  ],
+  eidBus: [
+    getCdnImage('v1777890426/IMG_9063_bqoaby.jpg'),
+    getCdnImage('v1777890410/IMG_3566_e4trwg.jpg'),
+    getCdnImage('v1777890410/IMG_9035_rwtdcg.jpg'),
+    getCdnImage('v1777890411/IMG_9051_s1bcz0.jpg'),
+    getCdnImage('v1777890385/IMG_2372_sx9szd.jpg'),
+    getCdnImage('v1777890383/IMG_8902_iz6vam.jpg'),
+    getCdnImage('v1777890383/IMG_8916_yge31g.jpg'),
+  ],
+  valuesMall: [
+    getCdnImage('v1777889929/IMG_2760_lox7ts.jpg'),
+    getCdnImage('v1777889929/IMG_2632_lf9cg5.jpg'),
+    getCdnImage('v1777889926/IMG_2665_bzwnuw.jpg'),
+    getCdnImage('v1777889908/DSC_0286_vuy7iq.jpg'),
+    getCdnImage('v1777889908/DSC_0064_zz0wiy.jpg'),
   ],
 };
 

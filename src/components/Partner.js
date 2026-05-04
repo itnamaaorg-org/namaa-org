@@ -1,44 +1,49 @@
 "use client";
 
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useState, useCallback } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { partnerLogos } from '@/lib/images';
 
 const partners_arr = partnerLogos.map((logo, i) => ({ name: `Partner ${i + 1}`, logo }));
 const repeated = [...partners_arr, ...partners_arr, ...partners_arr];
-
 const DURATION_S = 40;
 const PAUSE_MS = 3000;
-const STEP = 220;
 
 const Partners = () => {
   const trackRef = useRef(null);
+  const containerRef = useRef(null);
   const offsetRef = useRef(0);
   const rafRef = useRef(null);
   const pauseTimerRef = useRef(null);
   const isPausedRef = useRef(false);
-  const sectionWidthRef = useRef(0);
+  const slotWidthRef = useRef(0);
   const speedRef = useRef(0);
+  const [slotWidth, setSlotWidth] = useState(0);
+
+  const measure = useCallback(() => {
+    if (containerRef.current) {
+      const count = window.innerWidth < 768 ? 2 : 3;
+      const w = containerRef.current.offsetWidth / count;
+      slotWidthRef.current = w;
+      speedRef.current = (partners_arr.length * w) / (DURATION_S * 60);
+      setSlotWidth(w);
+    }
+  }, []);
 
   useEffect(() => {
-    const measure = () => {
-      if (trackRef.current) {
-        sectionWidthRef.current = trackRef.current.scrollWidth / 3;
-        speedRef.current = sectionWidthRef.current / (DURATION_S * 60);
-      }
-    };
     measure();
     window.addEventListener('resize', measure);
 
     const animate = () => {
-      if (!isPausedRef.current && sectionWidthRef.current > 0) {
+      if (!isPausedRef.current && slotWidthRef.current > 0) {
+        const sectionWidth = partners_arr.length * slotWidthRef.current;
         offsetRef.current += speedRef.current;
-        if (offsetRef.current >= sectionWidthRef.current) {
-          offsetRef.current -= sectionWidthRef.current;
+        if (offsetRef.current >= sectionWidth) {
+          offsetRef.current -= sectionWidth;
         }
-      }
-      if (trackRef.current) {
-        trackRef.current.style.transform = `translateX(-${offsetRef.current}px)`;
+        if (trackRef.current) {
+          trackRef.current.style.transform = `translateX(-${offsetRef.current}px)`;
+        }
       }
       rafRef.current = requestAnimationFrame(animate);
     };
@@ -49,7 +54,7 @@ const Partners = () => {
       clearTimeout(pauseTimerRef.current);
       window.removeEventListener('resize', measure);
     };
-  }, []);
+  }, [measure]);
 
   const pauseAndResume = () => {
     isPausedRef.current = true;
@@ -61,13 +66,23 @@ const Partners = () => {
 
   const moveNext = () => {
     pauseAndResume();
-    offsetRef.current = (offsetRef.current + STEP) % sectionWidthRef.current;
+    const sectionWidth = partners_arr.length * slotWidthRef.current;
+    offsetRef.current = (offsetRef.current + slotWidthRef.current) % sectionWidth;
+    if (trackRef.current) {
+      trackRef.current.style.transform = `translateX(-${offsetRef.current}px)`;
+    }
   };
 
   const movePrev = () => {
     pauseAndResume();
-    offsetRef.current = (offsetRef.current - STEP + sectionWidthRef.current) % sectionWidthRef.current;
+    const sectionWidth = partners_arr.length * slotWidthRef.current;
+    offsetRef.current = (offsetRef.current - slotWidthRef.current + sectionWidth) % sectionWidth;
+    if (trackRef.current) {
+      trackRef.current.style.transform = `translateX(-${offsetRef.current}px)`;
+    }
   };
+
+  const trackWidth = slotWidth * repeated.length;
 
   return (
     <div style={{ backgroundColor: "#F9F9F9" }} className="py-16 px-4">
@@ -89,22 +104,31 @@ const Partners = () => {
           <ChevronRight className="w-5 h-5 text-gray-600" />
         </button>
 
-        <div style={{ overflow: "hidden", width: "100%", direction: "ltr" }}>
+        <div ref={containerRef} style={{ overflow: "hidden", width: "100%", direction: "ltr" }}>
           <div
             ref={trackRef}
             style={{
               display: "flex",
-              gap: "5rem",
-              width: "max-content",
+              width: trackWidth > 0 ? `${trackWidth}px` : "max-content",
               willChange: "transform",
             }}
           >
             {repeated.map((partner, index) => (
-              <div key={index} style={{ flexShrink: 0, display: "flex", alignItems: "center" }}>
+              <div
+                key={index}
+                style={{
+                  flexShrink: 0,
+                  width: slotWidth > 0 ? `${slotWidth}px` : "auto",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  padding: "0 1.5rem",
+                }}
+              >
                 <img
                   src={partner.logo}
                   alt={partner.name}
-                  style={{ height: "128px", width: "auto", objectFit: "contain" }}
+                  style={{ height: "128px", width: "100%", objectFit: "contain" }}
                 />
               </div>
             ))}
