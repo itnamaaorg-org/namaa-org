@@ -15,9 +15,6 @@ const InitiativesIncubatorPage = () => {
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 text-center mb-8">
             حاضنة المبادرات
           </h1>
-          <p className="text-xl md:text-2xl text-gray-700 text-center max-w-3xl mx-auto">
-            دعم الجمعية للمبادرات والأفكار التطوعية التي تخدم المجتمع المحلي وتساعده على التنمية المستدامة
-          </p>
         </div>
       </div>
 
@@ -61,7 +58,7 @@ const InitiativesIncubatorPage = () => {
 
         {/* Initiatives Examples */}
         <div className="bg-white/80 backdrop-blur-sm rounded-3xl shadow-xl p-8 md:p-12 mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">أمثلة على المبادرات المدعومة</h2>
+          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">حكايات نجاح من الميدان</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {initiatives.map((initiative) => (
               <Link
@@ -88,18 +85,18 @@ const InitiativesIncubatorPage = () => {
         <div className="bg-gradient-to-br from-green-50 to-teal-50 rounded-3xl shadow-xl p-8 md:p-12">
           <h2 className="text-3xl font-bold text-gray-900 mb-6 text-center">كيفية تقديم مبادرة</h2>
           <div className="max-w-2xl mx-auto space-y-4">
-            <div className="flex items-start space-x-4 space-x-reverse bg-white/80 backdrop-blur-sm rounded-2xl p-6">
-              <div className="flex-shrink-0 w-8 h-8 bg-green-500 text-white rounded-full flex items-center justify-center font-bold">1</div>
-              <p className="text-lg text-gray-700">قم بإعداد خطة مفصلة لمبادرتك تتضمن الأهداف والأنشطة</p>
-            </div>
-            <div className="flex items-start space-x-4 space-x-reverse bg-white/80 backdrop-blur-sm rounded-2xl p-6">
-              <div className="flex-shrink-0 w-8 h-8 bg-green-500 text-white rounded-full flex items-center justify-center font-bold">2</div>
-              <p className="text-lg text-gray-700">تواصل معنا عبر البريد الإلكتروني أو الهاتف</p>
-            </div>
-            <div className="flex items-start space-x-4 space-x-reverse bg-white/80 backdrop-blur-sm rounded-2xl p-6">
-              <div className="flex-shrink-0 w-8 h-8 bg-green-500 text-white rounded-full flex items-center justify-center font-bold">3</div>
-              <p className="text-lg text-gray-700">سنقوم بمراجعة مبادرتك وتقديم الدعم المناسب</p>
-            </div>
+            {[
+              'إعداد خطة واضحة ومفصلة للمبادرة، تتضمن الأهداف، والفئة المستهدفة، والأنشطة المقترحة.',
+              'التواصل مع الجمعية عبر البريد الإلكتروني أو الهاتف لتقديم المبادرة.',
+              'تقوم الجهة المختصة بمراجعة المبادرة وتقييمها وفق معايير محددة.',
+              'التواصل مع صاحب المبادرة لتقديم الملاحظات والتوجيهات اللازمة (إن وجدت).',
+              'اعتماد المبادرة وبدء تقديم الدعم المناسب لتنفيذها على أرض الواقع.',
+            ].map((step, i) => (
+              <div key={i} className="flex items-start space-x-4 space-x-reverse bg-white/80 backdrop-blur-sm rounded-2xl p-6">
+                <div className="flex-shrink-0 w-8 h-8 bg-green-500 text-white rounded-full flex items-center justify-center font-bold">{i + 1}</div>
+                <p className="text-lg text-gray-700">{step}</p>
+              </div>
+            ))}
           </div>
         </div>
       </div>
