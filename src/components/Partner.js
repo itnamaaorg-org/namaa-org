@@ -6,7 +6,7 @@ import { partnerLogos } from '@/lib/images';
 
 const partners_arr = partnerLogos.map((logo, i) => ({ name: `Partner ${i + 1}`, logo }));
 const repeated = [...partners_arr, ...partners_arr, ...partners_arr];
-const DURATION_S = 40;
+const DURATION_S = 55;
 const PAUSE_MS = 3000;
 
 const Partners = () => {
