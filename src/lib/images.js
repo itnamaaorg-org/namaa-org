@@ -93,18 +93,6 @@ export const programSliders = {
 
 export const teamSliders = {
   campaigns: [
-    getCdnImage('v1776855090/DSC01931_dabv3h.webp'),
-    getCdnImage('v1776855089/DSC00314_tq3qgf.webp'),
-    getCdnImage('v1776855094/DSC02556_nyremg.webp'),
-    getCdnImage('v1776855092/DSC02026_wyr31d.webp'),
-    getCdnImage('v1776855097/DSC07947_db9meu.webp'),
-    getCdnImage('v1776855095/DSC06849_yvjmf5.webp'),
-    getCdnImage('v1776855099/DSC09743_sxafto.webp'),
-    getCdnImage('v1776855100/IMG_7643_jyelid.webp'),
-    getCdnImage('v1776855102/IMG_7919_y8bi9e.webp'),
-    getCdnImage('v1776855103/IMG_8099_c1fdhv.webp'),
-  ],
-  companions: [
     getCdnImage('v1776855635/C0983_fr2tjf.webp'),
     getCdnImage('v1776855638/DSC01434_woeprd.webp'),
     getCdnImage('v1776855640/DSC01970_cwifse.webp'),
@@ -117,6 +105,18 @@ export const teamSliders = {
     getCdnImage('v1776855657/DSC08620_wcxwxm.webp'),
     getCdnImage('v1776855655/DSC07821_l2dsmp.webp'),
     getCdnImage('v1776855642/DSC04914_jajzuf.webp'),
+  ],
+  companions: [
+    getCdnImage('v1776855090/DSC01931_dabv3h.webp'),
+    getCdnImage('v1776855089/DSC00314_tq3qgf.webp'),
+    getCdnImage('v1776855094/DSC02556_nyremg.webp'),
+    getCdnImage('v1776855092/DSC02026_wyr31d.webp'),
+    getCdnImage('v1776855097/DSC07947_db9meu.webp'),
+    getCdnImage('v1776855095/DSC06849_yvjmf5.webp'),
+    getCdnImage('v1776855099/DSC09743_sxafto.webp'),
+    getCdnImage('v1776855100/IMG_7643_jyelid.webp'),
+    getCdnImage('v1776855102/IMG_7919_y8bi9e.webp'),
+    getCdnImage('v1776855103/IMG_8099_c1fdhv.webp'),
   ],
   empowerment: [
     getCdnImage('v1776856199/IMG_6887_jcfurq.webp'),
