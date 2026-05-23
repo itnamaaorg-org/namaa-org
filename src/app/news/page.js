@@ -102,34 +102,36 @@ export default function NewsPage() {
                 <Link
                   key={news._id}
                   href={`/news/${news._id}`}
-                  className="block bg-white/80 backdrop-blur-sm rounded-3xl shadow-xl p-8 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
+                  className="block bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden"
                 >
                   {news.image && (
-                    <div className="mb-4 overflow-hidden rounded-2xl border border-gray-100">
+                    <div className="aspect-[4/3] bg-gray-50 overflow-hidden">
                       <img
                         src={news.image}
                         alt={news.title}
-                        className="w-full h-52 object-cover"
+                        className="w-full h-full object-contain"
                       />
                     </div>
                   )}
-                  <div className="mb-4">
-                    <span className="text-sm text-green-600 font-medium">
-                      {formatDate(news.createdOn)}
+                  <div className="p-6">
+                    <div className="mb-3">
+                      <span className="text-sm text-green-600 font-medium">
+                        {formatDate(news.createdOn)}
+                      </span>
+                    </div>
+                    <h2 className="text-xl font-bold text-gray-900 mb-3 line-clamp-2">
+                      {news.title}
+                    </h2>
+                    <p className="text-gray-600 leading-relaxed line-clamp-3">
+                      {news.description}
+                    </p>
+                    <span className="mt-4 inline-flex items-center text-green-700 font-semibold text-sm">
+                      قراءة التفاصيل
+                      <svg className="h-4 w-4 mr-1 rotate-180" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                      </svg>
                     </span>
                   </div>
-                  <h2 className="text-2xl font-bold text-gray-900 mb-4 line-clamp-2">
-                    {news.title}
-                  </h2>
-                  <p className="text-gray-700 leading-relaxed line-clamp-4">
-                    {news.description}
-                  </p>
-                  <span className="mt-4 inline-flex items-center text-green-700 font-semibold">
-                    قراءة التفاصيل
-                    <svg className="h-4 w-4 mr-1 rotate-180" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-                    </svg>
-                  </span>
                 </Link>
               ))}
             </div>
